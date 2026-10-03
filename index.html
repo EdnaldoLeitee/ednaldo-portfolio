@@ -1191,8 +1191,8 @@ function renderGrid(){
   grid.innerHTML=list.map((p,i)=>`<a class="card" href="#${p.id}" data-id="${p.id}" style="animation-delay:${i*60}ms"><div class="card-cover"><div class="card-tilt">${coverOf(p)}</div><span class="explore" aria-hidden="true"><span class="ex-row">${[...'Explore'].map((ch,k)=>`<i style="--k:${k}"><b>${ch}</b><b>${ch}</b></i>`).join('')}</span><span class="ex-arr">↗</span></span></div><div class="card-info"><h3>${p.title}</h3><span class="mono year">${p.year}</span><span class="mono client">${p.client}</span><div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div></a>`).join('');
   document.getElementById('workCount').textContent=pad(list.length);
 }
-filters.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;active=b.dataset.c;renderFilters();renderGrid();try{localStorage.setItem('pf-filter',active)}catch(_){}});
-try{const s=localStorage.getItem('pf-filter');if(s&&cats.includes(s))active=s}catch(_){}
+filters.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;active=b.dataset.c;renderFilters();renderGrid();});
+try{localStorage.removeItem('pf-filter')}catch(_){}
 renderFilters();renderGrid();
 /* card tilt: the cover lifts off the card and follows the pointer */
 if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
