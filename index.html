@@ -32,7 +32,7 @@ html{scroll-behavior:smooth}
 main{overflow-x:clip}
 body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.card:focus,.card:focus-visible{outline:none}
 .mono{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
 .wrap{padding-inline:var(--gut)}
 .print{display:none}
@@ -929,7 +929,7 @@ body.locked{overflow:hidden}
 (function(){
 const P = [
  {id:'vortal-vision',coverCenter:true,title:'VORTAL Vision',url:'https://community.vortal.biz/public/?SkinName=VisionAI&currentLanguage=pt',client:'VORTAL Connecting Business · Portugal',year:'2024',tags:['Product','Web'],cover:'img',coverImg:'vortal-cover.jpg',
-  role:'UI/UX modernisation of the public pages, at VORTAL',tools:'Figma',
+  role:'UI/UX Specialist at VORTAL: redesigned the public sign-in and tender search, applied the design system and supported the developers through the build',tools:'Figma',
   summary:'VORTAL runs one of the main electronic public procurement platforms in Portugal. I helped modernise its public pages: the sign-in and the search for open tenders that anyone can use without an account.',
   context:'Public buyers publish their tenders on VORTAL and companies come to find them, register and bid. The public pages are the first thing both see, and they had to feel as modern as the AI-powered platform behind them.',
   approach:['A clear, consistent layout: one side menu, one header and the content in cards.','A sign-in screen that introduces the new platform while keeping the form simple.','Search filters grouped on one card, with the results easy to scan.','Deadlines shown on a timeline, with the days left highlighted.'],
@@ -948,7 +948,7 @@ const P = [
    {k:'outcome',t:'Delivered',lede:'Live public pages that anyone can open on <a href="https://community.vortal.biz/public/?SkinName=VisionAI&currentLanguage=pt" target="_blank" rel="noopener">community.vortal.biz</a>.',deliverablesList:true}
   ]},
  {id:'armilar',coverCenter:true,title:'Armilar Market Intelligence',url:'https://armilar.biz/en/services/',client:'Armilar, by VORTAL · Portugal & Spain',year:'2024',tags:['Product','Web'],cover:'img',coverImg:'armilar-cover.jpg',
-  role:'UI/UX design for the web platform and the mobile app, at VORTAL',tools:'Figma',
+  role:'UI/UX Specialist at VORTAL: designed the experience of the web platform and the iOS and Android app, from user flows to prototypes and developer handoff',tools:'Figma',
   summary:'Armilar Market Intelligence helps companies find and win public tenders in Portugal and Spain. I designed the UI/UX of the platform while at VORTAL.',
   context:'Thousands of public tenders are published every month. Companies that sell to the public sector need to know which ones matter to them, who they are up against and what is coming next, without reading every notice.',
   approach:['Turn a large stream of public procurement data into a short list of opportunities that fit each company.','Make alerts, competitors and clients easy to follow from one place.','Show predictions and prices in a way a sales team can act on.','Bring the same experience to the phone, so nothing is missed away from the desk.'],
@@ -971,7 +971,7 @@ const P = [
    {k:'outcome',t:'Delivered',lede:'A live market intelligence product, on the web and in the app stores. More at <a href="https://armilar.biz/en/services/" target="_blank" rel="noopener">armilar.biz</a>.',deliverablesList:true}
   ]},
  {id:'foodfy',title:'Foodfy',client:'Personal project · Portugal',year:'2021',tags:['Product'],cover:'img',coverImg:'foodfy-cover.jpg',
-  role:'UX research, UI design and clickable prototype',tools:'Figma, Photoshop, Illustrator',
+  role:'UX/UI Designer, solo project: ran the research and interviews, defined the structure and user flows, designed the interface and built the Figma prototype',tools:'Figma, Photoshop, Illustrator',
   summary:'Foodfy is a restaurant app for Lisbon that takes you from “where should we eat?” to a confirmed table, with your food ordered before you arrive.',
   context:'Finding a good table usually means jumping between a map, a review site and a phone call. Foodfy puts discovery, booking and pre-ordering in one short flow, and works for guests as well as signed-in diners.',
   approach:['Explore: greeting and location, search, food categories, “Top rated in Lisbon” and “Near you”, plus a card for your next booking.','Restaurant page: rating, price level, area and opening status, quick actions for directions, call and menu, the full menu with dietary tags, and reviews.','Booking: guests, date and time with closed days and fully booked slots shown clearly, an occasion, special requests and an optional food pre-order.','Review and confirm: pre-order total, pay now or at the restaurant, and free cancellation up to two hours before.','After booking: a confirmation with a reference, add to calendar and directions, plus Bookings, Saved and Profile tabs.','Light and dark themes, with sign-in only asked for when you book, and a return straight to your booking afterwards.'],
@@ -1041,7 +1041,7 @@ const P = [
    {k:'outcome',t:'Delivered',lede:'A clickable Figma prototype that runs the full journey, from discovery to a confirmed, paid booking.',deliverablesList:true}
   ]},
  {id:'foodfy-brand',coverCenter:true,title:'Foodfy Brand Identity',client:'Personal project · Portugal',year:'2021',tags:['Branding'],cover:'img',coverImg:'foodfy-brand-cover.jpg',
-  role:'Naming, logo, visual identity and brand applications',tools:'Illustrator, Photoshop, Figma',
+  role:'Brand Designer, solo project: created the name, logo and visual identity, and applied it to posters, the app icon and merchandise',tools:'Illustrator, Photoshop, Figma',
   summary:'The brand behind the Foodfy app: a name, a logo and a voice that make booking a table feel like the start of the meal.',
   context:'Foodfy needed to feel friendly before anyone booked anything. A good part of that experience starts with the first thing people see: the logo.',
   approach:['A logo that turns the double O into a cloche, the dome that covers a dish before it is served.','Two greens: one for depth, one for energy.','A headline voice with Azo Sans Uber: “Nothing brings people together like food”.','A set of line icons of food and kitchen tools that becomes the pattern for everything else.'],
@@ -1060,7 +1060,7 @@ const P = [
    {k:'outcome',t:'Delivered',lede:'A complete identity for Foodfy. See the app itself in the Foodfy project.',deliverablesList:true}
   ]},
  {id:'pink-step',coverCenter:true,title:'Ivy Pink Step',client:'IVY Partners · Portugal & Switzerland',year:'2026',tags:['Product','Motion','Branding'],cover:'img',coverImg:'pinkstep-cover.jpg',
-  role:'App design, build and motion',tools:'React, TypeScript, Vite, Tailwind, OCR, HTML/CSS animation',
+  role:'UI/UX Designer at IVY Partners: designed the app and its look, built it with Claude, and produced the install videos and awareness content',tools:'Figma, Claude',
   summary:'Ivy Pink Step is IVY Partners’ Pink October challenge app. For 30 days, staff in Switzerland and Portugal log their daily steps, and every step adds to a donation to their country’s cancer league.',
   context:'I designed and built the app end to end, from the step logging and team dashboard to the awareness content, plus two animated install guides so staff could add it to their phones without an app store. The idea behind it: one step, two impacts, for your health and for the cause.',
   approach:['Home: a ring tracks today against a 10,000-step goal, with a “Day 1 of 30” counter.','Logging: upload a screenshot of your phone’s step counter and the app reads the number for you (OCR). Yesterday and today can be logged, then they lock.','Progress: total steps, days active and a 7-day bar chart; press and hold a bar for the exact count.','Team “Walk for Her”: total raised in CHF, a Top 50 leaderboard with a jump to your own rank, and Switzerland vs Portugal average steps.','Team goal: a 100,000-step target with progress ring, monthly counter, active users and average raised per person.','Bonus impact: steps turned into kilometres and the CO₂ saved versus driving the same distance.','Awareness: sourced breast cancer facts for both countries, warning signs, screening rules per country, guidance for higher risk and local support lines.','Office 365 sign-in, installable as a web app, and an accessibility pass: keyboard navigation, focus states and 44px touch targets.'],
@@ -1077,14 +1077,14 @@ const P = [
     screens:[{src:'pinkstep-v1-1-welcome.jpg',label:'Welcome'},{src:'pinkstep-v1-2-home.jpg',label:'Home · add steps'},{src:'pinkstep-v1-3-home-logged.jpg',label:'Home · logged'},{src:'pinkstep-v1-4-team.jpg',label:'Team fundraising'},{src:'pinkstep-v1-5-awareness.jpg',label:'Awareness'},{src:'pinkstep-v1-6-admin-login.jpg',label:'Admin access'},{src:'pinkstep-v1-7-admin.jpg',label:'Admin dashboard'}]},
    well:['Main flows designed and prototyped: onboarding, daily step input and the group total.','Steps saved locally, with personal and collective totals updating correctly.'],
    wrong:['Connecting Supabase for cloud storage crashed the prototype every time.','With local storage only, people couldn’t share a leaderboard across devices.','Figma Make’s no-code setup was too limited for authentication and data.'],
-   changed:['Rebuilt in code (React and TypeScript) instead of Figma Make.','Moved to a light theme in the IVY palette, with the pink leaf icon.','Office 365 sign-in replaced the name and password form.','Photo proof became the main way to log: the app reads the number from a step-counter screenshot.','Donations shown in CHF, with a Switzerland vs Portugal comparison.','Awareness content rewritten with sourced facts for both countries.']
+   changed:['Built as a working app with Claude, instead of a Figma Make prototype.','Moved to a light theme in the IVY palette, with the pink leaf icon.','Office 365 sign-in replaced the name and password form.','Photo proof became the main way to log: the app reads the number from a step-counter screenshot.','Donations shown in CHF, with a Switzerland vs Portugal comparison.','Awareness content rewritten with sourced facts for both countries.']
   },
   media:{
    videos:[{src:'pinkstep-install-ios.mp4',poster:'pinkstep-poster-ios.jpg',label:'iPhone · Safari',len:'0:56'},{src:'pinkstep-install-android.mp4',poster:'pinkstep-poster-android.jpg',label:'Android · Chrome',len:'0:50'}],
    screens:[{src:'pinkstep-01-login.jpg',label:'Sign in · Office 365'},{src:'pinkstep-app-1-home.jpg',label:'Home · today'},{src:'pinkstep-app-0-home-log.jpg',label:'Home · log by screenshot'},{src:'pinkstep-app-2-home-week.jpg',label:'Home · last 7 days'},{src:'pinkstep-app-3-team.jpg',label:'Team · total raised'},{src:'pinkstep-app-4-team-leaderboard.jpg',label:'Team · leaderboard'},{src:'pinkstep-app-5-team-countries.jpg',label:'Team · CH vs PT, goal'},{src:'pinkstep-app-6-team-impact.jpg',label:'Team · CO₂ impact'},{src:'pinkstep-app-7-aware.jpg',label:'Awareness · key facts'},{src:'pinkstep-app-8-aware-signs.jpg',label:'Awareness · warning signs'},{src:'pinkstep-app-9-aware-resources.jpg',label:'Awareness · support'}]
   }},
  {id:'donor-wall',coverCenter:true,title:'Valley View Donor Wall',client:'Valley View Hospital · United States',year:'2020',tags:['Product','Branding'],cover:'img',coverImg:'donorwall-cover.jpg',
-  role:'UX/UI design, discovery and developer handoff, at Acid Integrations',tools:'Illustrator, Adobe XD, Premiere Pro',
+  role:'UI/UX & Graphic Designer at Acid Integrations: ran discovery with the hospital, designed the touch interface, and prepared the assets and guidance for the developers',tools:'Illustrator, Adobe XD, Premiere Pro',
   summary:'An interactive donor appreciation wall for Valley View Hospital in Glenwood Springs, Colorado, designed with Acid Integrations between December 2019 and February 2020.',
   context:'One large touch screen with two jobs: thank the people who support the hospital, and introduce the hospital to everyone who walks by.',
   approach:['Discovery meetings to understand the donation programmes and what the wall had to say.','A clear structure: a screen saver, a welcome screen and four sections: About, Donors, Events and History.','A user-friendly touch interface that carries the hospital’s values and brand.','Assets prepared for handoff, with guidance to developers during the build.','A CMS so the hospital could manage the content after launch.'],
@@ -1113,7 +1113,7 @@ const P = [
    {k:'outcome',t:'Delivered',lede:'A wall the hospital can keep up to date on its own.',deliverablesList:true}
   ]},
  {id:'fox-real-estate',coverCenter:true,title:'Fox Real Estate',url:'https://foxrealestate.pt/',client:'Fox Relocation & Real Estate · Portugal',year:'2025',tags:['Branding','Web','Social'],cover:'img',coverImg:'fox-cover.jpg',
-  role:'Logo, brand guidelines, website and social media',tools:'WordPress, Illustrator',
+  role:'Freelance Brand & Web Designer: created the logo and brand guidelines, built the website in WordPress and designed the social media templates',tools:'WordPress, Illustrator',
   summary:'A logo, website and social media templates for Fox Real Estate, which helps people relocate to Portugal: finding a home to rent or buy and guiding them through the visa process (foxrealestate.pt).',
   context:'Moving country is stressful. The brand had to feel friendly and trustworthy at once, and the site had to turn curious visitors into booked consultations.',
   approach:['A fox detective as the mark: the agent who searches on your behalf.','A logo system of three lockups in nine files, with brand guidelines for clear space, sizes, colour and use.','A warm orange and deep navy palette carried from the logo into the site.','A hero that says the three things the company does in three lines.','A simple three-step service story and a free consultation form on every key page.','Long-form guides on relocating, visas and regions for search and trust.'],
@@ -1137,7 +1137,7 @@ const P = [
    {k:'outcome',t:'Delivered',lede:'A brand, a site and a social kit the team can grow with. The site is live at <a href="https://foxrealestate.pt/" target="_blank" rel="noopener">foxrealestate.pt</a>.',deliverablesList:true}
   ]},
  {id:'behind-the-frames',title:'Behind the Frames',client:'IVY Partners · Portugal & Switzerland',year:'2026',tags:['Presentation','Motion','Branding'],cover:'img',coverImg:'webinar-cover.jpg',
-  role:'Webinar identity, deck design and teaser trailer',tools:'PowerPoint, Illustrator, video editing',
+  role:'Branding Specialist at IVY Partners: created the webinar’s visual identity, designed the deck and produced the teaser trailer',tools:'PowerPoint, Illustrator, video editing',
   summary:'“Behind the Frames: Decoding 3D Game Architecture” was an IVY webinar on 25 June 2026, explaining what happens inside a 3D game every 16 milliseconds.',
   context:'The talk came from a 3D graphics engineer and was made for a mixed, mostly non-technical audience. My job was to make a deeply technical subject feel familiar and fun, from the teaser that sold the session to the deck that carried it.',
   approach:['A game HUD visual language: dark panels, teal readouts, brackets and “//” section labels.','Game vocabulary as structure: player profile, mission objectives, side quest, level complete.','Complex systems turned into simple diagrams: the game loop, the frame pipeline, object → mesh → triangles → GPU.','A teaser trailer cut from game footage to announce the date.'],
