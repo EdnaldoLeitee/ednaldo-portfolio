@@ -203,7 +203,43 @@ section{scroll-margin-top:4rem}
 
 /* ---------- About ---------- */
 .statement{margin:0;font-family:var(--display);font-stretch:100%;font-weight:300;font-size:clamp(1.7rem,4.2vw,3.6rem);line-height:1.08;letter-spacing:-.02em;max-width:24ch;text-wrap:balance}
+.statement .hi{display:block;font-weight:500;color:var(--mute);font-size:.55em;letter-spacing:0;margin-bottom:.4em}.statement .wave{display:inline-block;font-style:normal;color:var(--accent);margin-left:.15em;animation:wv 2.4s ease-in-out infinite;transform-origin:50% 55%}@keyframes wv{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(90deg) scale(1.2)}20%,40%{transform:rotate(180deg)}}@media (prefers-reduced-motion:reduce){.statement .wave{animation:none}}
 .statement em{font-style:normal;font-stretch:62%;font-weight:800;text-transform:uppercase;color:var(--accent)}
+/* ---------- what I do (friendly list) ---------- */
+.do{margin-top:clamp(3rem,6vw,5rem);border-top:1px solid var(--line)}
+.do-k{display:block;color:var(--mute);padding:1.25rem 0 .5rem}
+.do-row{position:relative;display:grid;grid-template-columns:3.2rem minmax(0,1.25fr) minmax(0,1fr) 2rem;gap:1.5rem;align-items:center;padding:1.6rem 1.5rem;border-bottom:1px solid var(--line);color:inherit;text-decoration:none;isolation:isolate;overflow:hidden}
+.do-row::before{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform .55s cubic-bezier(.7,0,.2,1);z-index:-1}
+.do-n{color:var(--mute);transition:color .3s}
+.dd{position:absolute;left:var(--x,80%);top:var(--y,50%);margin:-46px 0 0 -46px;width:92px;height:92px;fill:none;stroke:var(--ink);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;z-index:2;transform-box:border-box;transform-origin:50% 50%;transform:scale(0) rotate(-35deg);transition:transform .55s cubic-bezier(.3,1.5,.5,1),left .45s cubic-bezier(.2,.8,.2,1),top .45s cubic-bezier(.2,.8,.2,1)}
+.dd *{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .25s ease}
+.do-t h3{margin:0 0 .45rem;font-family:var(--display);font-stretch:75%;font-weight:700;text-transform:uppercase;font-size:clamp(1.5rem,2.6vw,2.3rem);line-height:.95;transition:color .3s}
+.do-t p{margin:0;color:var(--mute);max-width:46ch;transition:color .3s}
+.sq{position:relative;display:inline-block;white-space:nowrap}
+.sq::after{content:"";position:absolute;left:-2%;right:-2%;bottom:-.08em;height:.16em;background:var(--accent);border-radius:99px;transform:scaleX(0);transform-origin:left;transition:transform .7s .3s cubic-bezier(.6,0,.2,1),background .3s}
+.do-row.in .sq::after,.do-row.drawn .sq::after{transform:scaleX(1)}
+.do-tags{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.4rem}
+.do-tags li{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:.4rem .7rem;border:1px solid var(--line);border-radius:99px;transition:transform .35s cubic-bezier(.3,1.8,.5,1),border-color .3s,color .3s,background .3s}
+.do-go{font-size:1.4rem;justify-self:end;transform:translate(-6px,6px);opacity:.4;transition:transform .45s cubic-bezier(.3,1.6,.5,1),opacity .3s,color .3s}
+@media (hover:hover){
+ .do-row:hover::before{transform:scaleY(1);transform-origin:top}
+ .do-row:hover .do-n,.do-row:hover .do-t h3,.do-row:hover .do-t p,.do-row:hover .do-go{color:var(--ink)}
+ .do-row:hover .dd{transform:scale(1) rotate(0)}
+ .do-row:hover .dd *{stroke-dashoffset:0;transition:stroke-dashoffset .9s cubic-bezier(.6,0,.2,1)}
+ .do-row:hover .dd *:nth-child(2){transition-delay:.15s}.do-row:hover .dd *:nth-child(3){transition-delay:.3s}.do-row:hover .dd *:nth-child(4){transition-delay:.45s}
+ .do-row:hover .sq::after{background:var(--ink)}
+ .do-row:hover .do-tags li{border-color:rgba(12,12,14,.35);color:var(--ink)}
+ .do-row:hover .do-tags li:nth-child(odd){transform:rotate(-3deg) translateY(-2px)}
+ .do-row:hover .do-tags li:nth-child(even){transform:rotate(3deg) translateY(1px)}
+ .do-row:hover .do-go{opacity:1;transform:none}
+}
+.do-row:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+@keyframes ddFloat{0%,100%{rotate:0deg}50%{rotate:6deg}}
+.do-row:hover .dd{animation:ddFloat 1.8s ease-in-out .5s infinite}
+@media (max-width:900px){.do-row{grid-template-columns:2.4rem minmax(0,1fr);gap:1rem 1.25rem}.do-tags{grid-column:2/-1}.do-go{display:none}}
+@media (max-width:520px){.do-row{grid-template-columns:minmax(0,1fr);padding:1.4rem 1rem}.do-n{display:none}.do-tags{grid-column:1/-1}}
+@media (hover:none){.dd{display:none}}
+@media (prefers-reduced-motion:reduce){.dd *{stroke-dashoffset:0!important;transition:none!important}.sq::after{transform:scaleX(1)!important}.dd{animation:none!important;transition:none!important}}
 .about-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);margin-top:clamp(3rem,6vw,5rem)}
 .svc{padding:1.5rem 1.5rem 2rem 0;border-right:1px solid var(--line);display:grid;align-content:start;gap:.8rem;min-width:0}
 .svc+.svc{padding-left:1.5rem}
@@ -866,25 +902,13 @@ body.locked{overflow:hidden}
 
   <section id="about" class="wrap">
     <div class="shead"><h2>About</h2><p class="mono">Ednaldo Leite — Lisbon</p></div>
-    <p class="statement">UI/UX and graphic designer in Lisbon. I design the <em>product</em> people use, the <em>brand</em> they recognise and the <em>deck</em> that explains it.</p>
-    <div class="about-grid">
-      <div class="svc"><span class="mono" style="color:var(--mute)">UI/UX</span><h3>Products people can use</h3><p>From user research to tested prototypes and the design system behind them.</p><ul><li>User research &amp; interviews</li><li>Wireframes &amp; prototypes</li><li>Usability &amp; A/B testing</li><li>Design systems</li></ul></div>
-      <div class="svc"><span class="mono" style="color:var(--mute)">Brand</span><h3>Systems, not one-offs</h3><p>Colour, type and layout rules that keep every asset recognisable.</p><ul><li>Brand &amp; design systems</li><li>Print &amp; one-pagers</li><li>Event identity</li></ul></div>
-      <div class="svc"><span class="mono" style="color:var(--mute)">Presentations &amp; content</span><h3>Decks that carry the room</h3><p>Presentations, templates and social content that tell the story clearly.</p><ul><li>Pitch &amp; webinar decks</li><li>PowerPoint templates</li><li>Social &amp; campaign assets</li></ul></div>
-      <div class="svc"><span class="mono" style="color:var(--mute)">Web &amp; motion</span><h3>Built, not just drawn</h3><p>Sites designed and shipped, plus animations that explain things.</p><ul><li>Websites &amp; landing blocks</li><li>Logo &amp; UI animation</li><li>Forms &amp; interactive tools</li></ul></div>
-    </div>
-    <div class="xp">
-      <h3 class="mono xp-k">Experience</h3>
-      <ol class="xp-list">
-        <li><span class="mono">2024 — Now</span><div><h4>UI/UX Designer / Branding Specialist</h4><p class="mono">IVY Partners · Lisbon, Portugal</p><p>Brand identity and guidelines, digital and print assets, presentations and templates, UI/UX for web and mobile, animation and video. Also manage suppliers and print production.</p></div></li>
-        <li><span class="mono">2021 — 2024</span><div><h4>UI/UX Specialist</h4><p class="mono">VORTAL Connecting Business · Lisbon, Portugal</p><p>User stories, user research and A/B testing, interactive prototypes, and the company’s design system. Led UX projects including a major redesign of the main product interface, which raised user satisfaction scores by 30%.</p></div></li>
-        <li><span class="mono">2019 — 2021</span><div><h4>UI/UX &amp; Graphic Designer</h4><p class="mono">Acid Integration · Toronto, Canada</p><p>Led discovery and design sprints, built user journeys and information architecture, and designed brand identities, posters, videos, presentations and marketing collateral.</p></div></li>
-        <li><span class="mono">2018 — 2019</span><div><h4>UI/UX Designer · Internship</h4><p class="mono">Glartek · Lisbon, Portugal</p><p>Web, mobile and augmented reality tools for factory workers in the automotive, food and energy industries, making maintenance processes more efficient.</p></div></li>
-      </ol>
-      <div class="xp-side">
-        <div><h3 class="mono xp-k">Education</h3><p><b>Design Bachelor</b>, 2015 — 2018<br>Faculty of Architecture and Art, Lusíada University of Lisbon</p></div>
-        <div><h3 class="mono xp-k">Languages</h3><p>Portuguese, native<br>English, advanced<br>Spanish, intermediate</p></div>
-      </div>
+    <p class="statement"><span class="hi">Hi, I’m Ednaldo<i class="wave" aria-hidden="true">*</i></span>A UI/UX and graphic designer in Lisbon. I design the <em>product</em> people use, the <em>brand</em> they recognise and the <em>deck</em> that explains it.</p>
+    <div class="do">
+      <span class="mono do-k">What I do</span>
+      <a class="do-row" href="#work" data-f="Product"><span class="do-n mono">01</span><div class="do-t"><h3>Apps people <span class="sq">actually</span> enjoy</h3><p>I talk to users, sketch a lot and test early, so the final product feels obvious. Then I hand it over in a tidy design system.</p></div><ul class="do-tags"><li>Research &amp; interviews</li><li>Wireframes</li><li>Prototypes</li><li>Usability testing</li><li>Design systems</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
+      <a class="do-row" href="#work" data-f="Branding"><span class="do-n mono">02</span><div class="do-t"><h3>Brands that look like <span class="sq">themselves</span></h3><p>The logo is the fun part. I also make the rules for colour, type and layout, so every poster and post still looks like you.</p></div><ul class="do-tags"><li>Logos</li><li>Brand guidelines</li><li>Print</li><li>Event identity</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
+      <a class="do-row" href="#work" data-f="Presentation"><span class="do-n mono">03</span><div class="do-t"><h3>Slides nobody <span class="sq">falls asleep</span> to</h3><p>I turn long documents into clear, good-looking decks, templates your team can reuse and posts that get noticed.</p></div><ul class="do-tags"><li>Pitch &amp; webinar decks</li><li>PowerPoint templates</li><li>Social posts</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
+      <a class="do-row" href="#work" data-f="Motion"><span class="do-n mono">04</span><div class="do-t"><h3>Things that <span class="sq">move</span></h3><p>Websites, landing pages and small animations that explain an idea faster than a paragraph can. A bit like this one.</p></div><ul class="do-tags"><li>Websites</li><li>Logo &amp; UI animation</li><li>Videos</li><li>Interactive tools</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
     </div>
   </section>
 
@@ -1193,6 +1217,7 @@ function renderGrid(){
 }
 filters.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;active=b.dataset.c;renderFilters();renderGrid();});
 try{localStorage.removeItem('pf-filter')}catch(_){}
+document.querySelectorAll('.do-row[data-f]').forEach(r=>r.addEventListener('click',e=>{const c=r.dataset.f;if(!cats.includes(c))return;e.preventDefault();active=c;renderFilters();renderGrid();document.getElementById('work').scrollIntoView({behavior:'smooth'})}));
 renderFilters();renderGrid();
 /* card tilt: the cover lifts off the card and follows the pointer */
 if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -1548,7 +1573,7 @@ const RV=(()=>{
     const m=document.querySelector('main');
     prep(m,'.shead h2',null,{mask:true});
     prep(m,'.shead p, .filters, .statement, .tools, .contact .mono, .mailrow, .social-row',null);
-    prep(m,'.svc, .step, .xp-list li, .xp-side > div',null,{stagger:90});
+    prep(m,'.svc, .do-row, .step, .xp-list li, .xp-side > div',null,{stagger:90});
     prep(m,'.contact .big',null,{mask:true});
   }
   function caseIn(body,root){
@@ -1622,6 +1647,51 @@ RV.page();
     (el||window).scrollTo({top:0,behavior:beh});const f=el?document.getElementById('caseClose'):document.querySelector('.nav a,.nav button');if(f)setTimeout(()=>f.focus({preventScroll:true}),beh==='smooth'?600:0)});
   upd()})();
 
+/* ---------- liquid "Let's talk": the cursor leaves a fading trail that bends the type like ink in water ---------- */
+(()=>{const big=document.querySelector('#contact .big');if(!big)return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!matchMedia('(hover:hover)').matches)return;
+  const NS='http://www.w3.org/2000/svg',acc=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()||'#E0753A';
+  const svg=document.createElementNS(NS,'svg');svg.setAttribute('aria-hidden','true');svg.style.cssText='position:absolute;width:0;height:0;overflow:hidden';
+  svg.innerHTML=`<filter id="liqf" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+   <feImage id="liqimg" preserveAspectRatio="none" result="m0"/><feGaussianBlur in="m0" stdDeviation="11" result="m"/>
+   <feDisplacementMap in="SourceGraphic" in2="m" xChannelSelector="R" yChannelSelector="G" result="dg" id="liqd1"/>
+   <feDisplacementMap in="SourceGraphic" in2="m" xChannelSelector="R" yChannelSelector="G" result="dr" id="liqd2"/>
+   <feDisplacementMap in="SourceGraphic" in2="m" xChannelSelector="R" yChannelSelector="G" result="db" id="liqd3"/>
+   <feColorMatrix in="dr" values="1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" result="r"/>
+   <feColorMatrix in="dg" values="0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0" result="g"/>
+   <feColorMatrix in="db" values="0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0" result="b"/>
+   <feBlend in="r" in2="g" mode="screen" result="rg"/><feBlend in="rg" in2="b" mode="screen" result="txt"/>
+   <feColorMatrix in="m" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.8 0 -.55" result="mask"/>
+   <feFlood flood-color="${acc}" result="ac"/><feComposite in="ac" in2="mask" operator="in" result="acm"/>
+   <feComposite in="acm" in2="dg" operator="in" result="tint"/>
+   <feMerge><feMergeNode in="txt"/><feMergeNode in="tint"/></feMerge></filter>`;
+  document.body.appendChild(svg);
+  const img=svg.querySelector('#liqimg'),d=[1,2,3].map(i=>svg.querySelector('#liqd'+i)),fc=document.createElement('canvas'),fx=fc.getContext('2d');
+  let W=0,H=0,pad=0,raf=0,mx=-1,my=-1,px=-1,py=-1,energy=0,on=false,vis=false,last=0;
+  function size(){const r=big.getBoundingClientRect();if(!r.width)return false;W=r.width;H=r.height;pad=Math.round(parseFloat(getComputedStyle(big).fontSize)*.2);
+    const f=svg.querySelector('filter');[['x',-pad],['y',-pad],['width',W+pad*2],['height',H+pad*2]].forEach(([k,v])=>{f.setAttribute(k,v);img.setAttribute(k,v)});
+    const s=Math.max(30,H*.42);d[0].setAttribute('scale',s);d[1].setAttribute('scale',s*1.14);d[2].setAttribute('scale',s*.86);
+    fc.width=Math.max(16,Math.round((W+pad*2)/4));fc.height=Math.max(16,Math.round((H+pad*2)/4));fx.fillStyle='rgb(128,128,0)';fx.fillRect(0,0,fc.width,fc.height);return true}
+  function start(){if(on||big.querySelector('.dnt-ch'))return;if(!size())return;on=true;lt=0;big.style.filter='url(#liqf)';kick()}
+  function stop(){on=false;big.style.filter='';energy=0;fx.fillStyle='rgb(128,128,0)';fx.fillRect(0,0,fc.width,fc.height);img.setAttribute('href',fc.toDataURL())}
+  let lt=0;function frame(ts){raf=0;if(!on)return;const dt=Math.min(100,lt?ts-lt:16.7)/16.7;lt=ts;
+    if(big.querySelector('.dnt-ch')){stop();return}
+    fx.globalCompositeOperation='source-over';fx.fillStyle=`rgba(128,128,0,${Math.min(.6,1-Math.pow(.91,dt)).toFixed(3)})`;fx.fillRect(0,0,fc.width,fc.height);
+    if(mx>-1e4&&px>-1e4){const dx=mx-px,dy=my-py,sp=Math.hypot(dx,dy);
+      if(sp>.5){const n=Math.min(14,Math.ceil(sp/8));for(let i=1;i<=n;i++){const x=(px+dx*i/n+pad)/4,y=(py+dy*i/n+pad)/4,rad=Math.max(8,fc.height*.17);
+        const r=Math.max(0,Math.min(255,128-dx*2.4)),g=Math.max(0,Math.min(255,128-dy*2.4)),b=Math.min(255,120+sp*8);
+        const gr=fx.createRadialGradient(x,y,0,x,y,rad);gr.addColorStop(0,`rgba(${r|0},${g|0},${b|0},.5)`);gr.addColorStop(1,`rgba(${r|0},${g|0},${b|0},0)`);
+        fx.fillStyle=gr;fx.fillRect(x-rad,y-rad,rad*2,rad*2)}energy=1}}
+    px=mx;py=my;energy*=Math.pow(.945,dt);
+    if(ts-last>28){img.setAttribute('href',fc.toDataURL());last=ts}
+    if(energy>.04)kick();else stop()}
+  function kick(){if(!raf)raf=requestAnimationFrame(frame)}
+  addEventListener('pointermove',e=>{if(!vis)return;const r=big.getBoundingClientRect(),m=Math.max(60,pad);const x=e.clientX-r.left,y=e.clientY-r.top;
+    if(x<-m||y<-m||x>r.width+m||y>r.height+m){mx=my=px=py=-1e5;return}
+    if(px<-1e4){px=x;py=y}mx=x;my=y;start();kick()},{passive:true});
+  new IntersectionObserver(es=>{vis=es[0].isIntersecting;if(!vis)stop()}).observe(big);
+  addEventListener('resize',()=>{if(on)size()});
+})();
 (()=>{const btn=document.getElementById('dnt');if(!btn)return;let M=null,on=false,state=null;
   const load=()=>M?Promise.resolve(M):new Promise((res,rej)=>{const sc=document.createElement('script');sc.src='js-matter.min.js';sc.onload=()=>res(M=window.Matter);sc.onerror=rej;document.head.appendChild(sc)});
   const SEL='.dnt-ch,h1,h2,h3,h4,h5,p,a,button,li,img,video,svg,figcaption,label,small,blockquote,span,dt,dd,.chip,.card';
