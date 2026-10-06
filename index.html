@@ -3,38 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QFC4PXEY2F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QFC4PXEY2F');
-</script>
-<title>Ednaldo Leite · UI/UX &amp; Graphic Designer in Lisbon</title>
-<meta name="description" content="Portfolio of Ednaldo Leite, UI/UX and graphic designer in Lisbon. Product design, brand identities and websites for VORTAL, Armilar, Valley View Hospital and more.">
-<meta name="author" content="Ednaldo Leite">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://ednaldoleite.com/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#0C0C0E">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Ednaldo Leite">
-<meta property="og:title" content="Ednaldo Leite · UI/UX &amp; Graphic Designer">
-<meta property="og:description" content="Product design, brand identities and websites. Based in Lisbon.">
-<meta property="og:url" content="https://ednaldoleite.com/">
-<meta property="og:image" content="https://ednaldoleite.com/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ednaldo Leite, UI/UX and graphic designer">
-<meta property="og:locale" content="en_GB">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ednaldo Leite · UI/UX &amp; Graphic Designer">
-<meta name="twitter:description" content="Product design, brand identities and websites. Based in Lisbon.">
-<meta name="twitter:image" content="https://ednaldoleite.com/og-image.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ednaldo Leite","url":"https://ednaldoleite.com/","image":"https://ednaldoleite.com/og-image.jpg","jobTitle":"UI/UX & Graphic Designer","address":{"@type":"PostalAddress","addressLocality":"Lisbon","addressCountry":"PT"},"knowsAbout":["UI design","UX design","Product design","Brand identity","Web design","Design systems"],"sameAs":["https://www.linkedin.com/in/ednaldo-leite-05232a15b/"]}</script>
+<meta name="description" content="Ednaldo Leite, UI/UX and graphic designer in Lisbon. Product design, brand systems, presentations and motion.">
+<meta property="og:title" content="Ednaldo Leite Portfolio">
+<meta property="og:description" content="UI/UX and graphic designer in Lisbon.">
+<meta property="og:image" content="foodfy-cover.jpg">
+<title>Ednaldo Leite Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&family=Archivo+Black&family=Jost:wght@400;500;800&family=Poppins:wght@400;600;700&display=swap">
@@ -59,7 +32,7 @@ html{scroll-behavior:smooth}
 main{overflow-x:clip}
 body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:fixed;left:12px;top:-60px;z-index:200;padding:.7rem 1rem;border-radius:999px;background:var(--accent);color:var(--ink);font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:top .2s}.skip:focus{top:12px}.card:focus,.card:focus-visible{outline:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .mono{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
 .wrap{padding-inline:var(--gut)}
 .print{display:none}
@@ -107,7 +80,7 @@ a{color:inherit}
 /* marquee */
 .marquee{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding-block:1rem}
 .marquee-track{display:inline-flex;gap:2.5rem;animation:slide 38s linear infinite;font-family:var(--display);font-stretch:100%;font-weight:300;font-size:clamp(1.5rem,3.6vw,2.75rem);text-transform:uppercase;letter-spacing:-.01em}
-.marquee-track{gap:4rem}
+.marquee-track span::after{content:"✳";margin-left:2.5rem;color:var(--accent);font-size:.6em;vertical-align:middle}
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* ---------- Section heads ---------- */
@@ -127,6 +100,7 @@ section{scroll-margin-top:4rem}
 
 /* ---------- Work grid ---------- */
 .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,4.5rem) clamp(1rem,3vw,2.5rem);padding-bottom:4rem}
+.work-grid>.card:nth-child(even){margin-top:clamp(0rem,9vw,9rem)}
 @media (max-width:720px){.work-grid{grid-template-columns:1fr}.work-grid>.card:nth-child(even){margin-top:0}}
 .card{display:block;text-decoration:none;color:inherit;min-width:0;cursor:pointer;animation:cardIn .6s cubic-bezier(.2,.8,.2,1) both}
 @keyframes cardIn{from{opacity:.001;transform:translateY(24px)}}
@@ -229,43 +203,7 @@ section{scroll-margin-top:4rem}
 
 /* ---------- About ---------- */
 .statement{margin:0;font-family:var(--display);font-stretch:100%;font-weight:300;font-size:clamp(1.7rem,4.2vw,3.6rem);line-height:1.08;letter-spacing:-.02em;max-width:24ch;text-wrap:balance}
-.statement .hi{display:block;font-weight:500;color:var(--mute);font-size:.55em;letter-spacing:0;margin-bottom:.4em}.statement .wave{display:inline-block;font-style:normal;color:var(--accent);margin-left:.15em;animation:wv 2.4s ease-in-out 4;transform-origin:50% 55%}@keyframes wv{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(90deg) scale(1.2)}20%,40%{transform:rotate(180deg)}}@media (prefers-reduced-motion:reduce){.statement .wave{animation:none}}
 .statement em{font-style:normal;font-stretch:62%;font-weight:800;text-transform:uppercase;color:var(--accent)}
-/* ---------- what I do (friendly list) ---------- */
-.do{margin-top:clamp(3rem,6vw,5rem);border-top:1px solid var(--line)}
-.do-k{display:block;color:var(--mute);padding:1.25rem 0 .5rem}
-.do-row{position:relative;display:grid;grid-template-columns:3.2rem minmax(0,1.25fr) minmax(0,1fr) 2rem;gap:1.5rem;align-items:center;padding:1.6rem 1.5rem;border-bottom:1px solid var(--line);color:inherit;text-decoration:none;isolation:isolate;overflow:hidden}
-.do-row::before{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform .55s cubic-bezier(.7,0,.2,1);z-index:-1}
-.do-n{color:var(--mute);transition:color .3s}
-.dd{position:absolute;left:var(--x,80%);top:var(--y,50%);margin:-46px 0 0 -46px;width:92px;height:92px;fill:none;stroke:var(--ink);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;z-index:2;transform-box:border-box;transform-origin:50% 50%;transform:scale(0) rotate(-35deg);transition:transform .55s cubic-bezier(.3,1.5,.5,1),left .45s cubic-bezier(.2,.8,.2,1),top .45s cubic-bezier(.2,.8,.2,1)}
-.dd *{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .25s ease}
-.do-t h3{margin:0 0 .45rem;font-family:var(--display);font-stretch:75%;font-weight:700;text-transform:uppercase;font-size:clamp(1.5rem,2.6vw,2.3rem);line-height:.95;transition:color .3s}
-.do-t p{margin:0;color:var(--mute);max-width:46ch;transition:color .3s}
-.sq{position:relative;display:inline-block;white-space:nowrap}
-.sq::after{content:"";position:absolute;left:-2%;right:-2%;bottom:-.08em;height:.16em;background:var(--accent);border-radius:99px;transform:scaleX(0);transform-origin:left;transition:transform .7s .3s cubic-bezier(.6,0,.2,1),background .3s}
-.do-row.in .sq::after,.do-row.drawn .sq::after{transform:scaleX(1)}
-.do-tags{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.4rem}
-.do-tags li{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:.4rem .7rem;border:1px solid var(--line);border-radius:99px;transition:transform .35s cubic-bezier(.3,1.8,.5,1),border-color .3s,color .3s,background .3s}
-.do-go{font-size:1.4rem;justify-self:end;transform:translate(-6px,6px);opacity:.4;transition:transform .45s cubic-bezier(.3,1.6,.5,1),opacity .3s,color .3s}
-@media (hover:hover){
- .do-row:hover::before{transform:scaleY(1);transform-origin:top}
- .do-row:hover .do-n,.do-row:hover .do-t h3,.do-row:hover .do-t p,.do-row:hover .do-go{color:var(--ink)}
- .do-row:hover .dd{transform:scale(1) rotate(0)}
- .do-row:hover .dd *{stroke-dashoffset:0;transition:stroke-dashoffset .9s cubic-bezier(.6,0,.2,1)}
- .do-row:hover .dd *:nth-child(2){transition-delay:.15s}.do-row:hover .dd *:nth-child(3){transition-delay:.3s}.do-row:hover .dd *:nth-child(4){transition-delay:.45s}
- .do-row:hover .sq::after{background:var(--ink)}
- .do-row:hover .do-tags li{border-color:rgba(12,12,14,.35);color:var(--ink)}
- .do-row:hover .do-tags li:nth-child(odd){transform:rotate(-3deg) translateY(-2px)}
- .do-row:hover .do-tags li:nth-child(even){transform:rotate(3deg) translateY(1px)}
- .do-row:hover .do-go{opacity:1;transform:none}
-}
-.do-row:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-@keyframes ddFloat{0%,100%{rotate:0deg}50%{rotate:6deg}}
-.do-row:hover .dd{animation:ddFloat 1.8s ease-in-out .5s infinite}
-@media (max-width:900px){.do-row{grid-template-columns:2.4rem minmax(0,1fr);gap:1rem 1.25rem}.do-tags{grid-column:2/-1}.do-go{display:none}}
-@media (max-width:520px){.do-row{grid-template-columns:minmax(0,1fr);padding:1.4rem 1rem}.do-n{display:none}.do-tags{grid-column:1/-1}}
-@media (hover:none){.dd{display:none}}
-@media (prefers-reduced-motion:reduce){.dd *{stroke-dashoffset:0!important;transition:none!important}.sq::after{transform:scaleX(1)!important}.dd{animation:none!important;transition:none!important}}
 .about-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);margin-top:clamp(3rem,6vw,5rem)}
 .svc{padding:1.5rem 1.5rem 2rem 0;border-right:1px solid var(--line);display:grid;align-content:start;gap:.8rem;min-width:0}
 .svc+.svc{padding-left:1.5rem}
@@ -341,7 +279,6 @@ body.case-open #dnt,body.locked #dnt{display:none}
 @media (max-width:600px){#toTop{width:48px;height:48px}}
 #case{position:fixed;inset:0;z-index:80;background:var(--ink);overflow-y:auto;transform:translateY(100%);transition:transform .8s var(--ease);visibility:hidden}
 #case.open{transform:none;visibility:visible}
-.case-top #caseIdx{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.case-top #caseClose{flex:none;white-space:nowrap}
 .case-top{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:calc(14px + env(safe-area-inset-top,0px)) var(--gut) 14px;background:linear-gradient(var(--ink) 60%,transparent)}
 .case-hero{position:relative;aspect-ratio:16/8;max-width:100%;margin-top:1rem;overflow:hidden}
 @media (max-width:640px){.case-hero{aspect-ratio:4/3}}
@@ -386,42 +323,6 @@ body.locked{overflow:hidden}
 .lb-nav:hover{background:var(--paper);color:var(--ink)}
 .lb-nav:disabled{opacity:.25;cursor:default;background:transparent;color:var(--paper)}
 @media (max-width:560px){.lb-nav{position:absolute;bottom:calc(14px + env(safe-area-inset-bottom,0px));margin:0}.lb-nav.prev{left:16px}.lb-nav.next{right:16px}#lb{grid-template-columns:minmax(0,1fr);padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}.lb-stage{grid-column:1}}
-.work-grid>.card:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - clamp(1rem,3vw,2.5rem)/2)}
-@media (max-width:720px){.work-grid>.card:last-child:nth-child(odd){width:auto;justify-self:stretch}}
-.sph{position:relative;height:clamp(460px,78vh,820px);margin-top:1rem;overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;isolation:isolate;--sp:0}
-.sph-w{position:absolute;top:50%;transform:translate(0,-50%);font-family:var(--display);font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:clamp(2.6rem,5vw,7rem);line-height:.84;color:var(--paper);pointer-events:none;will-change:transform}
-.sph-w.l{left:0;transform:translate(calc(var(--sp)*14vw),-50%)}.sph-w.r{right:0;transform:translate(calc(var(--sp)*-14vw),-50%)}
-@media (max-width:720px){.sph-w,.sph-w.l,.sph-w.r{top:.25rem;transform:none;font-size:clamp(2.6rem,13vw,4.5rem)}.sph-w.r{top:auto;bottom:2.4rem}}
-.sph.drag{cursor:grabbing}
-.sph-st{position:absolute;left:50%;top:50%;width:0;height:0;perspective:2400px;transform:translateY(calc(var(--sp)*-140px))}
-.sph-r{position:absolute;transform-style:preserve-3d}
-.sph-t{position:absolute;width:var(--tw,120px);height:calc(var(--tw,120px)*.5625);left:calc(var(--tw,120px)/-2);top:calc(var(--tw,120px)*-.28125);padding:0;border:0;border-radius:4px;overflow:hidden;background:#fff;cursor:pointer;box-shadow:0 0 0 3px var(--paper),0 10px 24px rgba(0,0,0,.4);min-height:0;transition:opacity .45s ease,filter .4s ease}
-.sph-t.bk{filter:grayscale(1) brightness(.75);box-shadow:none;pointer-events:none}
-.sph-t img{display:block;width:100%;height:100%;pointer-events:none;-webkit-user-drag:none}
-.sph-t:hover{box-shadow:0 0 0 5px var(--accent),0 12px 28px rgba(0,0,0,.45)}
-.sph.zoom .sph-t{pointer-events:none}
-.sph-t:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
-@media (prefers-reduced-motion:reduce){.sph-t{transition:none}.sph-st{transform:none}}
-@media (prefers-reduced-motion:reduce) and (min-width:721px){.sph-w.l,.sph-w.r{transform:translateY(-50%)}}
-.sph-m{position:absolute;z-index:2;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);pointer-events:none;max-width:45%}
-.sph-m.bl{left:0;bottom:6px}.sph-m.br{right:0;bottom:6px;text-align:right}
-@media (max-width:720px){.sph-m{font-size:.62rem}.sph-m.bl{display:none}.sph-m.br{left:0;right:auto;text-align:left;max-width:none}}
-.smw{position:relative;height:clamp(480px,80vh,880px);margin-top:1rem;overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;isolation:isolate}
-.smw.drag{cursor:grabbing}
-.smw-v{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;z-index:0}
-.smw-t{position:absolute;left:0;top:0;padding:0;border:0;border-radius:8px;overflow:hidden;background:#1b1b1b;cursor:none;min-height:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 18px 36px rgba(0,0,0,.5);opacity:0}
-.smw-t img,.smw-t video{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
-.smw-b{position:absolute;right:8px;bottom:8px;padding:.2rem .45rem;border-radius:99px;background:rgba(0,0,0,.6);color:#fff;font-size:.55rem;letter-spacing:.08em;pointer-events:none}
-.smw-t:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.smw-cur{position:absolute;left:0;top:0;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:var(--paper);color:var(--ink);display:grid;place-items:center;pointer-events:none;z-index:5;transform:scale(0);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
-.smw-cur.on{transform:scale(1)}
-.smw-hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);color:var(--mute);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;pointer-events:none;z-index:6;white-space:nowrap}
-@media (hover:none){.smw-t{cursor:pointer}.smw-cur{display:none}}
-.lb-stage video{display:block;max-height:100%;max-width:100%;border-radius:14px;background:#000}
-.sph-fly{position:fixed;z-index:120;border-radius:14px;transform-origin:0 0;pointer-events:none;box-shadow:0 30px 80px rgba(0,0,0,.45)}
-.lb-stage{touch-action:pan-y pinch-zoom}
-#lb.multi .lb-cap::after{content:'Swipe to browse';display:none;margin-top:.35rem;color:var(--mute);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
-@media (pointer:coarse){#lb.multi .lb-cap::after{display:block}}
 .lb-cap{grid-column:1/-1;text-align:center;margin:.6rem 0 0;color:var(--paper)}
 .proc{border-top:1px solid var(--line);padding-block:2rem 1rem}
 .proc-h{margin:0 0 1.5rem;font-family:var(--display);font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:clamp(2.2rem,6vw,4.5rem);line-height:.9}
@@ -630,7 +531,7 @@ body.locked{overflow:hidden}
 
 
 /* ---------- generic story media ---------- */
-.cv-img{background:#262626}.cv-img img{width:100%;height:100%;object-fit:cover;object-position:left center;display:block}.cv-c img{object-position:center center}
+.cv-img{background:#262626}.cv-img img{width:100%;height:100%;object-fit:cover;object-position:left center;display:block}
 .slides{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
 @media (max-width:900px){.slides{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.slides{grid-template-columns:1fr}}
@@ -703,12 +604,12 @@ body.locked{overflow:hidden}
 .wide-vid figcaption{display:flex;justify-content:space-between;color:var(--mute)}
 .screens.wf .scr img{aspect-ratio:9/16;background:#f4f4f4}
 .ff-steps{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.ff-steps li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;min-height:190px;min-width:0}.ff-go,.ff-in{all:unset;box-sizing:border-box;width:100%;padding:1.25rem 1.1rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;min-width:0}.ff-go{cursor:pointer;transition:background .25s}.ff-go:hover{background:rgba(224,117,58,.1)}.ff-go:hover .go{text-decoration:underline;text-underline-offset:3px}.ff-go:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}.ff-steps .go{overflow-wrap:break-word}
+.ff-steps li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.25rem 1.1rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;min-height:190px}
 .ff-steps .mono{color:var(--accent);font-size:.72rem;letter-spacing:.1em}
 .ff-steps h4{margin:0;font-family:'Archivo',sans-serif;font-stretch:62%;font-weight:700;text-transform:uppercase;font-size:1.55rem;line-height:.95;color:var(--paper)}
 .ff-steps p{margin:0;color:var(--mute);font-size:.88rem;line-height:1.45}
-.ff-steps li .go{margin-top:auto;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-@media (max-width:1100px){.ff-steps{grid-template-columns:repeat(3,minmax(0,1fr))}}@media (max-width:700px){.ff-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.ff-steps li{min-height:0}.ff-steps h4{font-size:1.15rem}.ff-go,.ff-in{padding:1rem .85rem 1.1rem}.ff-steps p{font-size:.82rem}}@media (max-width:360px){.ff-steps{grid-template-columns:1fr}}
+.ff-steps li.on{background:rgba(224,117,58,.07)}.ff-steps li .go{margin-top:auto;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+@media (max-width:1100px){.ff-steps{grid-template-columns:repeat(3,minmax(0,1fr))}}@media (max-width:700px){.ff-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.ff-steps li{min-height:0}}
 .spine{list-style:none;margin:2rem 0 0;padding:0;border-bottom:1px solid var(--line)}
 .spine li{display:grid;grid-template-columns:minmax(150px,240px) 1fr;gap:1.5rem;padding:1.4rem 0;border-top:1px solid var(--line);align-items:baseline}
 .spine b{font-family:'Archivo',sans-serif;font-stretch:62%;font-weight:700;text-transform:uppercase;font-size:1.7rem;line-height:.95;color:var(--accent)}
@@ -745,11 +646,11 @@ body.locked{overflow:hidden}
 .jm .op{color:var(--paper)}.jm .op::before{content:"→ ";color:var(--accent)}
 .jm .feel{grid-column:2/-1;padding:0;position:relative;height:150px}.jm .feel svg{position:absolute;inset:0;width:100%;height:100%}
 .jm .feel-l{display:flex;flex-direction:column;justify-content:space-between}.jm .feel-l span{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
-.bm{min-width:1320px;width:100%;border-collapse:collapse;font-size:.85rem;table-layout:fixed}.bm thead th:first-child{width:210px}
+.bm{min-width:980px;width:100%;border-collapse:collapse;font-size:.85rem;table-layout:fixed}.bm thead th:first-child{width:210px}
 .bm th,.bm td{border:1px solid var(--line);padding:.7rem .5rem;text-align:center}
-.bm thead th{font-family:var(--mono);font-weight:400;font-size:.64rem;letter-spacing:.04em;hyphens:auto;text-transform:uppercase;color:var(--mute);vertical-align:bottom;line-height:1.35}
+.bm thead th{font-family:var(--mono);font-weight:400;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);vertical-align:bottom;line-height:1.35}
 .bm tbody th{text-align:left;font-family:'Archivo',sans-serif;font-stretch:62%;font-weight:700;text-transform:uppercase;font-size:1.25rem;color:var(--paper);white-space:nowrap;padding-left:.9rem}
-.bm tbody th small{display:block;white-space:normal;line-height:1.4;margin-top:.2rem;font-family:var(--mono);font-stretch:100%;font-weight:400;font-size:.6rem;letter-spacing:.06em;color:var(--mute);text-transform:none}
+.bm tbody th small{display:block;font-family:var(--mono);font-stretch:100%;font-weight:400;font-size:.6rem;letter-spacing:.06em;color:var(--mute);text-transform:none}
 .bm tr.us th,.bm tr.us td{background:rgba(224,117,58,.09)}.bm tr.us th{color:var(--accent)}
 .bm i{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:middle}
 .bm i.y{background:var(--paper)}.bm i.n{border:1.5px solid #4a4950}.bm i.p{border:1.5px solid var(--paper);background:linear-gradient(90deg,var(--paper) 50%,transparent 50%)}
@@ -822,8 +723,8 @@ body.locked{overflow:hidden}
 .vpc-col{display:grid;grid-template-rows:auto repeat(3,1fr)}
 @media (max-width:820px){.vpc{grid-template-columns:1fr}.vpc-fit{display:none}.vpc-cust{margin-top:2rem}}
 .ch-b .ds-sw{grid-template-columns:repeat(5,minmax(0,1fr))}
-.ds-sw.sm,.ch-b .ds-sw.sm{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem 1.25rem;max-width:1040px}.vv-pals{display:grid;gap:1.75rem;margin-top:2rem}.ds-sw.sm figcaption{min-width:0}.ds-sw.sm b{overflow-wrap:anywhere}.ds-sw.sm figure{grid-template-columns:44px 1fr;gap:.75rem;align-items:center}.ds-sw.sm i{width:44px;height:44px;aspect-ratio:auto;border-radius:10px}.ds-sw.sm b{font-size:.85rem}.ds-sw.sm .mono{font-size:.7rem}.ds-sw.sm small{display:none}
-@media (max-width:900px){.ds-sw.sm,.ch-b .ds-sw.sm{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ch-b .ds-sw.sm{grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem 1.25rem;max-width:980px}.ds-sw.sm figure{grid-template-columns:44px 1fr;gap:.75rem;align-items:center}.ds-sw.sm i{width:44px;height:44px;aspect-ratio:auto;border-radius:10px}.ds-sw.sm b{font-size:.85rem}.ds-sw.sm .mono{font-size:.7rem}.ds-sw.sm small{display:none}
+@media (max-width:900px){.ch-b .ds-sw.sm{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:700px){.ch-b .ds-sw{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ---------- Print / PDF export ---------- */
@@ -926,7 +827,6 @@ body.locked{overflow:hidden}
 
 <div class="cursor" id="cursor" aria-hidden="true">View</div>
 
-<a class="skip" href="#work">Skip to work</a>
 <nav class="nav screen" aria-label="Primary">
   <a class="brand" href="#top">Ednaldo Leite</a>
   <span class="mono clock" id="clock">Lisbon --:--</span>
@@ -939,7 +839,7 @@ body.locked{overflow:hidden}
 
 <main class="screen" id="top">
   <header class="hero wrap">
-    <h1><span class="hero-line"><span>Ednaldo</span></span><span class="hero-line"><span>Leite</span></span></h1>
+    <h1><span class="hero-line"><span>Ednaldo</span></span><span class="hero-line"><span>Leite<span class="ital">*</span></span></span></h1>
     <div class="hero-meta">
       <p><span class="mono">Practice</span>UI/UX &amp; graphic designer. Product and web design, brand systems, presentations and motion.</p>
       <p><span class="mono">Based</span>Lisbon, working with teams between Lisbon and Geneva.</p>
@@ -957,7 +857,7 @@ body.locked{overflow:hidden}
 
   <section id="work" class="wrap">
     <div class="shead">
-      <h2>Work</h2>
+      <h2>Work<sup id="workCount">08</sup></h2>
       <p>Decks, sites, apps and campaigns made for consultancies, studios and the people who present them.</p>
     </div>
     <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
@@ -966,13 +866,25 @@ body.locked{overflow:hidden}
 
   <section id="about" class="wrap">
     <div class="shead"><h2>About</h2><p class="mono">Ednaldo Leite — Lisbon</p></div>
-    <p class="statement"><span class="hi">Hi, I’m Ednaldo</span>A UI/UX and graphic designer in Lisbon. I design the <em>product</em> people use, the <em>brand</em> they recognise and the <em>deck</em> that explains it.</p>
-    <div class="do">
-      <span class="mono do-k">What I do</span>
-      <a class="do-row" href="#work" data-f="Product"><span class="do-n mono">01</span><div class="do-t"><h3>Apps people <span class="sq">actually</span> enjoy</h3><p>I talk to users, sketch a lot and test early, so the final product feels obvious. Then I hand it over in a tidy design system.</p></div><ul class="do-tags"><li>Research &amp; interviews</li><li>Wireframes</li><li>Prototypes</li><li>Usability testing</li><li>Design systems</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
-      <a class="do-row" href="#work" data-f="Branding"><span class="do-n mono">02</span><div class="do-t"><h3>Brands that look like <span class="sq">themselves</span></h3><p>The logo is the fun part. I also make the rules for colour, type and layout, so every poster and post still looks like you.</p></div><ul class="do-tags"><li>Logos</li><li>Brand guidelines</li><li>Print</li><li>Event identity</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
-      <a class="do-row" href="#work" data-f="Presentation"><span class="do-n mono">03</span><div class="do-t"><h3>Slides nobody <span class="sq">falls asleep</span> to</h3><p>I turn long documents into clear, good-looking decks, templates your team can reuse and posts that get noticed.</p></div><ul class="do-tags"><li>Pitch &amp; webinar decks</li><li>PowerPoint templates</li><li>Social posts</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
-      <a class="do-row" href="#work" data-f="Motion"><span class="do-n mono">04</span><div class="do-t"><h3>Things that <span class="sq">move</span></h3><p>Websites, landing pages and small animations that explain an idea faster than a paragraph can. A bit like this one.</p></div><ul class="do-tags"><li>Websites</li><li>Logo &amp; UI animation</li><li>Videos</li><li>Interactive tools</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
+    <p class="statement">UI/UX and graphic designer in Lisbon. I design the <em>product</em> people use, the <em>brand</em> they recognise and the <em>deck</em> that explains it.</p>
+    <div class="about-grid">
+      <div class="svc"><span class="mono" style="color:var(--mute)">UI/UX</span><h3>Products people can use</h3><p>From user research to tested prototypes and the design system behind them.</p><ul><li>User research &amp; interviews</li><li>Wireframes &amp; prototypes</li><li>Usability &amp; A/B testing</li><li>Design systems</li></ul></div>
+      <div class="svc"><span class="mono" style="color:var(--mute)">Brand</span><h3>Systems, not one-offs</h3><p>Colour, type and layout rules that keep every asset recognisable.</p><ul><li>Brand &amp; design systems</li><li>Print &amp; one-pagers</li><li>Event identity</li></ul></div>
+      <div class="svc"><span class="mono" style="color:var(--mute)">Presentations &amp; content</span><h3>Decks that carry the room</h3><p>Presentations, templates and social content that tell the story clearly.</p><ul><li>Pitch &amp; webinar decks</li><li>PowerPoint templates</li><li>Social &amp; campaign assets</li></ul></div>
+      <div class="svc"><span class="mono" style="color:var(--mute)">Web &amp; motion</span><h3>Built, not just drawn</h3><p>Sites designed and shipped, plus animations that explain things.</p><ul><li>Websites &amp; landing blocks</li><li>Logo &amp; UI animation</li><li>Forms &amp; interactive tools</li></ul></div>
+    </div>
+    <div class="xp">
+      <h3 class="mono xp-k">Experience</h3>
+      <ol class="xp-list">
+        <li><span class="mono">2024 — Now</span><div><h4>UI/UX Designer / Branding Specialist</h4><p class="mono">IVY Partners · Lisbon</p><p>Brand identity and guidelines, digital and print assets, presentations and templates, UI/UX for web and mobile, animation and video. Also manage suppliers and print production.</p></div></li>
+        <li><span class="mono">2021 — 2024</span><div><h4>UI/UX Specialist</h4><p class="mono">VORTAL Connecting Business · Lisbon</p><p>User stories, user research and A/B testing, interactive prototypes, and the company’s design system. Led UX projects including a major redesign of the main product interface, which raised user satisfaction scores by 30%.</p></div></li>
+        <li><span class="mono">2019 — 2021</span><div><h4>UI/UX &amp; Graphic Designer</h4><p class="mono">Acid Integration · Lisbon</p><p>Led discovery and design sprints, built user journeys and information architecture, and designed brand identities, posters, videos, presentations and marketing collateral.</p></div></li>
+        <li><span class="mono">2018 — 2019</span><div><h4>UI/UX Designer · Internship</h4><p class="mono">Glartek · Lisbon</p><p>Web, mobile and augmented reality tools for factory workers in the automotive, food and energy industries, making maintenance processes more efficient.</p></div></li>
+      </ol>
+      <div class="xp-side">
+        <div><h3 class="mono xp-k">Education</h3><p><b>Design Bachelor</b>, 2015 — 2018<br>Faculty of Architecture and Art, Lusíada University of Lisbon</p></div>
+        <div><h3 class="mono xp-k">Languages</h3><p>Portuguese, native<br>English, advanced<br>Spanish, intermediate</p></div>
+      </div>
     </div>
   </section>
 
@@ -1004,7 +916,7 @@ body.locked{overflow:hidden}
 <div id="lb" class="screen" role="dialog" aria-modal="true" aria-label="Screen viewer" hidden>
   <div class="lb-bar mono"><span id="lbCount">1 / 1</span><span class="lb-hint">Click or tap the screen to zoom</span><button class="btn" id="lbClose" type="button">Close ✕</button></div>
   <button class="lb-nav prev" id="lbPrev" type="button" aria-label="Previous screen">←</button>
-  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""><video id="lbVid" controls playsinline style="display:none"></video></div>
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
   <button class="lb-nav next" id="lbNext" type="button" aria-label="Next screen">→</button>
   <p class="lb-cap mono" id="lbCap"></p>
 </div>
@@ -1016,66 +928,24 @@ body.locked{overflow:hidden}
 <script>
 (function(){
 const P = [
- {id:'vortal-vision',coverCenter:true,title:'VORTAL Vision',url:'https://community.vortal.biz/public/?SkinName=VisionAI&currentLanguage=pt',client:'VORTAL Connecting Business · Portugal',year:'2024',tags:['Product','Web'],cover:'img',coverImg:'vortal-cover.jpg',
-  role:'UI/UX Specialist at VORTAL: redesigned the public sign-in and tender search, applied the design system and supported the developers through the build',tools:'Figma',
-  summary:'VORTAL is one of Portugal’s main public procurement platforms. I modernised its public pages: the sign-in and the open tender search.',
-  context:'These pages are the first thing buyers and suppliers see. They had to match the new AI-powered platform.',
-  approach:['A clear, consistent layout: one side menu, one header and the content in cards.','A sign-in screen that introduces the new platform while keeping the form simple.','Search filters grouped on one card, with the results easy to scan.','Deadlines shown on a timeline, with the days left highlighted.'],
-  deliverables:['UI design for the public sign-in','UI design for the public tender search','Components in the VORTAL design system','Handoff to development'],
-  chapters:[
-   {k:'brief',t:'The brief',lede:'A modern front door for a modern platform.',
-    paras:['Public bodies in Portugal and Spain publish tenders on VORTAL every day. Companies come here to find them, sign in and bid.','Goal: a modern look, a clearer structure and a faster route to the right tender.']},
-   {k:'signin',t:'Sign in',lede:'Brand on the left, a short form on the right.',
-    images:[{src:'vortal-login.jpg',label:'Public sign-in, “Bem-vindo à nova Vortal”'}],
-    list:['Two actions in the side menu: register or search.','Clear required tags, help right under each field.','One main button. Certificate and sign-up are secondary.']},
-   {k:'search',t:'Open tender search',lede:'Open tenders, searchable without an account.',
-    images:[{src:'vortal-search.jpg',label:'Consultas Ativas: public search for open tenders'}],
-    list:['Filters grouped on one card.','Each result: buyer, item, procedure and base price.','A mini timeline shows days left.','List view to scan, table view to compare.']},
-   {k:'role',t:'My role',lede:'Part of VORTAL’s wider UI modernisation.',
-    list:['Redesigned the sign-in and tender search.','Applied and extended the VORTAL design system.','Handed off to developers and followed the build.']},
-   {k:'outcome',t:'Delivered',lede:'Live at <a href="https://community.vortal.biz/public/?SkinName=VisionAI&currentLanguage=pt" target="_blank" rel="noopener">community.vortal.biz</a>.',deliverablesList:true}
-  ]},
- {id:'armilar',coverCenter:true,title:'Armilar Market Intelligence',url:'https://armilar.biz/en/services/',client:'Armilar, by VORTAL · Portugal & Spain',year:'2024',tags:['Product','Web'],cover:'img',coverImg:'armilar-cover.jpg',
-  role:'UI/UX Specialist at VORTAL: designed the experience of the web platform and the iOS and Android app, from user flows to prototypes and developer handoff',tools:'Figma',
-  summary:'Armilar helps companies find and win public tenders in Portugal and Spain. I designed its web platform and mobile app at VORTAL.',
-  context:'Thousands of tenders go out every month. Companies need the few that matter, without reading them all.',
-  approach:['Turn a large stream of public procurement data into a short list of opportunities that fit each company.','Make alerts, competitors and clients easy to follow from one place.','Show predictions and prices in a way a sales team can act on.','Bring the same experience to the phone, so nothing is missed away from the desk.'],
-  deliverables:['UX research and user flows','UI design for the web platform','UI design for the iOS and Android app','Interactive prototypes','Components in the VORTAL design system'],
-  chapters:[
-   {k:'brief',t:'The brief',lede:'What to bid for, who you’re up against, what’s next.',
-    paras:['Armilar turns public tender data from Portugal and Spain into leads and benchmarks.','My job: make that data simple. Open, see what fits, decide.'],
-    list:['Alerts for matching tenders.','Competitor analysis: who wins, what, and at what price.','Client tracking and new prospects.','Predictions from expiring contracts.','Price analysis for medicines and medical devices.']},
-   {k:'how',t:'How it works',lede:'From thousands of notices to the few that matter.',
-    steps:[['Set your interests','Choose the activities, regions and buyers you care about.'],['Get alerted','New tenders that match arrive by email and as notifications.'],['Read the summary','An AI summary explains each opportunity in a few lines, and you can ask it questions.'],['Know the market','See competitors, past winners and the prices they bid.'],['Plan ahead','Predicted tenders show what will be published next, from contracts that are ending.']]},
-   {k:'ai',t:'AI opportunity summaries',lede:'Dozens of pages, summed up in a few lines.',
-    video:{src:'armilar-ai-video.mp4',poster:'armilar-ai-video-poster.jpg',label:'Armilar AI: opportunity summaries (in Portuguese)',len:'1:20'},
-    paras:['Every opportunity gets an AI summary: what, who, how much, by when. A “Q&A with AI” panel answers questions and links to the exact source pages.','Documents and AI sit side by side, so every answer can be checked.']},
-   {k:'mobile',t:'The mobile app',lede:'Market intelligence in your pocket.',
-    video:{src:'armilar-app-video.mp4',poster:'armilar-app-video-poster.jpg',label:'The Armilar mobile app launch (in Portuguese)',len:'0:57'},
-    paras:['Built for quick checks between meetings. Deep analysis stays on the web.'],
-    list:['Alerts for new matching tenders.','Competitors, clients and prices.','On the App Store and Google Play.']},
-   {k:'role',t:'My role',lede:'UI/UX for web and mobile, at VORTAL.',
-    list:['Mapped the user flows.','Designed the web platform.','Designed the iOS and Android app.','Built prototypes to test the flows.','Kept it in the VORTAL design system.']},
-   {k:'outcome',t:'Delivered',lede:'Live on the web and in the app stores. <a href="https://armilar.biz/en/services/" target="_blank" rel="noopener">armilar.biz</a>.',deliverablesList:true}
-  ]},
- {id:'foodfy',title:'Foodfy',client:'Personal project · Portugal',year:'2021',tags:['Product'],cover:'img',coverImg:'foodfy-cover.jpg',
-  role:'UX/UI Designer, solo project: ran the research and interviews, defined the structure and user flows, designed the interface and built the Figma prototype',tools:'Figma, Photoshop, Illustrator',
-  summary:'Foodfy takes you from “where should we eat?” to a booked table, with your food ordered before you arrive.',
-  context:'Booking usually means a map, a review site and a phone call. Foodfy does it in one flow.',
+ {id:'foodfy',title:'Foodfy',client:'UX case study · Lisbon',year:'2021',tags:['Product'],cover:'img',coverImg:'foodfy-cover.jpg',
+  role:'UX research, UI design and clickable prototype',tools:'Figma, Photoshop, Illustrator',
+  summary:'Foodfy is a restaurant app for Lisbon that takes you from “where should we eat?” to a confirmed table, with your food ordered before you arrive.',
+  context:'Finding a good table usually means jumping between a map, a review site and a phone call. Foodfy puts discovery, booking and pre-ordering in one short flow, and works for guests as well as signed-in diners.',
   approach:['Explore: greeting and location, search, food categories, “Top rated in Lisbon” and “Near you”, plus a card for your next booking.','Restaurant page: rating, price level, area and opening status, quick actions for directions, call and menu, the full menu with dietary tags, and reviews.','Booking: guests, date and time with closed days and fully booked slots shown clearly, an occasion, special requests and an optional food pre-order.','Review and confirm: pre-order total, pay now or at the restaurant, and free cancellation up to two hours before.','After booking: a confirmation with a reference, add to calendar and directions, plus Bookings, Saved and Profile tabs.','Light and dark themes, with sign-in only asked for when you book, and a return straight to your booking afterwards.'],
   deliverables:['Research, value proposition canvas and information architecture','Low-fidelity wireframes','UI design for 16+ screens','Design system: tokens, components and icons for light and dark','Clickable prototype in Figma'],
   chapters:[
-   {k:'brief',t:'The idea',lede:'From “where should we eat?” to food on the table.',
-    paras:['Search, reviews and booking in one app for Lisbon, plus what others skip: order ahead, eat as you sit down.'],
-    list:['Discover by category, rating or distance.','Book in under a minute, real slots only.','Pre-order, pay now or later.','Everything in one account.']},
-   {k:'process',t:'Thought process',lede:'Twelve steps from blank wall to prototype.',
-    paras:['People first, screens last. Click a step to jump to it.'],
-    steps:[['Brainstorming','Every idea on the wall around eating out, booking and waiting for food.'],['Pixar storytelling','Telling the problem as a short story, to find the moment where things go wrong.','story'],['Interviews','Talking to people about how they really choose and book a restaurant.','persona'],['Personas','Turning what I heard into the person Foodfy is designed for.','persona'],['User journey','Mapping every stage, from hearing about the app to coming back.','journey'],['Benchmarking','Comparing Foodfy with the booking apps people already use.','benchmark'],['Networking','Conversations with people around the restaurant world to test the idea.'],['Design principles','A few rules to judge every decision against.','journey'],['Value proposition canvas','Matching what the app offers to the jobs, pains and gains we found.','value'],['Information architecture','The screens, the tabs and the shortest path to a booking.','ia'],['Wireframes','Grey boxes first, to get the flow right before any colour.','wireframes'],['Prototype','A clickable Figma prototype that runs the whole journey.','discover']]},
-   {k:'story',t:'The story',lede:'The problem, told as a Pixar story spine.',
-    paras:['It shows where things break: the call, the full room, the wait. Foodfy fixes all three.'],
+   {k:'brief',t:'The idea',lede:'From “where should we eat?” to a table and a meal that is already on its way.',
+    paras:['Booking a restaurant is rarely one step. You search on one app, read reviews on another, then call to check if there is space. Foodfy brings that into one place for Lisbon, and adds something most booking apps leave out: ordering your food ahead, so it arrives shortly after you sit down.'],
+    list:['Discover places worth going to, by category, rating or distance.','Book a table in under a minute, with only the real options shown.','Pre-order food and choose to pay now or at the restaurant.','Keep every booking, favourite and preference in one account.']},
+   {k:'process',t:'Thought process',lede:'Twelve steps from a blank wall of ideas to a prototype you can tap through.',
+    paras:['I didn’t start with screens. The first half of the work was about people: how they decide where to eat, who they go with and what goes wrong on the night. The second half turned that into structure, then into screens, testing each step before moving on.'],
+    steps:[['Brainstorming','Every idea on the wall around eating out, booking and waiting for food.'],['Pixar storytelling','Telling the problem as a short story, to find the moment where things go wrong.','Chapter 03'],['Interviews','Talking to people about how they really choose and book a restaurant.'],['Personas','Turning what I heard into the person Foodfy is designed for.','Chapter 04'],['User journey','Mapping every stage, from hearing about the app to coming back.','Chapter 05'],['Benchmarking','Comparing Foodfy with the booking apps people already use.','Chapter 06'],['Networking','Conversations with people around the restaurant world to test the idea.'],['Design principles','A few rules to judge every decision against.','Chapter 05'],['Value proposition canvas','Matching what the app offers to the jobs, pains and gains we found.','Chapter 07'],['Information architecture','The screens, the tabs and the shortest path to a booking.','Chapter 08'],['Wireframes','Grey boxes first, to get the flow right before any colour.','Chapter 09'],['Prototype','A clickable Figma prototype that runs the whole journey.','Chapters 11–14']]},
+   {k:'story',t:'The story',lede:'Before any feature, the problem told as a story, using Pixar’s six-beat story spine.',
+    paras:['A story makes the problem easy to share. Anyone can follow it, and it shows exactly where things break: the phone call, the full restaurant, the long wait for food. Those three moments became the three things Foodfy had to fix.'],
     spine:[['Once upon a time','there was a young couple in Lisbon who ate out almost every day.'],['Every day','they picked a restaurant, called to book and hoped someone would answer. Often it was full, so they started again with the next one.'],['One day','after three calls and a forty-minute wait for their food, their lunch break ended before the main course arrived.'],['Because of that','they went looking for a way to see free tables without picking up the phone.'],['Because of that','they found Foodfy. They booked in under a minute, chose their dishes on the way, and the kitchen started cooking as they got close.'],['Until finally','lunch became something to enjoy again. Choosing a restaurant now takes less time than eating there.']]},
-   {k:'persona',t:'The persona',lede:'Busy, phone-first, short on time.',
-    paras:['Built from the interviews. Every screen had to pass one test: does it get her a good lunch in fifty minutes?'],
+   {k:'persona',t:'The persona',lede:'One person to design for: busy, phone-first and always short on time.',
+    paras:['The persona brings together what came up again and again in the interviews: people who eat out often, book on the move and lose patience with phone calls and long waits. Every screen was checked against one question: would this help her get a good lunch in fifty minutes?'],
     persona:{initials:'IM',tag:'Primary persona',name:'Inês Moreira',meta:'29 · Art director · Lisbon',quote:'I don’t have time to call three restaurants for a table, and I really don’t have time to wait half an hour for the food.',
      facts:[['Eats out','5–6 times a week, mostly lunch'],['Books for','Herself, her team of six, clients'],['Device','iPhone, books between meetings'],['Trusts','Ratings, photos and real reviews'],['Pays with','Card or phone']],
      bio:'Inês leads a small design team at an agency in Lisbon. Her days are full of meetings and shoots, and she often travels to Porto for clients. She has little time to cook, so most of her meals happen in restaurants and cafés, often with colleagues or clients she wants to impress.',
@@ -1084,8 +954,8 @@ const P = [
      scenario:'12:40, and a client meeting has run late. The team has fifty minutes for lunch. In the taxi, Inês opens Foodfy, picks a place rated 4.7 that is 600 metres away, books a table for four at 13:00 and pre-orders two vegan dishes. When she is ten minutes away, the kitchen starts cooking. The food arrives five minutes after they sit down.',
      fit:['“Top rated” and “Near you” on the first screen','Only real free times, so no calls and no surprises','Pre-order, with the kitchen starting as she gets close','Pay in the app or at the table','Every booking in the Bookings tab']
      ,second:{initials:'T+R',name:'Secondary persona · Tomás and Rita, 34 and 32.',text:'The couple from the story. They eat out at weekends, love trying new places and booking for birthdays and anniversaries. For them Foodfy is about discovery: saving places to try, reading reviews and adding a note for the occasion.'}}},
-   {k:'journey',t:'User journey',lede:'Six stages, from first hearing to coming back.',
-    paras:['The low points showed where to work hardest: sign-up, and not knowing if there’s a table.'],
+   {k:'journey',t:'User journey',lede:'Six stages, from hearing about Foodfy to coming back for more.',
+    paras:['The journey map follows Inês from the first time she hears about the app to the moment she recommends it. Five principles guided every decision, and the low points on the curve showed where the design had to work hardest: signing up, and the uncertainty of not knowing if there is a table.'],
     journey:{principles:['People use an app to make the decision easier.','Plenty of choice, but well chosen.','No phone calls: real availability up front.','Your time matters: food ready when you arrive.','Direct, objective, fun and easy to use.'],
      stages:[{name:'Awareness',mood:'Fed up',feel:.3,doing:'Tired of calling around, she hears about Foodfy from a colleague or sees it in the App Store.',think:'“There has to be an easier way to book lunch.”',pain:'Booking means phone calls and guesswork.',opp:'A store page and short video that show the core flow.'},
       {name:'Consideration',mood:'Curious',feel:.55,doing:'Compares it with other apps, watches the preview and looks around without an account.',think:'“Will it have the places I like?”',pain:'Too many apps that only do one thing.',opp:'Explore without an account, Top 10 in Lisbon up front.'},
@@ -1093,64 +963,48 @@ const P = [
       {name:'Discover and book',mood:'Confident',feel:.82,doing:'Browses by category and rating, reads the menu, books for two or more and pre-orders.',think:'“I can see the menu and the real times.”',pain:'Not knowing which times are really free.',opp:'Only real slots, full ones crossed out, a live summary bar.'},
       {name:'Dine',mood:'Delighted',feel:.95,doing:'Gets directions, the kitchen starts as she gets close, pays in the app or at the table.',think:'“The food is already here.”',pain:'Waiting for food on a short break.',opp:'Start cooking on approach, pay now or later.'},
       {name:'Loyalty',mood:'Happy',feel:.8,doing:'Saves the place, rates the visit, gets suggestions and offers, tells friends.',think:'“Same place next week?”',pain:'Forgetting the places you liked.',opp:'Saved tab, booking reminders and a review prompt after the visit.'}]}},
-   {k:'benchmark',t:'Benchmark',lede:'Foodfy against the apps people already use.',
-    paras:['All four book a table. Almost none get food on it.'],
+   {k:'benchmark',t:'Benchmark',lede:'How Foodfy compares with the booking apps people already use.',
+    paras:['I compared Foodfy with four reservation apps: TheFork, the most used in Lisbon, plus OpenTable, Resy and Tock. All of them let you find a restaurant and book a table. Almost none of them help with what happens next, getting the food on the table.'],
     bench:{cols:['Discover restaurants','Menus in the app','Book a table','Pre-order food','Start cooking on approach','Pay in the app','Save favourites','Ratings and reviews','Map view','Events and experiences','Takeaway','Loyalty or discounts'],
      rows:[['Foodfy','This project','yyyyyyyynnnn'],['TheFork','Europe · market leader in Portugal','yyynnpyyynny'],['OpenTable','Global','ypynnpyyyyny'],['Resy','US and major cities','ynynnpypyynp'],['Tock','Global · prepaid experiences','ypypnyynyyyn']],
      source:'Updated in 2026 against public app listings and help pages',
      insights:[['Nobody links the table to the kitchen','Every other app stops at the booking. Ordering ahead and having the kitchen start as you arrive is Foodfy’s clearest difference.'],['Paying in the app is becoming normal','TheFork brought in-app payment to Portugal in 2026, and Tock takes payment when you book. Paying in the app is now expected, not a bonus.'],['Room to grow','A map view, events and a loyalty programme are standard elsewhere. They are natural next steps for Foodfy.']]}},
-   {k:'value',t:'Value proposition',lede:'What diners need, and how Foodfy delivers.',
-    paras:['Every feature had to answer a job, a pain or a gain. The rest was cut.'],
+   {k:'value',t:'Value proposition',lede:'What people try to get done when they eat out, and how Foodfy helps.',
+    paras:['The canvas kept the product honest. Every feature on the left had to answer something on the right: a job someone is trying to get done, a pain we could take away or a gain we could add. Ideas that didn’t connect to anything were left out.'],
     vpc:{map:[['Products and services',['Restaurant discovery by category, Top 10 and Explore','Table booking with party size, date and time','Food pre-order with extras, drinks and dessert','Bookings, saved restaurants and a profile']],['Pain relievers',['Discovery, reviews and booking in one app','Only real, free time slots are offered','The kitchen can start cooking when you are 10–20 minutes away','Cancel or change from the booking itself']],['Gain creators',['Ratings and review counts on every card','Pay at the restaurant or by card in the app','Save places to come back to later','Notes for the restaurant on every order']]],
       cust:[['Customer jobs',['Decide where to eat today','Book a table for the group','Get food on the table without a long wait','Keep track of plans']],['Pains',['Jumping between maps, review sites and phone calls','Not knowing if there is a free table','Waiting a long time after sitting down','Losing track of bookings']],['Gains',['Trusted picks nearby','Food that arrives soon after you sit','Flexible ways to pay','Everything in one place']]]}},
-   {k:'ia',t:'Information architecture',lede:'Four tabs, one golden path.',
-    paras:['Shallow on purpose: four tabs, and seven taps from splash to checkout.'],
+   {k:'ia',t:'Information architecture',lede:'Four tabs, and one clear path from opening the app to a paid booking.',
+    paras:['The structure is deliberately shallow. After signing in, everything lives under four tabs: Home, Archives, Bookings and Profile. The golden path, highlighted below, goes from the splash screen to checkout in seven taps. Saved restaurants lead straight back into that path, and every booking can be opened, checked and cancelled from the Bookings tab.'],
     ia:{src:'foodfy-ia.jpg',label:'Foodfy information architecture and golden path.'}},
-   {k:'wireframes',t:'First iterations',lede:'Grey boxes first, colour later.',
-    paras:['The whole flow, wireframed. Some ideas changed: Archives became Saved, and “start cooking when I’m close” grew into pre-order.','Then a first clickable prototype. The recordings show booking, paying and cancelling.'],
+   {k:'wireframes',t:'First iterations',lede:'Grey boxes first: the whole flow on paper-white screens before any colour.',
+    paras:['The first wireframes covered every step: splash, sign in and sign up, account setup, home, a category list, the restaurant and its menus, the order and checkout, then bookings, the profile and saved places. Some ideas changed later. The “Archives” tab became Saved, booking now starts with the table and adds food after it, and the option to start cooking when you are 10–20 minutes away grew into the pre-order the final app is built around.','The wireframes then became a first clickable prototype in Figma, with real photos and the green palette. The two recordings below show it in use: choosing a restaurant, picking a dish with extras, setting party size, time and date, and paying; then checking upcoming and past bookings and cancelling one.'],
     wf:true,clipsTitle:'First clickable prototype · 2021',clips:[{src:'foodfy-v1-booking.mp4',poster:'foodfy-v1-booking.jpg',label:'Booking a table and pre-ordering',len:'1:15'},{src:'foodfy-v1-view.mp4',poster:'foodfy-v1-view.jpg',label:'Viewing and cancelling a booking',len:'0:16'}],screens:[{src:'foodfy-wf-01-splash.jpg',label:'Splash'},{src:'foodfy-wf-02-signin.jpg',label:'Sign in'},{src:'foodfy-wf-03-signup.jpg',label:'Sign up'},{src:'foodfy-wf-04-setup.jpg',label:'Account setup'},{src:'foodfy-wf-05-home.jpg',label:'Home'},{src:'foodfy-wf-06-category.jpg',label:'Category · Fine dining'},{src:'foodfy-wf-07-restaurant.jpg',label:'Restaurant'},{src:'foodfy-wf-08-item.jpg',label:'Menu item'},{src:'foodfy-wf-09-order.jpg',label:'Order details'},{src:'foodfy-wf-10-checkout.jpg',label:'Checkout'},{src:'foodfy-wf-11-upcoming.jpg',label:'Bookings · upcoming'},{src:'foodfy-wf-12-past.jpg',label:'Bookings · past'},{src:'foodfy-wf-13-detail.jpg',label:'Booking detail'},{src:'foodfy-wf-14-profile.jpg',label:'Profile'},{src:'foodfy-wf-15-archives.jpg',label:'Archives'}]},
-   {k:'discover',t:'Discover',lede:'One tap from a good meal, signed in or not.',
-    paras:['No account needed to explore. Home asks one question, then shows categories, top rated and nearby. Your next booking sits on top.'],
+   {k:'brand',t:'Brand identity',lede:'A name, a logo and a voice that make booking a table feel like the start of the meal.',
+    paras:['Foodfy needed to feel friendly before anyone booked anything. The logo turns the double O into a cloche, the dome that covers a dish before it is served, drawn as one rounded outline that works as a word, an app icon and a pattern. Two greens carry the brand: Foody Night Green for depth and Foody Turquoise Green for energy. Azo Sans Uber gives the headline voice, “Nothing brings people together like food”, and a set of line icons of food and kitchen tools becomes the pattern for posters, the tote bag and the app’s backgrounds.'],
+    brand:[{src:'foodfy-brand-02-pattern.jpg',label:'Food icon pattern'},{src:'foodfy-brand-03-logo-versions.jpg',label:'Logo versions for light and dark grounds'},{src:'foodfy-brand-04-logo-construction.jpg',label:'Logo construction'},{type:true,label:'Typography: Azo Sans Uber for headlines, Futura PT for text'},{src:'foodfy-brand-06-brand-elements.jpg',label:'Brand elements, tone of voice and icons'},{colours:true,label:'Foody Night Green and Foody Turquoise Green'},{src:'foodfy-brand-09-posters.jpg',label:'Poster series'},{src:'foodfy-brand-10-app-icon.jpg',label:'App icon'},{src:'foodfy-brand-12-street-posters.jpg',label:'Posters in the street'},{src:'foodfy-brand-13-merch.jpg',label:'T-shirt and tote bag'}]},
+   {k:'discover',t:'Discover',lede:'Open the app and you are one tap from a good meal, signed in or not.',
+    paras:['The welcome carousel offers to create an account or sign in, but “Explore without an account” is always there. The home screen leads with a single question, “What’s the meal for today?”, then search, round category photos and two rails: the best rated in Lisbon and what is near you. Once you have a booking, it sits at the top of the screen.'],
     screens:[{src:'foodfy-01-welcome.jpg',label:'Welcome'},{src:'foodfy-03-home.jpg',label:'Explore · next booking'},{src:'foodfy-04-home-near.jpg',label:'Explore · near you'},{src:'foodfy-05-search.jpg',label:'Search, filters and sort'}]},
-   {k:'restaurant',t:'The restaurant page',lede:'Everything to decide. Booking always in reach.',
-    paras:['Essentials up top, then directions, call and menu. A sticky bar keeps “Reserve a table” on screen.'],
+   {k:'restaurant',t:'The restaurant page',lede:'Everything you need to decide, with the booking button never out of reach.',
+    paras:['A large food photo sets the mood. Below it come the essentials: cuisine, rating, price level, neighbourhood and whether it is open now, then quick actions to get directions, call or jump to the menu. The menu marks dietary options such as vegan, and reviews close the page. A sticky bar shows the next free table and the “Reserve a table” button the whole way down.'],
     screens:[{src:'foodfy-06-restaurant.jpg',label:'Restaurant · overview'},{src:'foodfy-07-menu.jpg',label:'Restaurant · menu'},{src:'foodfy-08-reviews.jpg',label:'Restaurant · reviews'}]},
-   {k:'booking',t:'Booking and pre-order',lede:'Choose, check, celebrate.',
-    paras:['Full slots stay visible, crossed out. Add an occasion, pre-order dishes, and watch a live summary at the bottom.','Review, pay now or later, cancel free up to two hours before.'],
+   {k:'booking',t:'Booking and pre-order',lede:'One screen to choose the table, one to check, one to celebrate.',
+    paras:['Guests use a stepper, dates scroll as chips and closed days are greyed out. Time slots that are fully booked stay visible but crossed out, so nobody wonders where they went. You can add an occasion and a note for the restaurant, then pre-order dishes, each with a quantity and a special request. The bottom bar keeps a live summary, “Today · 20:30 · 2 guests · 3 dishes, €58.00”.','The review screen lists the table, the pre-order and the total, with a choice to pay now or at the restaurant and free cancellation up to two hours before. The confirmation gives a reference, the details and quick actions: add to calendar, directions, change or cancel.'],
     screens:[{src:'foodfy-09-book.jpg',label:'Choose guests, date and time'},{src:'foodfy-10-preorder.jpg',label:'Pre-order food'},{src:'foodfy-11-review.jpg',label:'Review and confirm'},{src:'foodfy-12-booked.jpg',label:'You’re booked'}]},
-   {k:'account',t:'Bookings, saved and profile',lede:'After the booking matters too.',
-    paras:['Bookings, saved places and settings. Sign-in appears only when you book, then drops you back where you were.'],
+   {k:'account',t:'Bookings, saved and profile',lede:'What happens after the booking matters as much as the booking.',
+    paras:['Bookings splits upcoming and past visits and shows how many dishes are pre-ordered. Saved keeps the places you want to try. Profile holds personal details, the payment method, appearance, booking reminders and help. Sign-in only appears when you try to book, with Google and Apple as shortcuts, and returns you straight to the booking you started.'],
     screens:[{src:'foodfy-13-bookings.jpg',label:'Bookings · upcoming'},{src:'foodfy-14-saved.jpg',label:'Saved places'},{src:'foodfy-15-profile.jpg',label:'Profile and preferences'},{src:'foodfy-02-signin.jpg',label:'Sign in when you book'}]},
-   {k:'system',t:'Design system',lede:'One set of tokens, two themes.',
-    paras:['Named colour tokens for light and dark, one typeface, one corner radius.','Every screen is built from these components. Switch the theme to compare.'],
+   {k:'system',t:'Design system',lede:'One set of tokens, two themes: a fresh green that reads as food and calm.',
+    paras:['Every colour is a named token, defined once for light and once for dark, so the same components work in both. Poppins carries all the text, cards share an 18px corner radius, and the stars and heart keep their own warm colours in either theme. The appearance setting follows the phone by default, with light and dark as options.','The components below are the building blocks every screen is made from: type, buttons, chips and selectors, inputs, cards, navigation and a set of 24 line icons on a 24px grid. Switch the theme to see the same components in light mode.'],
     swatches:[['Brand · light','#277A64','Buttons, links, active tab'],['Tint · light','#E5F2ED','Selected chips, badges'],['Background · light','#F6F8F7','Page background'],['Surface · light','#FFFFFF','Cards and sheets'],['Star · light','#B7791F','Ratings'],['Brand · dark','#5CC8A5','The same roles in dark mode'],['Tint · dark','#173029','Selected chips, badges'],['Background · dark','#0F1412','Page background'],['Surface · dark','#171D1A','Cards and sheets'],['Star · dark','#F2B84B','Ratings']],
     kit:true,
     screens:[{src:'foodfy-03-home.jpg',label:'Dark theme'},{src:'foodfy-16-home-light.jpg',label:'Light theme'}]},
-   {k:'outcome',t:'Delivered',lede:'A clickable prototype of the full journey.',deliverablesList:true}
+   {k:'outcome',t:'Delivered',lede:'A clickable Figma prototype that runs the full journey, from discovery to a confirmed, paid booking.',deliverablesList:true}
   ]},
- {id:'foodfy-brand',coverCenter:true,title:'Foodfy Brand Identity',client:'Personal project · Portugal',year:'2021',tags:['Branding'],cover:'img',coverImg:'foodfy-brand-cover.jpg',
-  role:'Brand Designer, solo project: created the name, logo and visual identity, and applied it to posters, the app icon and merchandise',tools:'Illustrator, Photoshop, Figma',
-  summary:'The brand behind Foodfy: booking a table should feel like the start of the meal.',
-  context:'Friendly from the first glance, starting with the logo.',
-  approach:['A logo that turns the double O into a cloche, the dome that covers a dish before it is served.','Two greens: one for depth, one for energy.','A headline voice with Azo Sans Uber: “Nothing brings people together like food”.','A set of line icons of food and kitchen tools that becomes the pattern for everything else.'],
-  deliverables:['Logo and logo versions for light and dark grounds','Logo construction','Typography and colour palette','Icon set and pattern','Poster series','App icon','T-shirt and tote bag'],
-  chapters:[
-   {k:'brief',t:'The idea',lede:'The moment the cloche lifts.',
-    paras:['The double O becomes a cloche. Two greens, one bold headline face and a food icon pattern do the rest.']},
-   {k:'logo',t:'The logo',lede:'One outline: word, icon, pattern.',
-    brand:[{src:'foodfy-brand-03-logo-versions.jpg',label:'Logo versions for light and dark grounds'},{src:'foodfy-brand-04-logo-construction.jpg',label:'Logo construction'}]},
-   {k:'type',t:'Type and colour',lede:'Bold type, two greens.',
-    brand:[{type:true,label:'Typography: Azo Sans Uber for headlines, Futura PT for text'},{colours:true,label:'Foody Night Green and Foody Turquoise Green'}]},
-   {k:'elements',t:'Brand elements',lede:'Food icons and a friendly voice.',
-    brand:[{src:'foodfy-brand-02-pattern.jpg',label:'Food icon pattern'},{src:'foodfy-brand-06-brand-elements.jpg',label:'Brand elements, tone of voice and icons'}]},
-   {k:'applications',t:'Applications',lede:'From phone to street to tote bag.',
-    brand:[{src:'foodfy-brand-09-posters.jpg',label:'Poster series'},{src:'foodfy-brand-10-app-icon.jpg',label:'App icon'},{src:'foodfy-brand-12-street-posters.jpg',label:'Posters in the street'},{src:'foodfy-brand-13-merch.jpg',label:'T-shirt and tote bag'}]},
-   {k:'outcome',t:'Delivered',lede:'A complete identity. See the app in the Foodfy project.',deliverablesList:true}
-  ]},
- {id:'pink-step',hidden:true,coverCenter:true,title:'Ivy Pink Step',client:'IVY Partners · Portugal & Switzerland',year:'2026',tags:['Product','Motion','Branding'],cover:'img',coverImg:'pinkstep-cover.jpg',
-  role:'UI/UX Designer at IVY Partners: designed the app and its look, built it with Claude, and produced the install videos and awareness content',tools:'Figma, Claude',
-  summary:'IVY Partners’ Pink October app: staff log their steps for 30 days, and every step funds their country’s cancer league.',
-  context:'I designed and built it end to end. One step, two impacts: your health and the cause.',
+ {id:'pink-step',title:'Ivy Pink Step',client:'IVY Partners',year:'2026',tags:['Product','Motion','Branding'],cover:'pink',
+  role:'App design, build and motion',tools:'React, TypeScript, Vite, Tailwind, OCR, HTML/CSS animation',
+  summary:'Ivy Pink Step is IVY Partners’ Pink October challenge app. For 30 days, staff in Switzerland and Portugal log their daily steps, and every step adds to a donation to their country’s cancer league.',
+  context:'I designed and built the app end to end, from the step logging and team dashboard to the awareness content, plus two animated install guides so staff could add it to their phones without an app store. The idea behind it: one step, two impacts, for your health and for the cause.',
   approach:['Home: a ring tracks today against a 10,000-step goal, with a “Day 1 of 30” counter.','Logging: upload a screenshot of your phone’s step counter and the app reads the number for you (OCR). Yesterday and today can be logged, then they lock.','Progress: total steps, days active and a 7-day bar chart; press and hold a bar for the exact count.','Team “Walk for Her”: total raised in CHF, a Top 50 leaderboard with a jump to your own rank, and Switzerland vs Portugal average steps.','Team goal: a 100,000-step target with progress ring, monthly counter, active users and average raised per person.','Bonus impact: steps turned into kilometres and the CO₂ saved versus driving the same distance.','Awareness: sourced breast cancer facts for both countries, warning signs, screening rules per country, guidance for higher risk and local support lines.','Office 365 sign-in, installable as a web app, and an accessibility pass: keyboard navigation, focus states and 44px touch targets.'],
   deliverables:['App design and front-end build','Awareness content for CH and PT','iPhone install video (0:56)','Android install video (0:50)','App icon and launch visuals'],
   prototype:true,
@@ -1165,110 +1019,87 @@ const P = [
     screens:[{src:'pinkstep-v1-1-welcome.jpg',label:'Welcome'},{src:'pinkstep-v1-2-home.jpg',label:'Home · add steps'},{src:'pinkstep-v1-3-home-logged.jpg',label:'Home · logged'},{src:'pinkstep-v1-4-team.jpg',label:'Team fundraising'},{src:'pinkstep-v1-5-awareness.jpg',label:'Awareness'},{src:'pinkstep-v1-6-admin-login.jpg',label:'Admin access'},{src:'pinkstep-v1-7-admin.jpg',label:'Admin dashboard'}]},
    well:['Main flows designed and prototyped: onboarding, daily step input and the group total.','Steps saved locally, with personal and collective totals updating correctly.'],
    wrong:['Connecting Supabase for cloud storage crashed the prototype every time.','With local storage only, people couldn’t share a leaderboard across devices.','Figma Make’s no-code setup was too limited for authentication and data.'],
-   changed:['Built as a working app with Claude, instead of a Figma Make prototype.','Moved to a light theme in the IVY palette, with the pink leaf icon.','Office 365 sign-in replaced the name and password form.','Photo proof became the main way to log: the app reads the number from a step-counter screenshot.','Donations shown in CHF, with a Switzerland vs Portugal comparison.','Awareness content rewritten with sourced facts for both countries.']
+   changed:['Rebuilt in code (React and TypeScript) instead of Figma Make.','Moved to a light theme in the IVY palette, with the pink leaf icon.','Office 365 sign-in replaced the name and password form.','Photo proof became the main way to log: the app reads the number from a step-counter screenshot.','Donations shown in CHF, with a Switzerland vs Portugal comparison.','Awareness content rewritten with sourced facts for both countries.']
   },
   media:{
    videos:[{src:'pinkstep-install-ios.mp4',poster:'pinkstep-poster-ios.jpg',label:'iPhone · Safari',len:'0:56'},{src:'pinkstep-install-android.mp4',poster:'pinkstep-poster-android.jpg',label:'Android · Chrome',len:'0:50'}],
    screens:[{src:'pinkstep-01-login.jpg',label:'Sign in · Office 365'},{src:'pinkstep-app-1-home.jpg',label:'Home · today'},{src:'pinkstep-app-0-home-log.jpg',label:'Home · log by screenshot'},{src:'pinkstep-app-2-home-week.jpg',label:'Home · last 7 days'},{src:'pinkstep-app-3-team.jpg',label:'Team · total raised'},{src:'pinkstep-app-4-team-leaderboard.jpg',label:'Team · leaderboard'},{src:'pinkstep-app-5-team-countries.jpg',label:'Team · CH vs PT, goal'},{src:'pinkstep-app-6-team-impact.jpg',label:'Team · CO₂ impact'},{src:'pinkstep-app-7-aware.jpg',label:'Awareness · key facts'},{src:'pinkstep-app-8-aware-signs.jpg',label:'Awareness · warning signs'},{src:'pinkstep-app-9-aware-resources.jpg',label:'Awareness · support'}]
   }},
- {id:'ppt-template',coverCenter:true,title:'IVY PowerPoint Template',client:'IVY Partners · Portugal & Switzerland',year:'2026',tags:['Presentation','Branding'],cover:'img',coverImg:'ppt-cover.jpg',heroSphere:[[1,'Cover'],[18,'Agenda · cards'],[40,'Text and image'],[59,'Stacked bar chart'],[85,'Section divider · circle charts'],[109,'Gantt chart'],[140,'Map of Switzerland'],[5,'Cover · teal'],[22,'Section divider with intro'],[45,'Process'],[73,'Stacked columns'],[92,'Venn diagram'],[119,'Road timeline'],[144,'Icon library'],[10,'Title slide'],[31,'Four columns'],[50,'Two images'],[79,'Line chart'],[99,'Cycle diagram'],[128,'Section divider · trees'],[151,'Contact'],[15,'Agenda'],[36,'Cards'],[54,'Section divider · bar charts'],[84,'Radar chart'],[107,'Section divider · Gantt'],[137,'Scrum cycle'],[3,'Cover · light'],[21,'Section divider'],[42,'Text and image · cards'],[63,'Waterfall chart'],[86,'Pie chart'],[118,'Planning grid'],[142,'Meet the team'],[6,'Cover · gradient'],[27,'Text layout'],[49,'Image layout'],[77,'Section divider · line charts'],[95,'Ring diagram'],[121,'Step timeline'],[150,'Closing slide'],[13,'Cover with image'],[33,'Numbered steps'],[53,'Quote'],[81,'Area chart'],[101,'Hub diagram'],[131,'Org tree']],
-  role:'Brand Designer: designed and built the company template in Slide Master, from the master and layouts to charts, diagrams and icon libraries',tools:'PowerPoint (Slide Master)',
-  summary:'One template the whole company can use, with the brand built in.',
-  context:'Pick a layout, add content, stay on brand.',
-  approach:['Built in Slide Master, so colours, fonts and footers stay locked.','70 layouts: covers, section dividers, content grids and closing slides.','Ready-made charts, Gantt plans, timelines, org trees, scrum and maps.','Icon libraries by sector and centre of excellence.'],
-  deliverables:['Slide Master with 70 layouts','Theme colours and fonts','152 example slides: charts, Gantt, timelines, trees, scrum and maps','Icon libraries'],
-  chapters:[
-   {k:'brief',t:'The idea',lede:'Every deck starts on brand.',
-    paras:['One master file for everyone. Colours, type and footers are set once in Slide Master, so people spend their time on content, not on formatting.','Spin the globe at the top and click any slide to see it up close.']},
-   {k:'outcome',t:'Delivered',lede:'A template the whole company uses.',deliverablesList:true}
-  ]},
- {id:'social-media',coverCenter:true,title:'Social Media',client:'IVY Partners · Portugal & Switzerland',year:'2026',tags:['Branding','Motion'],cover:'img',coverImg:'social-cover.jpg',heroWall:[{k:'fraud',n:7,l:'Fraud detection, Instagram carousel'},{k:'quote',l:'Quote post'},{k:'welcome-01',v:1,l:'Welcome animation'},{k:'speakers',l:'Webinar speakers, LinkedIn banner'},{k:'sod',n:7,l:'Who really owns SoD?, carousel'},{k:'shadow',l:'Shadow AI, stat post'},{k:'datastrategy',v:1,l:'Designing a data strategy, motion post'},{k:'poster',l:'Webinar poster'},{k:'bank',n:8,l:'Banks govern data, carousel'},{k:'layer',l:'HR Transformation Series, The Intelligence Layer'},{k:'welcome-02',v:1,l:'Brand animation'},{k:'recruit',l:'Webinar banner'},{k:'webinar',n:6,l:'Webinar speakers, carousel'},{k:'quote2',l:'Quote post, LinkedIn'},{k:'opmodel',l:'HR Transformation Series, The Operating Model'},{k:'welcome-03',v:1,l:'Logo animation'}],
-  role:'Graphic & Motion Designer: designed the posts, carousels, webinar campaigns and short animations for the company’s LinkedIn and Instagram',tools:'Illustrator, Photoshop, Premiere Pro',
-  summary:'A steady stream of posts that all look like one company.',
-  context:'Carousels, quotes, stats, webinar campaigns and short animations. Drag the wall above and click any post to open it.',
-  approach:['Dark and teal templates that keep every post on brand.','Carousels with one idea per slide and a clear next step.','Big numbers and short quotes that stop the scroll.','Short motion pieces for launches and series openers.'],
-  deliverables:['Instagram and LinkedIn carousels','Quote and stat posts','Webinar campaigns: posters, banners and speaker cards','Motion posts and logo animations'],
-  chapters:[
-   {k:'brief',t:'The idea',lede:'Many posts, one voice.',
-    paras:['Every post starts from the same system: dark or teal grounds, Poppins, one highlight colour and the logo in the same corner. That makes a busy feed read as one brand.','Carousels break a topic into one idea per slide. Quotes and stats stay short enough to read in a scroll.']},
-   {k:'outcome',t:'Delivered',lede:'A library of posts the team keeps reusing.',deliverablesList:true}
-  ]},
- {id:'donor-wall',coverCenter:true,title:'Valley View Donor Wall',client:'Valley View Hospital · United States',year:'2020',tags:['Product','Branding'],cover:'img',coverImg:'donorwall-cover.jpg',
-  role:'UI/UX & Graphic Designer at Acid Integrations: ran discovery with the hospital, designed the touch interface, and prepared the assets and guidance for the developers',tools:'Illustrator, Adobe XD, Premiere Pro',
-  summary:'An interactive donor wall for Valley View Hospital in Colorado, designed at Acid Integrations.',
-  context:'One touch screen, two jobs: thank donors, and introduce the hospital.',
+ {id:'donor-wall',title:'Valley View Donor Wall',client:'Valley View Hospital · with Acid Integrations',year:'2020',tags:['Product','Branding'],cover:'img',coverImg:'donorwall-cover.jpg',
+  role:'UX/UI design, discovery and developer handoff',tools:'Illustrator, Adobe XD, Premiere Pro',
+  summary:'An interactive donor appreciation wall for Valley View Hospital in Glenwood Springs, Colorado, designed with Acid Integrations between December 2019 and February 2020.',
+  context:'One large touch screen with two jobs: thank the people who support the hospital, and introduce the hospital to everyone who walks by.',
   approach:['Discovery meetings to understand the donation programmes and what the wall had to say.','A clear structure: a screen saver, a welcome screen and four sections: About, Donors, Events and History.','A user-friendly touch interface that carries the hospital’s values and brand.','Assets prepared for handoff, with guidance to developers during the build.','A CMS so the hospital could manage the content after launch.'],
   deliverables:['Information architecture','UI design for the touch wall','Design system: type and colour','Assets for development','CMS content structure'],
   chapters:[
    {k:'brief',t:'The brief',lede:'A thank-you note the size of a wall.',
-    paras:['A community hospital wanted to thank its donors in public and show visitors who it is.','The challenge: honour hundreds of names without it feeling like a list, and let staff update it themselves.'],
+    paras:['Valley View Hospital is a community hospital in Glenwood Springs, Colorado, and it relies on the generosity of the people around it. It wanted a large interactive wall that would thank those donors in public, and use the same screen to show patients and visitors what the hospital does: its services, its staff, its events and its history.','The hard part was balance. The wall had to honour a long list of names without feeling like a list, welcome someone who is simply walking past, and keep working long after launch, updated by the hospital’s own team.'],
     brief:{statement:'Thank every donor. Tell the hospital’s story. Keep it current.',
       goals:[['Recognise','Give every donor a visible place, grouped by the hospital’s own giving programmes and levels.'],['Inform','Show patients and visitors who the hospital is: its services, its people, its events and its history.'],['Endure','Hand over a CMS so the hospital’s team can keep names, events and stories up to date on their own.']],
       facts:[['Client','Valley View Hospital'],['Agency','Acid Integrations'],['Timeline','Dec 2019 – Feb 2020'],['Location','Glenwood Springs, Colorado'],['Format','Large interactive touch wall']]}},
-   {k:'film',t:'The wall in use',lede:'The finished wall, in use.',video:{src:'donorwall-video.mp4',poster:'donorwall-video-poster.jpg',label:'Valley View Donor Wall in use',len:'1:35'}},
-   {k:'role',t:'My role',lede:'From discovery to handover.',
-    list:['Ran discovery.','Designed the touch interface.','Carried the hospital’s values into the design.','Prepared assets and guided developers.','Shaped the CMS for the hospital’s team.']},
-   {k:'structure',t:'Structure',lede:'A screen saver invites. One touch opens four sections.',
+   {k:'role',t:'My role',lede:'From the first discovery meeting to the moment the client could update the wall without us.',
+    list:['Prepared and ran the discovery meetings.','Designed the user interface and made sure it was easy to use on a large touch screen.','Made sure the wall carried the institution’s values.','Prepared the assets for handoff and guided the developers through the build.','Shaped the CMS so the hospital could manage the wall’s content after delivery.']},
+   {k:'structure',t:'Structure',lede:'A screen saver invites people in. One touch opens the wall, with four sections built around how the hospital raises money.',
     images:[{src:'donorwall-ia.jpg',label:'Information architecture: from screen saver to every donor name. Click to zoom.'}],
-    paras:['Donors follow the hospital’s own giving programmes, so every gift has a place.']},
-   {k:'look',t:'Look and feel',lede:'The hospital’s brand, at wall scale.',
-    paras:['An engraved-feeling serif for names, a clean one for reading.','Deep green leads. Each donor programme gets its own accent.'],
+    paras:['Donors are grouped by the hospital’s own giving programmes, such as the Summit Circle, the Legacy Society and Cornerstone employee giving, so every gift has a place. Events come from the CMS, and the History timeline uses material supplied by the hospital.']},
+   {k:'look',t:'Look and feel',lede:'The hospital’s own brand, scaled up for a screen people walk up to and touch.',
+    paras:['Two typefaces carry the wall. Filosofia OT Italic sets the headers, with a classic, almost engraved feel that suits names being honoured. Minerva Modern sets the text, clean and open for reading on a big screen.','Deep green leads. Charcoal, sage and Planetree olive support it, and a set of softer secondary colours gives each donor programme its own accent.'],
     look:{type:[['Header type','Filosofia OT Italic','Used for headers','donorwall-type-filosofia.svg'],['Text type','Minerva Modern','Used for text','donorwall-type-minerva.svg']],
       primary:['Primary green','#275D2D','PMS 349','RGB 39 93 45'],
       alt:[['Charcoal','#565558','PMS 83% Black'],['Sage','#7F9272','PMS 54% 349'],['Planetree','#899163','PMS 5773']],
       secondary:[['#B0B87B','PMS 5777'],['#74B0BD','PMS 5493'],['#CFDB9D','PMS 7492'],['#F7DE8C','PMS 1205'],['#8A7A67','Warm Grey 10'],['#899163','PMS 5773'],['#F28900','PMS 144'],['#7472BF','PMS 272']]}},
-   {k:'wall',t:'The wall',lede:'The valley panorama stays in view.',
+   {k:'wall',t:'The wall',lede:'The interface sits on the left of a wide panorama of the valley, so the town is always in the picture.',
     images:[{src:'donorwall-home.jpg',label:'Home: welcome and menu'},{src:'donorwall-donors.jpg',label:'Donors: programmes and giving levels',tall:true},{src:'donorwall-timeline.jpg',label:'History timeline'},{src:'donorwall-more.jpg',label:'More sections: events, search, about, campaigns'}],
-    paras:['Touch anywhere to start. Browse donors by programme, or walk the history year by year.']},
-   {k:'outcome',t:'Delivered',lede:'A wall the hospital updates on its own.',deliverablesList:true}
+    paras:['When someone touches either side of the screen, the welcome screen appears with the menu bar. The donor section follows the hospital’s giving programmes, down to each giving level, and the timeline lets people move through the hospital’s history year by year.']},
+   {k:'outcome',t:'Delivered',lede:'A wall the hospital can keep up to date on its own.',deliverablesList:true}
   ]},
- {id:'fox-real-estate',coverCenter:true,title:'Fox Real Estate',url:'https://foxrealestate.pt/',client:'Fox Relocation & Real Estate · Portugal',year:'2025',tags:['Branding','Web','Social'],cover:'img',coverImg:'fox-cover.jpg',
-  role:'Freelance Brand & Web Designer: created the logo and brand guidelines, built the website in WordPress and designed the social media templates',tools:'WordPress, Illustrator',
-  summary:'Logo, website and social kit for Fox Real Estate, which helps people move to Portugal: homes and visas.',
-  context:'Moving country is stressful. The brand had to feel friendly and trustworthy, and the site had to book consultations.',
+ {id:'fox-real-estate',title:'Fox Real Estate',url:'https://foxrealestate.pt/',client:'Fox Relocation & Real Estate · Portugal',year:'2025',tags:['Branding','Web','Social'],cover:'img',coverImg:'fox-cover.jpg',
+  role:'Logo, brand guidelines, website and social media',tools:'WordPress, Illustrator',
+  summary:'A logo, website and social media templates for Fox Real Estate, which helps people relocate to Portugal: finding a home to rent or buy and guiding them through the visa process (foxrealestate.pt).',
+  context:'Moving country is stressful. The brand had to feel friendly and trustworthy at once, and the site had to turn curious visitors into booked consultations.',
   approach:['A fox detective as the mark: the agent who searches on your behalf.','A logo system of three lockups in nine files, with brand guidelines for clear space, sizes, colour and use.','A warm orange and deep navy palette carried from the logo into the site.','A hero that says the three things the company does in three lines.','A simple three-step service story and a free consultation form on every key page.','Long-form guides on relocating, visas and regions for search and trust.'],
   deliverables:['Logo and brand colours','Website design','Page structure and content layout','Consultation booking forms','Brand guidelines','Social media templates'],
   chapters:[
-   {k:'brief',t:'The brief',lede:'A home in a new country, and the right to live there.',
-    paras:['Fox finds homes to rent or buy and handles the visa process for people moving to Portugal.','It needed a memorable identity and a site that makes a complex service simple.']},
-   {k:'mark',t:'The mark',lede:'A detective fox: the agent who searches for you.',
-    paras:['Warmth and wit in a cold category. The cap and magnifying glass say “we find the right place”.'],
+   {k:'brief',t:'The brief',lede:'A company that finds you a home in a new country, and helps you get the right to live there.',
+    paras:['Fox Real Estate works with individuals, families, corporate clients and investors moving to Portugal. It finds properties to rent or buy, and supports the immigration and visa process, from choosing the right visa to sorting out a tax number and a bank account.','It needed an identity people would remember and a website that explains a complex service simply, then makes it easy to take the first step.']},
+   {k:'mark',t:'The mark',lede:'A fox in a flat cap, holding a magnifying glass. The agent who does the searching for you.',
+    paras:['The fox brings a little warmth and wit to a category that often feels cold. The cap and magnifying glass turn it into a detective, a quick way to say “we hunt down the right place”. The wordmark is set in heavy, rounded capitals, stacked so it works as a compact block next to the mark.'],
     images:[{src:'fox-brand-02-system.jpg',label:'The logo system: stacked, horizontal and icon'}],
     swatches:[['Fox orange','#F37C37','Primary'],['Navy','#162D53','Wordmark and text'],['Cap blue','#1E3C72','Illustration'],['Cream','#F3ECD2','Background']]},
-   {k:'site',t:'The website',lede:'Three lines, three steps, one ask: book a consultation.',
-    paras:['Three statements, three steps, one form. The orange button always leads to it.'],
+   {k:'site',t:'The website',lede:'Say what we do in three lines, show how it works in three steps, then ask for one thing: a consultation.',
+    paras:['The home page opens on a bright, styled interior with three statements: we help people relocate, we find properties to buy or rent, and we facilitate the visa process. Orange picks out the key words. A three-step service section and a free consultation form follow, and the same orange button leads to the form throughout.','Inner pages such as Relocate to Portugal pair short, question-led sections with photography of the places clients are moving to.'],
     images:[{src:'fox-home.jpg',label:'Home: hero'},{src:'fox-services.jpg',label:'Home: three-step services'},{src:'fox-consult.jpg',label:'Free consultation form'},{src:'fox-relocate.jpg',label:'Relocate to Portugal'},{src:'fox-cities.jpg',label:'Relocate to Portugal: cities and regions'}]},
-   {k:'guidelines',t:'Brand guidelines',lede:'One brand book, everywhere the fox appears.',
-    paras:['Three lockups in three colourways, with rules for space, size, colour, type and misuse.'],
+   {k:'guidelines',t:'Brand guidelines',lede:'A short brand book so the fox looks the same on a business card, a for-rent sign and an Instagram avatar.',
+    paras:['The logo comes as three lockups, stacked, horizontal and icon, each in full colour, white and black: nine files in all. The guidelines set the rules around them: a clear space unit taken from the height of FOX, minimum sizes for screen and print, the colour palette and Poppins as the supporting typeface, which version to use on which background, and what not to do.','The last pages put the system to work on stationery, signage, merchandise and the brand’s digital touchpoints.'],
     book:[{src:'fox-brand-01-cover.jpg',label:'Brand guidelines, logo v2'},{src:'fox-brand-03-versions.jpg',label:'Colour versions: nine files'},{src:'fox-brand-04-clearspace.jpg',label:'Clear space'},{src:'fox-brand-05-minsize.jpg',label:'Minimum sizes'},{src:'fox-brand-06-colour.jpg',label:'Colour and typography'},{src:'fox-brand-07-backgrounds.jpg',label:'Choosing a version for the background'},{src:'fox-brand-08-misuse.jpg',label:'Misuse'},{src:'fox-brand-11-digital.jpg',label:'Application: Instagram, favicon and app icons'}]},
-   {k:'social',t:'Social media',lede:'Instagram templates the team fills in themselves.',
-    paras:['Eight 4:5 templates in orange and cream: brand messages and listing carousels with a clear call to action.','Varied in the feed, always recognisably Fox.'],
+   {k:'social',t:'Social media',lede:'A set of Instagram templates the team can fill in themselves: listings, services and the team, all in the same voice.',
+    paras:['Eight 4:5 templates built from the logo’s orange and a soft cream. Some carry the core message, “we help people relocate to Portugal”; others turn a listing into a short carousel, from the hero photo to the key facts and a clear call to action to schedule a viewing or book a meeting.','The layouts swap between full-bleed photography, solid orange panels and photo grids, so a feed of them stays varied while every post is still recognisably Fox.'],
     posts:[{src:'fox-social-s01.jpg',label:'01 · Brand message'},{src:'fox-social-s02.jpg',label:'02 · Listing: photo and details'},{src:'fox-social-s03.jpg',label:'03 · Listing: key facts on photo'},{src:'fox-social-s04.jpg',label:'04 · Listing: full-bleed photo'},{src:'fox-social-s05.jpg',label:'05 · Brand message with photo'},{src:'fox-social-s06.jpg',label:'06 · Listing: photo grid'},{src:'fox-social-s07.jpg',label:'07 · Meet the team'},{src:'fox-social-s08.jpg',label:'08 · Book a meeting'}]},
-   {k:'outcome',t:'Delivered',lede:'A brand, a site and a social kit. Live at <a href="https://foxrealestate.pt/" target="_blank" rel="noopener">foxrealestate.pt</a>.',deliverablesList:true}
+   {k:'outcome',t:'Delivered',lede:'A brand, a site and a social kit the team can grow with. The site is live at <a href="https://foxrealestate.pt/" target="_blank" rel="noopener">foxrealestate.pt</a>.',deliverablesList:true}
   ]},
- {id:'behind-the-frames',hidden:true,title:'Behind the Frames',client:'IVY Partners · Portugal & Switzerland',year:'2026',tags:['Presentation','Motion','Branding'],cover:'img',coverImg:'webinar-cover.jpg',
-  role:'Branding Specialist at IVY Partners: created the webinar’s visual identity, designed the deck and produced the teaser trailer',tools:'PowerPoint, Illustrator, video editing',
-  summary:'An IVY webinar on what happens inside a 3D game every 16 milliseconds.',
-  context:'A deeply technical talk for a mostly non-technical audience. I made it feel familiar and fun, from teaser to deck.',
+ {id:'behind-the-frames',title:'Behind the Frames',client:'IVY Partners · Webinar',year:'2026',tags:['Presentation','Motion','Branding'],cover:'img',coverImg:'webinar-cover.jpg',
+  role:'Webinar identity, deck design and teaser trailer',tools:'PowerPoint, Illustrator, video editing',
+  summary:'“Behind the Frames: Decoding 3D Game Architecture” was an IVY webinar on 25 June 2026, explaining what happens inside a 3D game every 16 milliseconds.',
+  context:'The talk came from a 3D graphics engineer and was made for a mixed, mostly non-technical audience. My job was to make a deeply technical subject feel familiar and fun, from the teaser that sold the session to the deck that carried it.',
   approach:['A game HUD visual language: dark panels, teal readouts, brackets and “//” section labels.','Game vocabulary as structure: player profile, mission objectives, side quest, level complete.','Complex systems turned into simple diagrams: the game loop, the frame pipeline, object → mesh → triangles → GPU.','A teaser trailer cut from game footage to announce the date.'],
   deliverables:['Teaser trailer (0:51)','26-slide webinar deck','Diagram set for the frame pipeline','Social carousel'],
   chapters:[
-   {k:'brief',t:'The brief',lede:'How a 3D game runs, explained in under an hour.',
+   {k:'brief',t:'The brief',lede:'Explain how a 3D game actually runs to people who play games but have never built one, in under an hour.',
     quote:'When you move your character in a game… hundreds of systems update in milliseconds.',
-    paras:['Four goals: what runs a game, the key systems, every frame, and a model to reuse at work.','And one business point: real-time 3D now powers far more than games.']},
-   {k:'trailer',t:'The teaser',lede:'A 50-second teaser to sell the session.',video:{src:'webinar-trailer.mp4',poster:'webinar-trailer-poster.jpg',label:'Teaser trailer',len:'0:51'},
-    paras:['From arcade pixels to open worlds, then the title and date.']},
-   {k:'language',t:'Visual language',lede:'A deck that feels like a game, not a lecture.',
+    paras:['The opening line of the deck set the tone. The talk had four goals: what makes a 3D game run, the key systems involved, what happens every frame, and a mental model people could reuse at work.','It also had to land a business point: real-time 3D was born in games, and now architecture, engineering, healthcare and education depend on it.']},
+   {k:'trailer',t:'The teaser',lede:'Before the webinar, a 50-second trailer set the mood and the date: “Ever wondered how these worlds are built?”',video:{src:'webinar-trailer.mp4',poster:'webinar-trailer-poster.jpg',label:'Teaser trailer',len:'0:51'},
+    paras:['It moves from early arcade graphics to today’s open worlds, with three title cards: “Ever wondered how these worlds are built?”, “It’s more than just graphics.” and “It’s complex architecture in motion.”, before landing on the webinar title and date.']},
+   {k:'language',t:'Visual language',lede:'The deck looks like a game interface, so the audience feels like a player rather than a student.',
     swatches:[['Charcoal','#262626','Slide background'],['Panel','#2E2E2E','HUD panels'],['IVY teal','#2A9C9E','Highlights and titles'],['Deep teal','#1A6A6B','Bars and fills'],['White','#FFFFFF','Headlines']],
-    list:['“//” labels, like code comments.','Bracketed panels, like in-game menus.','Game language: player profile, missions, “Level complete”.','A hidden side quest with a prize.']},
-   {k:'deck',t:'The deck',lede:'26 slides, one system at a time.',slides:[{src:'webinar-slides-s02.jpg',label:'Why this matters'},{src:'webinar-slides-s04.jpg',label:'Industry quote'},{src:'webinar-slides-s05.jpg',label:'Mission objectives'},{src:'webinar-slides-s06.jpg',label:'What is a 3D game?'},{src:'webinar-slides-s07.jpg',label:'The game loop'},{src:'webinar-slides-s08.jpg',label:'Mental model'},{src:'webinar-slides-s09.jpg',label:'The movie analogy'},{src:'webinar-slides-s10.jpg',label:'Objects in space'},{src:'webinar-slides-s11.jpg',label:'The camera'},{src:'webinar-slides-s12.jpg',label:'The mesh'},{src:'webinar-slides-s13.jpg',label:'Textures'},{src:'webinar-slides-s14.jpg',label:'Simulation + rendering'},{src:'webinar-slides-s15.jpg',label:'What is logic'},{src:'webinar-slides-s16.jpg',label:'Scripts in action'},{src:'webinar-slides-s17.jpg',label:'Gravity & collisions'},{src:'webinar-slides-s18.jpg',label:'Drawing the game world'},{src:'webinar-slides-s19.jpg',label:'Lighting, shadows & shaders'},{src:'webinar-slides-s20.jpg',label:'Recap'}],
-    paras:['A game is a simulation plus a renderer, 60 times a second. Then each building block gets its own slide.']},
-   {k:'outcome',t:'Delivered',lede:'Everything to promote and run the session, in one look.',deliverablesList:true}
+    list:['Every slide opens with a small “//” label, like a code comment or a HUD tag.','Content sits in outlined panels with corner brackets, like in-game menus.','Game language guides the talk: a player profile for the speaker, mission objectives, a side quest, “Level complete”.','A hidden side quest ran through the deck: spot the small characters on the slides, and the fastest correct count won a gaming voucher.']},
+   {k:'deck',t:'The deck',lede:'Twenty-six slides that build the idea one system at a time, then put it back together in a recap.',slides:[{src:'webinar-slides-s02.jpg',label:'Why this matters'},{src:'webinar-slides-s04.jpg',label:'Industry quote'},{src:'webinar-slides-s05.jpg',label:'Mission objectives'},{src:'webinar-slides-s06.jpg',label:'What is a 3D game?'},{src:'webinar-slides-s07.jpg',label:'The game loop'},{src:'webinar-slides-s08.jpg',label:'Mental model'},{src:'webinar-slides-s09.jpg',label:'The movie analogy'},{src:'webinar-slides-s10.jpg',label:'Objects in space'},{src:'webinar-slides-s11.jpg',label:'The camera'},{src:'webinar-slides-s12.jpg',label:'The mesh'},{src:'webinar-slides-s13.jpg',label:'Textures'},{src:'webinar-slides-s14.jpg',label:'Simulation + rendering'},{src:'webinar-slides-s15.jpg',label:'What is logic'},{src:'webinar-slides-s16.jpg',label:'Scripts in action'},{src:'webinar-slides-s17.jpg',label:'Gravity & collisions'},{src:'webinar-slides-s18.jpg',label:'Drawing the game world'},{src:'webinar-slides-s19.jpg',label:'Lighting, shadows & shaders'},{src:'webinar-slides-s20.jpg',label:'Recap'}],
+    paras:['The story goes from definition to detail: a game is a simulation plus a renderer, running a loop 60 times a second. Then each building block gets a slide: objects, the camera, meshes, textures, logic, physics, rendering and shaders.']},
+   {k:'outcome',t:'Delivered',lede:'Everything needed to promote and run the session, in one consistent look.',deliverablesList:true}
   ]}
-].filter(p=>!p.hidden);
+];
 const pad = n => String(n).padStart(2,'0');
 
-function coverOf(p){return p.cover==='img'?`<div class="cv cv-img${p.coverCenter?' cv-c':''}"><img src="${p.coverImg}" alt="" loading="lazy"></div>`:cover(p.cover)}
+function coverOf(p){return p.cover==='img'?`<div class="cv cv-img"><img src="${p.coverImg}" alt="" loading="lazy"></div>`:cover(p.cover)}
 function cover(k){
   switch(k){
    case 'ivyweb': return `<div class="cv cv-ivyweb"><div class="bar"><i></i><i></i><i></i><span>ivy partners</span></div><div class="map"></div><b class="pin" style="left:62%;top:36%">Geneva</b><b class="pin" style="left:38%;top:58%">Lisbon</b><div class="hd"><small>Cybersecurity · IAM · Data · AI</small>Geneva &amp; Lisbon</div></div>`;
@@ -1299,10 +1130,10 @@ function renderFilters(){
 function renderGrid(){
   const list=P.filter(p=>active==='All'||p.tags.includes(active));
   grid.innerHTML=list.map((p,i)=>`<a class="card" href="#${p.id}" data-id="${p.id}" style="animation-delay:${i*60}ms"><div class="card-cover"><div class="card-tilt">${coverOf(p)}</div><span class="explore" aria-hidden="true"><span class="ex-row">${[...'Explore'].map((ch,k)=>`<i style="--k:${k}"><b>${ch}</b><b>${ch}</b></i>`).join('')}</span><span class="ex-arr">↗</span></span></div><div class="card-info"><h3>${p.title}</h3><span class="mono year">${p.year}</span><span class="mono client">${p.client}</span><div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div></a>`).join('');
+  document.getElementById('workCount').textContent=pad(list.length);
 }
-filters.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;active=b.dataset.c;renderFilters();renderGrid();});
-try{localStorage.removeItem('pf-filter')}catch(_){}
-document.querySelectorAll('.do-row[data-f]').forEach(r=>r.addEventListener('click',e=>{const c=r.dataset.f;if(!cats.includes(c))return;e.preventDefault();active=c;renderFilters();renderGrid();document.getElementById('work').scrollIntoView({behavior:'smooth'})}));
+filters.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;active=b.dataset.c;renderFilters();renderGrid();try{localStorage.setItem('pf-filter',active)}catch(_){}});
+try{const s=localStorage.getItem('pf-filter');if(s&&cats.includes(s))active=s}catch(_){}
 renderFilters();renderGrid();
 /* card tilt: the cover lifts off the card and follows the pointer */
 if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -1334,7 +1165,7 @@ const DS={
  rules:['Teal is for action and progress; pink is for the cause.','One job per screen, with the main action on Home.','Every tap target is at least 44px tall.','Numbers are the hero: big, bold and tabular.','Poppins only, in four weights: 400, 500, 600 and 700.']
 };
 function dsHTML(){
-  const sw=DS.colors.map(g=>`<div class="ds-group"><h4 class="mono ch-k">${g.g}</h4><div class="ds-sw sm">${g.items.map(([n,h,t,u])=>`<figure><i style="background:${h}"></i><figcaption><b>${n}</b><span class="mono">${h}</span><small>${u}</small></figcaption></figure>`).join('')}</div></div>`).join('');
+  const sw=DS.colors.map(g=>`<div class="ds-group"><h4 class="mono ch-k">${g.g}</h4><div class="ds-sw">${g.items.map(([n,h,t,u])=>`<figure><i style="background:${h}"></i><figcaption><b>${n}</b><span class="mono">${h}</span><small>${u}</small></figcaption></figure>`).join('')}</div></div>`).join('');
   const ty=`<div class="ds-type">${DS.type.map(([sz,w,ex,use])=>`<div class="ds-trow"><span class="mono">${sz}px · ${w}</span><span class="ds-spec" style="font-size:${sz}px;font-weight:${w==='Bold'?700:w==='Semibold'?600:400};color:${+sz>=20?'#2A9C9E':'#262626'}">${ex}</span><small>${use}</small></div>`).join('')}</div>`;
   const comp=`<div class="ips-screen ds-board">
    <div class="ds-cell"><span class="mono ds-l">Buttons</span><button class="ips-btn" type="button" tabindex="-1">Save today’s total</button><button class="ips-btn ips-grey" type="button" tabindex="-1">Add Screenshot</button><button class="ips-btn" disabled type="button" tabindex="-1">Disabled</button></div>
@@ -1358,27 +1189,26 @@ function chapterStory(p){
     c.quote?`<blockquote class="ch-quote">“${c.quote}”</blockquote>`:'',
     c.video?`<figure class="wide-vid"><video src="${c.video.src}" poster="${c.video.poster}" controls playsinline preload="metadata" aria-label="${c.video.label}"></video><figcaption class="mono"><span>${c.video.label}</span><span>${c.video.len}</span></figcaption></figure>`:'',
     (c.paras||[]).map(t=>`<p>${t}</p>`).join(''),
-    c.swatches?`<div class="ds-sw sm">${c.swatches.map(([nm,h,u])=>`<figure><i style="background:${h}"></i><figcaption><b>${nm}</b><span class="mono">${h}</span><small>${u}</small></figcaption></figure>`).join('')}</div>`:'',
+    c.swatches?`<div class="ds-sw${c.swatches.length>6?' sm':''}">${c.swatches.map(([nm,h,u])=>`<figure><i style="background:${h}"></i><figcaption><b>${nm}</b><span class="mono">${h}</span><small>${u}</small></figcaption></figure>`).join('')}</div>`:'',
     c.kit?kitHTML():'',
     c.list?list(c.list):'',
-    c.steps?`<ol class="ff-steps">${c.steps.map(([t,d,go],i)=>{const tg=go&&C.find(x=>x.k===go),ix=tg?C.indexOf(tg):-1,inner=`<span class="mono">${String(i+1).padStart(2,'0')}</span><h4>${t}</h4><p>${d}</p>`;return tg?`<li class="on"><button type="button" class="ff-go" data-ch="ch-${go}">${inner}<span class="go">See chapter ${n(ix)}: ${tg.t} <span aria-hidden="true">↓</span></span></button></li>`:`<li><div class="ff-in">${inner}</div></li>`}).join('')}</ol>`:'',
+    c.steps?`<ol class="ff-steps">${c.steps.map(([t,d,go],i)=>`<li${go?' class="on"':''}><span class="mono">${String(i+1).padStart(2,'0')}</span><h4>${t}</h4><p>${d}</p>${go?`<span class="go">${go} ↓</span>`:''}</li>`).join('')}</ol>`:'',
     c.spine?`<ol class="spine">${c.spine.map(([k,t],i,a)=>`<li${i===a.length-1?' class="end"':''}><b>${k}</b><p>${t}</p></li>`).join('')}</ol>`:'',
     c.persona?(()=>{const P1=c.persona,ul=a=>`<ul>${a.map(x=>`<li>${x}</li>`).join('')}</ul>`;return `<div class="persona"><div class="ps-id"><div class="ps-av" aria-hidden="true">${P1.initials}</div><div><span class="mono">${P1.tag}</span><h4>${P1.name}</h4><span class="mono">${P1.meta}</span></div><p class="ps-q">“${P1.quote}”</p><dl>${P1.facts.map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl></div><div class="ps-body"><div class="ps-c wide"><h5>Who she is</h5><p>${P1.bio}</p></div><div class="ps-c"><h5>Goals</h5>${ul(P1.goals)}</div><div class="ps-c"><h5>Frustrations</h5>${ul(P1.pains)}</div><div class="ps-c wide"><h5>A typical Tuesday</h5><p>${P1.scenario}</p></div><div class="ps-c wide"><h5>What Foodfy gives her</h5>${ul(P1.fit)}</div></div></div>${P1.second?`<div class="ps-2"><div class="ps-av" aria-hidden="true">${P1.second.initials}</div><p><b>${P1.second.name}</b> ${P1.second.text}</p></div>`:''}`})():'',
     c.journey?(()=>{const J=c.journey,S=J.stages,W=1000,H=150,x=i=>(i+.5)*W/S.length,y=v=>H-14-(v*(H-34));const pts=S.map((st,i)=>[x(i),y(st.feel)]);let d=`M${pts[0][0]},${pts[0][1]}`;for(let i=1;i<pts.length;i++){const [x0,y0]=pts[i-1],[x1,y1]=pts[i],m=(x0+x1)/2;d+=` C${m},${y0} ${m},${y1} ${x1},${y1}`}
       const row=(lab,k,cls)=>`<div class="rl">${lab}</div>${S.map(st=>`<div class="${cls||''}">${st[k]}</div>`).join('')}`;
       return `<ol class="jm-pr">${J.principles.map((t,i)=>`<li><span class="mono">Principle ${String(i+1).padStart(2,'0')}</span><p>${t}</p></li>`).join('')}</ol><div class="jm-wrap" tabindex="0" aria-label="User journey map, scroll horizontally"><div class="jm"><div class="rl">Stage</div>${S.map((st,i)=>`<div class="st"><small>${String(i+1).padStart(2,'0')}</small>${st.name}</div>`).join('')}${row('Doing','doing')}${row('Thinking','think','th')}<div class="rl">Feeling</div><div class="feel"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true"><line x1="0" x2="${W}" y1="${y(.5)}" y2="${y(.5)}" stroke="#2a2a30" stroke-dasharray="4 6" vector-effect="non-scaling-stroke"/><path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg>${pts.map(([px,py],i)=>`<span style="position:absolute;left:${px/W*100}%;top:${py/H*100}%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--ink);border:2.5px solid var(--accent)"></span><span class="mono" style="position:absolute;left:${px/W*100}%;top:${py/H*100}%;transform:translate(-50%,${S[i].feel>.7?'14px':'-28px'});font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);white-space:nowrap">${S[i].mood}</span>`).join('')}</div>${row('Pain points','pain')}${row('Foodfy answer','opp','op')}</div></div>`})():'',
-    c.bench?(()=>{const B=c.bench,ic={y:'Yes',p:'Partly',n:'No'};return `<div class="bm-wrap" tabindex="0" aria-label="Benchmark table, scroll horizontally"><table class="bm"><thead><tr><th><span class="sr-only">App</span></th>${B.cols.map(h=>`<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${B.rows.map(([nm,sub,v],i)=>`<tr${i===0?' class="us"':''}><th scope="row">${nm}<small>${sub}</small></th>${v.split('').map(k=>`<td><i class="${k}" role="img" aria-label="${ic[k]}"></i></td>`).join('')}</tr>`).join('')}</tbody></table></div><div class="bm-key"><span><i class="y" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--paper)"></i>Yes</span><span><i style="display:inline-block;width:12px;height:12px;border-radius:50%;border:1.5px solid var(--paper);background:linear-gradient(90deg,var(--paper) 50%,transparent 50%)"></i>Partly · only some restaurants or prepaid experiences</span><span><i style="display:inline-block;width:12px;height:12px;border-radius:50%;border:1.5px solid #4a4950"></i>No</span><span>${B.source}</span></div><div class="bm-ins">${B.insights.map(([h,t],i)=>`<div><span class="mono">Insight ${String(i+1).padStart(2,'0')}</span><h4>${h}</h4><p>${t}</p></div>`).join('')}</div>`})():'',
+    c.bench?(()=>{const B=c.bench,ic={y:'Yes',p:'Partly',n:'No'};return `<div class="bm-wrap" tabindex="0" aria-label="Benchmark table, scroll horizontally"><table class="bm"><thead><tr><th></th>${B.cols.map(h=>`<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${B.rows.map(([nm,sub,v],i)=>`<tr${i===0?' class="us"':''}><th scope="row">${nm}<small>${sub}</small></th>${v.split('').map(k=>`<td><i class="${k}" role="img" aria-label="${ic[k]}"></i></td>`).join('')}</tr>`).join('')}</tbody></table></div><div class="bm-key"><span><i class="y" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--paper)"></i>Yes</span><span><i style="display:inline-block;width:12px;height:12px;border-radius:50%;border:1.5px solid var(--paper);background:linear-gradient(90deg,var(--paper) 50%,transparent 50%)"></i>Partly · only some restaurants or prepaid experiences</span><span><i style="display:inline-block;width:12px;height:12px;border-radius:50%;border:1.5px solid #4a4950"></i>No</span><span>${B.source}</span></div><div class="bm-ins">${B.insights.map(([h,t],i)=>`<div><span class="mono">Insight ${String(i+1).padStart(2,'0')}</span><h4>${h}</h4><p>${t}</p></div>`).join('')}</div>`})():'',
     c.vpc?(()=>{const V=c.vpc,cell=([h,a])=>`<div class="vpc-cell"><h4>${h}</h4><ul>${a.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;return `<div class="vpc"><div class="vpc-col vpc-map"><div class="vpc-h"><i></i>Value map · Foodfy</div>${V.map.map(cell).join('')}</div><div class="vpc-fit" aria-hidden="true"><span></span><span>⟷</span><span>⟷</span><span>⟷</span></div><div class="vpc-col vpc-cust"><div class="vpc-h c"><i></i>Customer profile · people eating out</div>${V.cust.map(cell).join('')}</div></div>`})():'',
     c.ia?`<figure class="mood"><img src="${c.ia.src}" alt="${c.ia.label}" loading="lazy" tabindex="0"><figcaption class="mono">${c.ia.label} Click to zoom.</figcaption></figure>`:'',
     c.screens?shotsHTML(c.screens,c.wf?'wf':''):'',
     c.clips?`<h4 class="mono ch-k" style="margin-top:2.5rem">${c.clipsTitle||'Prototype recordings'}</h4><div class="vids ffv">${c.clips.map(v=>`<figure class="vid"><video src="${v.src}" poster="${v.poster}" controls muted playsinline preload="metadata" aria-label="${v.label}"></video><figcaption class="mono"><span>${v.label}</span><span>${v.len}</span></figcaption></figure>`).join('')}</div>`:'',
-    c.look?(()=>{const L=c.look,lt=h=>{const n=parseInt(h.slice(1),16),r=n>>16,g=n>>8&255,b=n&255;return (r*299+g*587+b*114)/1000>150};return `<div class="vv-look"><div class="vv-type">${L.type.map(([k,nm,use,src])=>`<figure class="vv-tc"><figcaption><span class="mono">${k}</span><h4>${nm}</h4><p>${use}</p></figcaption><img src="${src}" alt="${nm} specimen" loading="lazy"></figure>`).join('')}</div><div class="vv-pals"><div class="ds-group"><h4 class="mono ch-k">Primary and alternates</h4><div class="ds-sw sm">${[[L.primary[0],L.primary[1]],...L.alt].map(([nm,h])=>`<figure><i style="background:${h}"></i><figcaption><b>${nm}</b><span class="mono">${h}</span></figcaption></figure>`).join('')}</div></div><div class="ds-group"><h4 class="mono ch-k">Secondary · donor programmes</h4><div class="ds-sw sm">${L.secondary.map(([h,nm])=>`<figure><i style="background:${h}"></i><figcaption><b>${nm}</b><span class="mono">${h}</span></figcaption></figure>`).join('')}</div></div></div></div>`})():'',
+    c.look?(()=>{const L=c.look,lt=h=>{const n=parseInt(h.slice(1),16),r=n>>16,g=n>>8&255,b=n&255;return (r*299+g*587+b*114)/1000>150};return `<div class="vv-look"><div class="vv-type">${L.type.map(([k,nm,use,src])=>`<figure class="vv-tc"><figcaption><span class="mono">${k}</span><h4>${nm}</h4><p>${use}</p></figcaption><img src="${src}" alt="${nm} specimen" loading="lazy"></figure>`).join('')}</div><div class="vv-pal"><div class="vv-pri" style="background:${L.primary[1]}"><span class="mono">Primary</span><b>${L.primary[0]}</b><small class="mono">${L.primary[1]} · ${L.primary[2]} · ${L.primary[3]}</small></div>${L.alt.map(([nm,h,u],i)=>`<div class="vv-alt" style="background:${h}"><span class="mono">${i<2?'Alternate':'Planetree'}</span><b>${nm}</b><small class="mono">${h} · ${u}</small></div>`).join('')}<div class="vv-sec"><span class="mono vv-sec-k">Secondary · donor programmes</span><div>${L.secondary.map(([h,u])=>`<i class="${lt(h)?'lt':''}" style="background:${h}"><small class="mono">${h}<br>${u}</small></i>`).join('')}</div></div></div></div>`})():'',
     c.brief?`<div class="vv-brief"><div class="vv-hero"><span class="mono">The ask</span><p class="vv-st">${c.brief.statement.split(/(?<=\.) /).map(x=>`<span>${x}</span>`).join('')}</p><img class="vv-logo" src="donorwall-vvlogo.svg" alt="Valley View Hospital logo"></div><ol class="vv-goals">${c.brief.goals.map(([t,d],i)=>`<li class="vv-goal"><span class="mono">0${i+1}</span><h4>${t}</h4><p>${d}</p></li>`).join('')}</ol><dl class="vv-facts">${c.brief.facts.map(([k,v])=>`<div><dt class="mono">${k}</dt><dd>${v}</dd></div>`).join('')}</dl></div>`:'',
     c.images?`<div class="figs">${c.images.map(x=>`<figure class="mood${x.tall?' tall':''}"><img src="${x.src}" alt="${x.label}" loading="lazy" tabindex="0"><figcaption class="mono">${x.label}</figcaption></figure>`).join('')}</div>`:'',
     c.brand?`<div class="figs brandst">${c.brand.map(x=>x.type?fftHTML(x.label):x.colours?ffcHTML(x.label):`<figure class="mood"><img src="${x.src}" alt="${x.label}" loading="lazy" tabindex="0"><figcaption class="mono">${x.label}</figcaption></figure>`).join('')}</div>`:'',
     c.book?`<div class="figs book">${c.book.map(x=>`<figure class="mood"><img src="${x.src}" alt="${x.label}" loading="lazy" tabindex="0"><figcaption class="mono">${x.label}</figcaption></figure>`).join('')}</div>`:'',
     c.posts?`<div class="figs posts">${c.posts.map(x=>`<figure class="mood"><img src="${x.src}" alt="${x.label}" loading="lazy" tabindex="0"><figcaption class="mono">${x.label}</figcaption></figure>`).join('')}</div>`:'',
-    c.sphere?sphereHTML(c.sphere):'',
     c.slides?`<div class="slides">${c.slides.map(x=>`<figure class="sl"><img src="${x.src}" alt="${x.label}" loading="lazy" tabindex="0"><figcaption class="mono">${x.label}</figcaption></figure>`).join('')}</div>`:'',
     c.deliverablesList?`<div class="learn"><div><h4>Role</h4><p>${p.role}</p></div><div><h4>Deliverables</h4>${list(p.deliverables)}</div></div>`:''
   ].join('');
@@ -1396,17 +1226,17 @@ function storyHTML(p){
   return `<div class="story-intro"><div><span class="mono ch-k">The story</span><p class="story-lede">${p.summary}</p><p>${p.context}</p></div>
    <nav class="story-nav" aria-label="Chapters">${CH.map((c,i)=>`<button type="button" data-ch="ch-${c[0]}"><span class="mono">${String(i+1).padStart(2,'0')}</span>${c[1]}</button>`).join('')}</nav></div>
   ${ch(0,'Pink October needed a reason for colleagues to move together, and a way to turn those steps into support for breast cancer prevention.',`<blockquote class="ch-quote">“${r.quote}”</blockquote><p>${r.brief}</p><h4 class="mono ch-k">How it was meant to work</h4><ol class="ch-list">${r.how.map(h=>`<li>${h}</li>`).join('')}</ol>`)}
-  ${ch(1,'Fitness apps that make progress rewarding, and a challenge that turned effort into donations.',`<figure class="mood"><img src="${r.moodboard.src}" alt="Moodboard" loading="lazy" tabindex="0"><figcaption class="mono">${r.moodboard.note} Click to zoom.</figcaption></figure>`)}
-  ${ch(2,'Core journeys first, in low fidelity.',shotsHTML(r.lofi))}
-  ${ch(3,'A first Figma Make prototype to test the flows.',`<p>${r.v1.note} <a href="${r.v1.link}" target="_blank" rel="noopener">Open the prototype ↗</a></p>${shotsHTML(r.v1.screens)}<div class="learn"><div><h4>What worked</h4>${list(r.well)}</div><div><h4>What didn’t</h4>${list(r.wrong)}</div></div>`)}
-  ${ch(4,'Rebuilt around one job: log today’s steps in a few taps.',`<h4 class="mono ch-k">What changed</h4>${list(r.changed)}<figure class="mood"><img src="${r.ia.src}" alt="Information architecture and golden path" loading="lazy" tabindex="0"><figcaption class="mono">${r.ia.note} Click to zoom.</figcaption></figure>`)}
-  ${ch(5,'A small palette, one typeface, a few components.',dsHTML())}
-  ${ch(6,'Live at steps.ivy.partners. Quick enough for every day of October.',`<h4 class="mono ch-k">What it does</h4>${list(p.approach)}${m.screens?`<h4 class="mono ch-k">App screens</h4>${shotsHTML(m.screens)}`:''}${p.prototype?protoHTML():''}`)}
-  ${ch(7,'Two animated install guides, no app store needed.',`${m.videos?`<div class="vids">${m.videos.map(v=>`<figure class="vid"><video src="${v.src}" poster="${v.poster}" controls muted playsinline loop preload="metadata" aria-label="${v.label} install guide"></video><figcaption class="mono"><span>${v.label}</span><span>${v.len}</span></figcaption></figure>`).join('')}</div>`:''}<h4 class="mono ch-k">Deliverables</h4>${list(p.deliverables)}`)}`;
+  ${ch(1,'I looked at how health and fitness apps make progress feel rewarding, and how a stairs challenge turned effort into a fundraising counter.',`<figure class="mood"><img src="${r.moodboard.src}" alt="Moodboard" loading="lazy" tabindex="0"><figcaption class="mono">${r.moodboard.note} Click to zoom.</figcaption></figure>`)}
+  ${ch(2,'Before any colour, I mapped the core journeys as low-fidelity wireframes: signing up, logging steps with photo proof, the team view and the awareness content.',shotsHTML(r.lofi))}
+  ${ch(3,'The first interactive version, “StepSync”, was built in Figma Make with a dark theme to test the flows end to end.',`<p>${r.v1.note} <a href="${r.v1.link}" target="_blank" rel="noopener">Open the prototype ↗</a></p>${shotsHTML(r.v1.screens)}<div class="learn"><div><h4>What worked</h4>${list(r.well)}</div><div><h4>What didn’t</h4>${list(r.wrong)}</div></div>`)}
+  ${ch(4,'Those lessons shaped a rebuild in code, with a clearer structure built around one job: log a day’s steps in a few taps.',`<h4 class="mono ch-k">What changed</h4>${list(r.changed)}<figure class="mood"><img src="${r.ia.src}" alt="Information architecture and golden path" loading="lazy" tabindex="0"><figcaption class="mono">${r.ia.note} Click to zoom.</figcaption></figure>`)}
+  ${ch(5,'Before polishing screens, I set the rules: a small palette in the IVY colours, one typeface, a fixed type scale and a handful of components that every screen is built from.',dsHTML())}
+  ${ch(6,'The final app, live at steps.ivy.partners: light, on-brand, and quick enough to use every day of October.',`<h4 class="mono ch-k">What it does</h4>${list(p.approach)}${m.screens?`<h4 class="mono ch-k">App screens</h4>${shotsHTML(m.screens)}`:''}${p.prototype?protoHTML():''}`)}
+  ${ch(7,'To get everyone on board without an app store, I made two animated install guides, one for iPhone and one for Android.',`${m.videos?`<div class="vids">${m.videos.map(v=>`<figure class="vid"><video src="${v.src}" poster="${v.poster}" controls muted playsinline loop preload="metadata" aria-label="${v.label} install guide"></video><figcaption class="mono"><span>${v.label}</span><span>${v.len}</span></figcaption></figure>`).join('')}</div>`:''}<h4 class="mono ch-k">Deliverables</h4>${list(p.deliverables)}`)}`;
 }
 
-const FKI={search:'<path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/>',pin:'<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',heart:'<path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>',calendar:'<path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="m9 15 2 2 4-4"/>',user:'<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',home:'<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',star:'<path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>',clock:'<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',phone:'<path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>',directions:'<polygon points="3 11 22 2 13 21 11 13 3 11"/>',menu:'<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>',card:'<rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/><path d="M6 14h2"/>',bell:'<path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/>',share:'<path d="M12 2v13"/><path d="m16 6-4-4-4 4"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>',back:'<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',next:'<path d="m9 18 6-6-6-6"/>',plus:'<path d="M5 12h14"/><path d="M12 5v14"/>',minus:'<path d="M5 12h14"/>',check:'<path d="M20 6 9 17l-5-5"/>',close:'<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',filter:'<path d="M10 5H3"/><path d="M12 19H3"/><path d="M14 3v4"/><path d="M16 17v4"/><path d="M21 12h-9"/><path d="M21 19h-5"/><path d="M21 5h-7"/><path d="M8 10v4"/><path d="M8 12H3"/>',theme:'<circle cx="12" cy="12" r="10"/><path d="M12 18a6 6 0 0 0 0-12v12z"/>',help:'<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',signout:'<path d="m16 17 5-5-5-5"/><path d="M21 12H9"/><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>'};
-const fki=(k,sz=22)=>`<svg class="fki" width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${FKI[k]}</svg>`;
+const FKI={search:'<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>',pin:'<path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>',heart:'<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/>',calendar:'<rect x="4" y="5.5" width="16" height="14.5" rx="3"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/>',user:'<circle cx="12" cy="8.5" r="3.8"/><path d="M4.8 20a7.2 7.2 0 0 1 14.4 0"/>',home:'<path d="M4 10.5 12 4l8 6.5V19a1.5 1.5 0 0 1-1.5 1.5H15v-5.5H9v5.5H5.5A1.5 1.5 0 0 1 4 19z"/>',star:'<path d="M12 4l2.4 5 5.4.6-4 3.7 1.1 5.4L12 16l-4.9 2.7 1.1-5.4-4-3.7 5.4-.6z"/>',clock:'<circle cx="12" cy="12" r="8"/><path d="M12 7.5V12l3 2"/>',phone:'<path d="M6.5 4h3l1.5 4-2 1.3a10 10 0 0 0 5.7 5.7l1.3-2 4 1.5v3A2 2 0 0 1 18 19.5 14.5 14.5 0 0 1 4.5 6 2 2 0 0 1 6.5 4z"/>',directions:'<path d="M20 4 4 11l7 2 2 7z"/>',menu:'<path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M16.5 21V3c-2 1-3 3.5-3 6.5V13h3"/>',card:'<rect x="3.5" y="6" width="17" height="12.5" rx="2.5"/><path d="M3.5 10h17M7 15h3"/>',bell:'<path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5H5z"/><path d="M10 20.5h4"/>',share:'<path d="M12 3.5v11M8 7.5l4-4 4 4"/><path d="M6 12v6.5A1.5 1.5 0 0 0 7.5 20h9a1.5 1.5 0 0 0 1.5-1.5V12"/>',back:'<path d="M19 12H5M11 6l-6 6 6 6"/>',next:'<path d="M9.5 6l6 6-6 6"/>',plus:'<path d="M12 5v14M5 12h14"/>',minus:'<path d="M5 12h14"/>',check:'<path d="M5 12.5l4.5 4.5L19 7.5"/>',close:'<path d="M6 6l12 12M18 6 6 18"/>',filter:'<path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/>',theme:'<circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/>',help:'<circle cx="12" cy="12" r="8"/><path d="M9.8 9.6a2.3 2.3 0 1 1 3.3 2.1c-.7.4-1.1.9-1.1 1.7"/><circle cx="12" cy="16.3" r=".6" fill="currentColor"/>',signout:'<path d="M14 4.5H7A1.5 1.5 0 0 0 5.5 6v12A1.5 1.5 0 0 0 7 19.5h7M10.5 12H20M16.5 8.5 20 12l-3.5 3.5"/>'};
+const fki=(k,sz=22)=>`<svg class="fki" width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${FKI[k]}</svg>`;
 function kitHTML(){
   const pan=(cls,lab,note,body)=>`<section class="fk-p ${cls}"><header><span class="mono">${lab}</span>${note?`<small>${note}</small>`:''}</header>${body}</section>`;
   const type=[['Display','28 / 700 / 1.15','What’s the meal for today?','fk-t1'],['Title','22 / 600 / 1.2','Unique Sushi Lab','fk-t2'],['Heading','17 / 600 / 1.3','Top rated in Lisbon','fk-t3'],['Body','15 / 400 / 1.5','Twelve seats at a counter facing the chef.','fk-t4'],['Caption','13 / 400 / 1.4','Today · 20:30 · 2 guests','fk-t5'],['Overline','11 / 600 / +8%','ACCOUNT','fk-t6']];
@@ -1415,11 +1245,11 @@ function kitHTML(){
   <div class="fk-g">
   ${pan('fk-type','01 · Typography','Poppins, one family, six steps',`<ul class="fk-ts">${type.map(([n,sp,ex,c])=>`<li><span class="fk-lab">${n}<i>${sp}</i></span><span class="${c}">${ex}</span></li>`).join('')}</ul>`)}
   ${pan('fk-btn','02 · Buttons','Pill shape, 48px tall, one primary per screen',`<div class="fk-row"><span class="fk-b fk-b1">Reserve a table</span><span class="fk-b fk-b1 is-press">Pressed</span></div><div class="fk-row"><span class="fk-b fk-b2">Continue as guest</span><span class="fk-b fk-b1 is-off">Disabled</span></div><div class="fk-row"><span class="fk-q">${fki('directions')}<span>Directions</span></span><span class="fk-q">${fki('phone')}<span>Call</span></span><span class="fk-q">${fki('menu')}<span>Menu</span></span></div><div class="fk-row"><span class="fk-ib">${fki('heart',20)}</span><span class="fk-ib">${fki('share',20)}</span><span class="fk-step"><i>${fki('minus',18)}</i><b>2</b><i>${fki('plus',18)}</i></span><span class="fk-link">See all</span></div>`)}
-  ${pan('fk-sel','03 · Chips and selectors','Selected states use the brand colour; full slots stay visible',`<div class="fk-row fk-dates"><span class="fk-d on"><small>Today</small><b>2</b><small>Oct</small></span><span class="fk-d"><small>Sat</small><b>3</b><small>Oct</small></span><span class="fk-d off"><small>Mon</small><b>5</b><small>Closed</small></span></div><div class="fk-row"><span class="fk-c">19:30</span><span class="fk-c full">20:00</span><span class="fk-c on">20:30</span><span class="fk-c">21:00</span></div><div class="fk-row"><span class="fk-c">Birthday</span><span class="fk-c on">Anniversary</span><span class="fk-badge">Confirmed</span><span class="fk-badge v">Vegan</span></div><div class="fk-row"><span class="fk-seg"><b>Upcoming (3)</b><span>Past</span></span><span class="fk-tg on" role="img" aria-label="On"><i></i></span><span class="fk-tg" role="img" aria-label="Off"><i></i></span></div>`)}
+  ${pan('fk-sel','03 · Chips and selectors','Selected states use the brand colour; full slots stay visible',`<div class="fk-row fk-dates"><span class="fk-d on"><small>Today</small><b>2</b><small>Oct</small></span><span class="fk-d"><small>Sat</small><b>3</b><small>Oct</small></span><span class="fk-d off"><small>Mon</small><b>5</b><small>Closed</small></span></div><div class="fk-row"><span class="fk-c">19:30</span><span class="fk-c full">20:00</span><span class="fk-c on">20:30</span><span class="fk-c">21:00</span></div><div class="fk-row"><span class="fk-c">Birthday</span><span class="fk-c on">Anniversary</span><span class="fk-badge">Confirmed</span><span class="fk-badge v">Vegan</span></div><div class="fk-row"><span class="fk-seg"><b>Upcoming (3)</b><span>Past</span></span><span class="fk-tg on" aria-label="On"><i></i></span><span class="fk-tg" aria-label="Off"><i></i></span></div>`)}
   ${pan('fk-inp','04 · Inputs','Large touch targets, icon first',`<div class="fk-field fk-search">${fki('search',20)}<span>Search restaurants, cuisines or dishes</span></div><label class="fk-fl"><span>Email</span><div class="fk-field">portfolio.demo@foodfy.test</div></label><label class="fk-fl"><span>Special requests <i>(optional)</i></span><div class="fk-field fk-ta">A quiet table, please</div></label>`)}
   ${pan('fk-cards','05 · Cards','18px radius, photo first, rating always visible',`<div class="fk-cg"><article class="fk-rc"><div class="fk-img" style="background-image:url(foodfy-06-restaurant.jpg)"><span class="fk-ib sm">${fki('heart',18)}</span></div><div class="fk-rcb"><b>Unique Sushi Lab</b><small>Japanese · Chiado</small><span class="fk-rate"><i>${fki('star',15)}</i>4.9 <em>(640) · €€€</em></span></div></article><div class="fk-cstack"><article class="fk-nb"><div class="fk-th" style="background-image:url(foodfy-06-restaurant.jpg)"></div><div><small>Your next booking</small><b>Unique Sushi Lab</b><small>Today · 20:30 · 2 guests</small></div>${fki('next',20)}</article><article class="fk-lr"><div class="fk-th" style="background-image:url(foodfy-06-restaurant.jpg)"></div><div><b>Unique Sushi Lab</b><small>Today · 20:30</small><small>2 guests · 3 dishes pre-ordered</small><span class="fk-badge">Confirmed</span></div>${fki('next',20)}</article></div></div>`)}
   ${pan('fk-nav','06 · Navigation','Four tabs, active state filled; back always top left',`<div class="fk-top">${fki('back',22)}<b>Reserve a table</b></div><div class="fk-menu">${[['home','Personal details'],['card','Payment method'],['bell','Booking reminders']].map(([i,t])=>`<div>${fki(i==='home'?'user':i,20)}<span>${t}</span>${fki('next',18)}</div>`).join('')}</div><nav class="fk-tabs" aria-label="Example tab bar"><span class="on"><i>${fki('home',22)}</i>Explore</span><span><i>${fki('heart',22)}</i>Saved</span><span><i>${fki('calendar',22)}<em>3</em></i>Bookings</span><span><i>${fki('user',22)}</i>Profile</span></nav>`)}
-  ${pan('fk-ico','07 · Iconography','The same outline icons as in the app: 24px grid · 2px stroke · round caps and joins',`<ul class="fk-icons">${Object.keys(FKI).map(k=>`<li>${fki(k,24)}<small>${k}</small></li>`).join('')}</ul>`)}
+  ${pan('fk-ico','07 · Iconography','24px grid · 1.75px stroke · round caps and joins',`<ul class="fk-icons">${Object.keys(FKI).map(k=>`<li>${fki(k,24)}<small>${k}</small></li>`).join('')}</ul>`)}
   ${pan('fk-tok','08 · Radius and spacing','A 4px base grid',`<div class="fk-rad">${[['Chip','10'],['Input','14'],['Card','18'],['Sheet','28'],['Pill','999']].map(([n,r])=>`<div><i style="border-radius:${Math.min(r,40)}px"></i><small>${n} · ${r}</small></div>`).join('')}</div><div class="fk-sp">${[4,8,12,16,24,32].map(v=>`<div><i style="width:${v*1.6}px"></i><small>${v}</small></div>`).join('')}</div>`)}
   </div></div>`;
 }
@@ -1448,8 +1278,8 @@ function openCase(id){
   const i=P.findIndex(p=>p.id===id); if(i<0)return; lastId=id;
   const p=P[i], nx=P[(i+1)%P.length];
   document.getElementById('caseIdx').textContent=`${pad(i+1)} / ${pad(P.length)} — ${p.tags.join(' · ')}`;
-  caseBody.innerHTML=`${p.heroSphere?sphereHTML(p.heroSphere):p.heroWall?wallHTML():`<div class="case-hero">${coverOf(p)}</div>`}
-   <h2 class="case-title${p.heroSphere?' sr-only':''}" id="caseTitle">${p.title}</h2>
+  caseBody.innerHTML=`<div class="case-hero">${coverOf(p)}</div>
+   <h2 class="case-title" id="caseTitle">${p.title}</h2>
    ${p.url?`<a class="case-link" href="${p.url}" target="_blank" rel="noopener"><span class="mono">Live site</span>${p.url.replace(/^https?:\/\//,'').replace(/\/$/,'')} <i aria-hidden="true">↗</i></a>`:''}
    <div class="case-meta"><div><span class="mono">Client</span>${p.client}</div><div><span class="mono">Year</span>${p.year}</div><div><span class="mono">Role</span>${p.role}</div><div><span class="mono">Tools</span>${p.tools}</div></div>
    ${(p.process||p.chapters)?storyHTML(p):`<div class="case-body"><h3>Overview</h3><div><p>${p.summary}</p><p>${p.context}</p></div>
@@ -1457,7 +1287,7 @@ function openCase(id){
    <h3>Deliverables</h3><ul>${p.deliverables.map(a=>`<li>${a}</li>`).join('')}</ul></div>${p.media?mediaHTML(p.media):`<div class="gallery"><div class="slot wide mono">Image slot — hero shot of the final piece</div><div class="slot mono">Image slot — detail</div><div class="slot mono">Image slot — process / sketch</div></div>`}`}
    <a class="next" href="#${nx.id}"><span class="mono">Next project</span><strong>${nx.title} →</strong></a>`;
   if(!caseEl.classList.contains('open')) lastFocus=document.activeElement;
-  caseBody.querySelectorAll('[data-sph]').forEach(SPH.mount);caseBody.querySelectorAll('[data-smw]').forEach(e=>SMW.mount(e,p.heroWall));const pm=caseBody.querySelector('[data-proto]');if(pm){IPS.mount(pm);caseBody.querySelector('[data-proto-reset]').addEventListener('click',()=>IPS.reset())}
+  const pm=caseBody.querySelector('[data-proto]');if(pm){IPS.mount(pm);caseBody.querySelector('[data-proto-reset]').addEventListener('click',()=>IPS.reset())}
   caseEl.classList.add('open'); caseEl.scrollTop=0; requestAnimationFrame(()=>RV.caseIn(caseBody,caseEl)); document.body.classList.add('locked');
   setTimeout(()=>document.getElementById('caseClose').focus({preventScroll:true}),50);
 }
@@ -1471,185 +1301,6 @@ function route(){const id=location.hash.slice(1); if(P.some(p=>p.id===id)) openC
 window.addEventListener('hashchange',route);
 document.getElementById('caseClose').addEventListener('click',closeCase);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&caseEl.classList.contains('open'))closeCase()});
-document.addEventListener('keydown',e=>{if(e.key!=='Tab'||!caseEl.classList.contains('open')||!lb.hidden)return;const f=[...caseEl.querySelectorAll('a[href],button:not([disabled]),video[controls],input,select,textarea,[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null||el===document.activeElement);if(!f.length)return;const a=f[0],z=f[f.length-1];if(!caseEl.contains(document.activeElement)){e.preventDefault();a.focus();return}if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}});
-
-/* ---------- slide globe (PowerPoint template) ---------- */
-function sphereHTML(S){const f=n=>String(n).padStart(3,'0');
-  return `<div class="sph" data-sph><span class="sph-w l" aria-hidden="true">PowerPoint</span><span class="sph-w r" aria-hidden="true">Template</span>
-  <span class="sph-m mono bl" data-sph-l aria-live="polite"></span><span class="sph-m mono br" aria-hidden="true">Drag to spin · click a slide</span>
-  <div class="sph-st"><div class="sph-r" role="group" aria-label="Template slides on a rotating globe. Use the arrow keys to move between slides and Enter to open one.">${S.map(([n,l],i)=>`<button type="button" class="sph-t" data-i="${i}" data-full="ppt-s${f(n)}.jpg" aria-label="${l}" tabindex="${i?-1:0}"><img src="ppt-t${f(n)}.jpg" alt="" loading="lazy" draggable="false"></button>`).join('')}</div></div></div>`}
-const SPH=(()=>{
-  const RM=matchMedia('(prefers-reduced-motion: reduce)'),FINE=matchMedia('(hover:hover) and (pointer:fine)');
-  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
-  let active=null;
-  function mount(el){
-    const st=el.querySelector('.sph-st'),ring=el.querySelector('.sph-r'),T=[...el.querySelectorAll('.sph-t')],N=T.length,lab=el.querySelector('[data-sph-l]'),ga=Math.PI*(3-Math.sqrt(5));
-    const pos=T.map((t,i)=>{const y=1-(i+.5)/N*2,r=Math.sqrt(1-y*y),th=ga*i,x=Math.cos(th)*r,z=Math.sin(th)*r;return {x,y,z,ry:Math.atan2(x,z)*180/Math.PI,rx:-Math.asin(y)*180/Math.PI}});
-    let R=200,ax=-14,ay=20,vy=0,vx=0,run=false,vis=false,last=0,drag=null,moved=false,tw=null,cur=0,speed=1,over=false,px=0,py=0,pxs=0,pys=0,busy=false;
-    const back=new Array(N).fill(false);
-    function layout(){const w=el.clientWidth,h=el.clientHeight;R=w<720?Math.min(w*.42,h*.3):Math.min(w*.25,h*.42);el.style.setProperty('--tw',(R*(w<720?.36:.3)).toFixed(1)+'px');T.forEach((t,i)=>t.style.transform=`rotateY(${pos[i].ry}deg) rotateX(${pos[i].rx}deg) translateZ(${R.toFixed(1)}px)`)}
-    function paint(){const AX=ax+pys*10,AY=ay+pxs*16;ring.style.transform=`rotateX(${AX}deg) rotateY(${AY}deg)`;
-      if(busy)return;
-      const a=AY*Math.PI/180,b=AX*Math.PI/180,ca=Math.cos(a),sa=Math.sin(a),cb=Math.cos(b),sb=Math.sin(b);
-      for(let i=0;i<N;i++){const p=pos[i],z1=-p.x*sa+p.z*ca,z=p.y*-sb+z1*cb;
-        const o=z<-.05?.14:Math.min(1,.3+.7*(z+.05)/1.05);T[i].style.opacity=o.toFixed(2);
-        const bk=z<-.05;if(bk!==back[i]){back[i]=bk;T[i].classList.toggle('bk',bk)}}}
-    function tick(t){if(!el.isConnected){run=false;return}
-      if(!vis||(!lb.hidden&&!tw)||document.hidden){run=false;return}
-      const dt=Math.min(.05,(t-(last||t))/1000);last=t;
-      speed+=((over&&!busy?.12:1)-speed)*Math.min(1,dt*4);
-      const k=busy?0:1;pxs+=(px*k-pxs)*Math.min(1,dt*3);pys+=(py*k-pys)*Math.min(1,dt*3);
-      if(tw){const q=Math.min(1,(t-tw.t0)/tw.d),e=ease(q);ay=tw.ay0+(tw.ay1-tw.ay0)*e;ax=tw.ax0+(tw.ax1-tw.ax0)*e;if(q>=1){const f=tw.done;tw=null;f&&f()}}
-      else if(!drag&&!busy){ay+=(RM.matches?0:6)*speed*dt+vy*dt;ax+=vx*dt;vy*=Math.pow(.04,dt);vx*=Math.pow(.04,dt);ax+=(-14-ax)*Math.min(1,dt*.8)}
-      paint();requestAnimationFrame(tick)}
-    function start(){if(run||!vis)return;run=true;last=0;requestAnimationFrame(tick)}
-    el._sphStart=start;
-    new IntersectionObserver(es=>{vis=es[0].isIntersecting;start()}).observe(el);
-    new ResizeObserver(()=>{layout();paint()}).observe(el);
-    layout();paint();
-    /* hover: slow the spin; cursor gives a gentle parallax tilt (desktop) */
-    el.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;px=(e.clientX-cx)/(r.width/2);py=-(e.clientY-cy)/(r.height/2);over=Math.hypot(e.clientX-cx,e.clientY-cy)<R*1.15});
-    el.addEventListener('pointerleave',()=>{over=false;px=py=0;if(!drag)lab.textContent=''});
-    el.addEventListener('pointerdown',e=>{if(e.button||busy)return;drag={x:e.clientX,y:e.clientY,ay,ax,t:performance.now(),px:e.clientX,py:e.clientY};moved=false;tw=null;vy=vx=0});
-    const mv=e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(!moved&&Math.hypot(dx,dy)<6)return;
-      if(!moved){moved=true;el.classList.add('drag');if(e.pointerType!=='mouse'&&Math.abs(dy)>Math.abs(dx)){drag=null;el.classList.remove('drag');return}}
-      const k=e.pointerType==='mouse'?.28:.35,now=performance.now(),dt=Math.max(1,now-drag.t)/1000;
-      vy=(e.clientX-drag.px)*k/dt;vx=-(e.clientY-drag.py)*k/dt;drag.t=now;drag.px=e.clientX;drag.py=e.clientY;
-      ay=drag.ay+dx*k;ax=Math.max(-70,Math.min(70,drag.ax-dy*k));if(!run)paint()};
-    const up=()=>{if(!drag)return;drag=null;el.classList.remove('drag');if(RM.matches)vy=vx=0;vy=Math.max(-300,Math.min(300,vy));vx=Math.max(-150,Math.min(150,vx));start()};
-    window.addEventListener('pointermove',mv,{passive:true});window.addEventListener('pointerup',up);window.addEventListener('pointercancel',up);
-    el.addEventListener('click',e=>{const t=e.target.closest('.sph-t');if(!t)return;if(moved||busy){e.preventDefault();moved=false;return}open(+t.dataset.i)},true);
-    el.addEventListener('pointerover',e=>{const t=e.target.closest('.sph-t');if(t&&!drag){lab.textContent=t.getAttribute('aria-label');if(!t._pre){t._pre=1;const im=new Image();im.src=t.dataset.full}}});
-    function faceAngles(i){const p=pos[i];let d=((-p.ry-ay)%360+540)%360-180;return {ay:ay+d,ax:Math.max(-80,Math.min(80,-p.rx))}}
-    function face(i,d,done){const g=faceAngles(i);if(RM.matches||!d){ay=g.ay;ax=g.ax;paint();done&&done();return}tw={t0:performance.now(),d,ay0:ay,ax0:ax,ay1:g.ay,ax1:g.ax,done};start()}
-    T.forEach((t,i)=>t.addEventListener('focus',()=>{cur=i;T.forEach(x=>x.tabIndex=-1);t.tabIndex=0;lab.textContent=t.getAttribute('aria-label');if(!busy)face(i,700)}));
-    ring.addEventListener('keydown',e=>{const k={ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1}[e.key];if(e.key==='Home'||e.key==='End'){e.preventDefault();T[e.key==='Home'?0:N-1].focus({preventScroll:true});return}if(!k)return;e.preventDefault();T[(cur+k+N)%N].focus({preventScroll:true})});
-    const listOf=()=>T.map(x=>({src:x.dataset.full,alt:x.getAttribute('aria-label')}));
-    /* open: spin the slide to the front, fade the rest, then zoom it into the viewer */
-    function open(i){if(busy)return;busy=true;active=api;ay+=pxs*16;ax+=pys*10;pxs=pys=px=py=0;const t=T[i];el.classList.add('zoom');vy=vx=0;
-      T.forEach((x,j)=>{x.style.opacity=j===i?'1':'0'});t.classList.remove('bk');
-      const full=new Image();full.src=t.dataset.full;
-      const dur=RM.matches?0:Math.min(900,350+Math.abs(faceAngles(i).ay-ay)*4);
-      face(i,dur,()=>requestAnimationFrame(()=>fly(i,full)))}
-    function fly(i,full){const t=T[i];lbList=listOf();lbI=i;lbFrom=t;
-      const from=t.getBoundingClientRect();lb.style.opacity='0';lb.hidden=false;lbShow();
-      const to=lbImg.getBoundingClientRect();
-      if(RM.matches||!to.width){lb.style.opacity='';done();return}
-      const f=new Image();f.className='sph-fly';f.alt='';f.src=t.querySelector('img').currentSrc||t.querySelector('img').src;
-      Object.assign(f.style,{left:to.left+'px',top:to.top+'px',width:to.width+'px',height:to.height+'px'});document.body.appendChild(f);
-      lbImg.style.visibility='hidden';t.style.visibility='hidden';
-      const sx=from.width/to.width,sy=from.height/to.height;
-      const a=f.animate([{transform:`translate(${from.left-to.left}px,${from.top-to.top}px) scale(${sx},${sy})`,borderRadius:'4px'},{transform:'none',borderRadius:'14px'}],{duration:760,easing:'cubic-bezier(.76,0,.24,1)',fill:'both'});
-      lb.animate([{opacity:0},{opacity:0,offset:.25},{opacity:1}],{duration:760,easing:'ease-out',fill:'both'}).onfinish=e=>{lb.style.opacity='';e.target.cancel()};
-      a.onfinish=()=>{const sw=()=>{lbImg.style.visibility='';f.animate([{opacity:1},{opacity:0}],{duration:220,fill:'both'}).onfinish=()=>f.remove();done()};(full.decode?full.decode():Promise.resolve()).then(sw,sw)}}
-    function done(){document.getElementById('lbClose').focus({preventScroll:true})}
-    /* close: zoom the current slide back onto the globe */
-    function close(){const i=lbI,t=T[i];if(!t){return false}
-      const from=lbImg.getBoundingClientRect();lbStage.classList.remove('zoom');
-      T.forEach(x=>x.style.visibility='');face(i,0);t.style.opacity='1';
-      lb.hidden=true;lb.style.opacity='';
-      const to=t.getBoundingClientRect();
-      const finish=()=>{busy=false;active=null;el.classList.remove('zoom');T.forEach(x=>x.style.visibility='');last=0;paint();start();t.focus({preventScroll:true})};
-      if(RM.matches||!from.width||!to.width){finish();return true}
-      const f=new Image();f.className='sph-fly';f.alt='';f.src=lbImg.src;Object.assign(f.style,{left:from.left+'px',top:from.top+'px',width:from.width+'px',height:from.height+'px'});document.body.appendChild(f);
-      t.style.visibility='hidden';
-      f.animate([{transform:'none',borderRadius:'14px'},{transform:`translate(${to.left-from.left}px,${to.top-from.top}px) scale(${to.width/from.width},${to.height/from.height})`,borderRadius:'4px'}],{duration:650,easing:'cubic-bezier(.76,0,.24,1)',fill:'both'}).onfinish=()=>{f.remove();finish()};
-      return true}
-    const api={close};
-  }
-  /* scroll: the words slide in and the globe drifts up as the case scrolls */
-  addEventListener('scroll',e=>{const c=e.target;if(!(c instanceof Element)||c.id!=='case')return;const el=c.querySelector('[data-sph]');if(!el)return;const p=Math.max(0,Math.min(1,c.scrollTop/el.offsetHeight));el.style.setProperty('--sp',p.toFixed(3))},true);
-  document.addEventListener('visibilitychange',()=>{if(!document.hidden)document.querySelectorAll('[data-sph]').forEach(e=>e._sphStart&&e._sphStart())});
-  return {mount,close(){return active?active.close():false},resume(){document.querySelectorAll('[data-sph]').forEach(e=>e._sphStart&&e._sphStart())}};
-})();
-
-/* ---------- social media wall (draggable infinite canvas) ---------- */
-const SMR={"bank": 0.75, "datastrategy": 1.778, "fraud": 0.75, "layer": 1.0, "opmodel": 1.914, "poster": 0.713, "quote": 1.0, "quote2": 1.914, "recruit": 3.478, "shadow": 0.75, "sod": 1.0, "speakers": 1.863, "webinar": 0.8, "welcome-01": 1.0, "welcome-02": 1.0, "welcome-03": 1.0};
-function wallHTML(){return `<div class="smw" data-smw role="region" aria-label="Social media posts. Drag to explore, or use Tab to move between posts and Enter to open one."><div class="smw-v"></div><span class="smw-cur" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><span class="smw-hint mono" aria-hidden="true">Drag to explore</span></div>`}
-const SMW=(()=>{
-  const RM=matchMedia('(prefers-reduced-motion: reduce)'),A='social-',GA=Math.PI*(3-Math.sqrt(5));
-  function mount(el,W){
-    const sp=el.querySelector('.smw-v'),cur=el.querySelector('.smw-cur');
-    /* every slide of every post becomes its own tile; repeated to fill the sphere */
-    const uniq=[];W.forEach((w,wi)=>{const r=SMR[w.k]||1;if(w.n)for(let k=1;k<=w.n;k++)uniq.push({wi,k,r,src:`${A}t-${w.k}-${String(k).padStart(2,'0')}.jpg`});else uniq.push({wi,k:1,r,src:`${A}t-${w.k}.jpg`,v:w.v?A+w.k+'.mp4':null})});
-    let N,R,S,tiles=[],pos=[],ent=[],hov=[],m=[1,0,0,0,1,0,0,0,1],mT=new Array(9),Rm=new Array(9);
-    let target={x:0,y:0},smooth={x:0,y:0},prev={x:0,y:0},moving=false,auto=false,entering=true,snap=null,vis=false,run=false,last=0,drag=null,dist=0,busy=false;
-    function premul(L){for(let i=0;i<3;i++){const a=L[i*3],b=L[i*3+1],c=L[i*3+2];for(let j=0;j<3;j++)mT[i*3+j]=a*m[j]+b*m[3+j]+c*m[6+j]}for(let k=0;k<9;k++)m[k]=mT[k]}
-    function axisM(ax,ay,az,an){const c=Math.cos(an),s=Math.sin(an),t=1-c;return [t*ax*ax+c,t*ax*ay-s*az,t*ax*az+s*ay,t*ax*ay+s*az,t*ay*ay+c,t*ay*az-s*ax,t*ax*az-s*ay,t*ay*az+s*ax,t*az*az+c]}
-    function orient(fx,fy,fz){let ux=0,uy=-1,uz=0,rx=uy*fz-uz*fy,ry=uz*fx-ux*fz,rz=ux*fy-uy*fx,l=Math.hypot(rx,ry,rz);if(l<1e-6){ux=0;uy=0;uz=1;rx=uy*fz-uz*fy;ry=uz*fx-ux*fz;rz=ux*fy-uy*fx;l=Math.hypot(rx,ry,rz)}rx/=l;ry/=l;rz/=l;const u2=fy*rz-fz*ry,v2=fz*rx-fx*rz,w2=fx*ry-fy*rx;return [rx,-u2,fx,ry,-v2,fy,rz,-w2,fz]}
-    function tp(i){const p=pos[i];return [m[0]*p.x+m[1]*p.y+m[2]*p.z,m[3]*p.x+m[4]*p.y+m[5]*p.z,m[6]*p.x+m[7]*p.y+m[8]*p.z]}
-    function build(){
-      const w=el.clientWidth,mob=w<=500;
-      if(mob){R=520;sp.style.transform='translateZ(-120px)';el.style.perspective='1400px';N=Math.round(uniq.length*1.6)}
-      else if(w<=1400){R=980;sp.style.transform='translateZ(-310px)';el.style.perspective='3920px';N=uniq.length*2}
-      else{R=.7*w;sp.style.transform=`translateZ(${-.22*w}px)`;el.style.perspective=2.8*w+'px';N=uniq.length*2}
-      S=Math.sqrt(4*Math.PI*R*R/N)/1.95;
-      pos=[];for(let i=0;i<N;i++){const y=1-(2*i+1)/N,ph=Math.acos(y)-Math.PI/2,th=(i*GA)%(2*Math.PI);pos.push({x:Math.cos(ph)*Math.cos(th),y:Math.sin(ph),z:Math.cos(ph)*Math.sin(th)})}
-      sp.innerHTML='';tiles=[];hov=[];
-      for(let i=0;i<N;i++){const u=uniq[i%uniq.length],wd=W[u.wi],b=document.createElement('button');b.type='button';b.className='smw-t';b.dataset.i=i;
-        const tw=u.r>=1?S*Math.min(u.r,1.55):S*u.r,th=u.r>=1?tw/u.r:S;b.style.width=tw+'px';b.style.height=th+'px';b.style.marginLeft=-tw/2+'px';b.style.marginTop=-th/2+'px';
-        const first=i<uniq.length;b.tabIndex=first?0:-1;if(!first)b.setAttribute('aria-hidden','true');
-        b.setAttribute('aria-label',wd.l+(wd.n?`, slide ${u.k} of ${wd.n}`:'')+(u.v?', video':''));
-        b.innerHTML=u.v?`<video src="${u.v}" poster="${u.src}" muted loop playsinline preload="none"></video><span class="smw-b mono">▶</span>`:`<img src="${u.src}" alt="" draggable="false" loading="lazy">`;
-        sp.appendChild(b);tiles.push({b,u,vid:b.querySelector('video'),on:false});hov.push(1)}
-      for(let i=0;i<N;i++){if(!ent[i])ent[i]={s:0,o:0,d:Math.random()*N*.014};if((ent.started&&!entering)||RM.matches){ent[i].s=ent[i].o=1}}
-      // open on a front-facing tile at the centre
-      if(!build.done){build.done=true;snapTo(closest(),true)}
-      render()}
-    function closest(){let ci=0,cd=1e9;for(let i=0;i<N;i++){const [x,y,z]=tp(i);if(z<=0)continue;const d=x*x+y*y;if(d<cd){cd=d;ci=i}}return ci}
-    function render(){for(let i=0;i<N;i++){const [x,y,z]=tp(i),l=Math.hypot(x,y,z)||1,r=orient(x/l,-y/l,z/l),e=ent[i],s=e.s*hov[i],t=tiles[i];
-        t.b.style.transform=`translate3d(${(x*R).toFixed(1)}px,${(-y*R).toFixed(1)}px,${(z*R).toFixed(1)}px) matrix3d(${r[0]},${r[3]},${r[6]},0,${r[1]},${r[4]},${r[7]},0,${r[2]},${r[5]},${r[8]},0,0,0,0,1) scaleX(-1) scale(${s.toFixed(3)})`;
-        t.b.style.opacity=e.o.toFixed(3);
-        if(t.vid){const on=vis&&z>.35&&!RM.matches;if(on!==t.on){t.on=on;if(on){t.vid.preload='auto';t.vid.play().catch(()=>{})}else t.vid.pause()}}}}
-    function rebase(){snap=null;target.x=target.y=0;smooth.x=smooth.y=0;prev.x=prev.y=0}
-    function snapTo(i,instant,done){const [vx,vy,vz]=tp(i),s=Math.hypot(vx,vy);if(s<.02){done&&done();return}
-      const ax=vy/s,ay=-vx/s,an=Math.acos(Math.max(-1,Math.min(1,vz)));rebase();
-      if(instant||RM.matches){premul(axisM(ax,ay,0,an));render();done&&done();return}
-      snap={t0:performance.now(),m0:m.slice(),ax,ay,an,done};start()}
-    const expoIO=t=>t===0?0:t===1?1:t<.5?Math.pow(2,20*t-10)/2:(2-Math.pow(2,-20*t+10))/2,p3o=t=>1-Math.pow(1-t,3);
-    function tick(t){if(!el.isConnected){run=false;return}
-      const dt=Math.min(.05,(t-(last||t))/1000);last=t;let busyF=false;
-      if(entering&&ent.started){const tt=(t-ent.t0)/1000;let all=true;for(const e of ent){const q=Math.max(0,Math.min(1,(tt-e.d)/1.1)),k=p3o(q);e.s=k;e.o=k;if(q<1)all=false}if(all){entering=false;auto=true}busyF=true}
-      if(snap){const q=Math.min(1,(t-snap.t0)/1000),k=expoIO(q);for(let i=0;i<9;i++)m[i]=snap.m0[i];premul(axisM(snap.ax,snap.ay,0,snap.an*k));if(q>=1){const d=snap.done;snap=null;d&&d()}busyF=true}
-      else{const f=1-Math.exp(-dt*4.5);smooth.x+=(target.x-smooth.x)*f;smooth.y+=(target.y-smooth.y)*f;
-        const dY=(smooth.y-prev.y)*Math.PI/180,dX=(smooth.x-prev.x)*Math.PI/180;prev.x=smooth.x;prev.y=smooth.y;
-        if(dX||dY){const cy=Math.cos(dY),sy=Math.sin(dY),cx=Math.cos(dX),sx=Math.sin(dX);premul([cy,0,sy,sx*sy,cx,-sx*cy,-cx*sy,sx,cx*cy]);busyF=true}
-        if(!moving&&Math.abs(target.x-smooth.x)<.05&&Math.abs(target.y-smooth.y)<.05&&!entering&&!busy)auto=true;
-        if(auto&&!RM.matches){const a=.012*(dt*60)*Math.PI/180,c=Math.cos(a),s=Math.sin(a);premul([c,0,s,0,1,0,-s,0,c]);busyF=true}}
-      for(let i=0;i<N;i++){const g=tiles[i].hv?1.18:1;if(Math.abs(hov[i]-g)>.002){hov[i]+=(g-hov[i])*Math.min(1,dt*7);busyF=true}}
-      render();if(busyF&&vis&&lb.hidden)requestAnimationFrame(tick);else run=false}
-    function start(){if(run)return;run=true;last=0;requestAnimationFrame(tick)}
-    new IntersectionObserver(es=>{vis=es[0].isIntersecting;if(vis&&!ent.started){ent.started=true;ent.t0=performance.now();entering=!RM.matches;if(!entering)auto=true}render();if(vis)start()}).observe(el);
-    let rw=0;new ResizeObserver(()=>{const w=el.clientWidth;if(Math.abs(w-rw)<2&&tiles.length)return;rw=w;build()}).observe(el);
-    /* drag: rotate the sphere; touch moves 4x more than mouse, like the reference */
-    el.addEventListener('pointerdown',e=>{if(e.button||entering||busy)return;drag={x:e.clientX,y:e.clientY,t:e.pointerType};dist=0});
-    window.addEventListener('pointermove',e=>{
-      if(e.pointerType==='mouse'&&el.isConnected){const r=el.getBoundingClientRect();cur.style.left=(e.clientX-r.left)+'px';cur.style.top=(e.clientY-r.top)+'px'}
-      if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag.x=e.clientX;drag.y=e.clientY;dist+=Math.abs(dx)+Math.abs(dy);
-      if(dist>3&&!moving){moving=true;auto=false;rebase();el.classList.add('drag');cur.classList.remove('on')}
-      if(moving){const k=drag.t==='mouse'?.25:1;target.y+=dx*k;target.x+=dy*k;start()}},{passive:true});
-    const up=()=>{if(!drag)return;drag=null;moving=false;el.classList.remove('drag');start()};
-    window.addEventListener('pointerup',up);window.addEventListener('pointercancel',up);
-    el.addEventListener('pointerover',e=>{const b=e.target.closest('.smw-t');tiles.forEach(t=>t.hv=t.b===b&&!moving);cur.classList.toggle('on',!!b&&!moving);start()});
-    el.addEventListener('pointerleave',()=>{tiles.forEach(t=>t.hv=false);cur.classList.remove('on');start()});
-    el.addEventListener('click',e=>{const b=e.target.closest('.smw-t');if(!b)return;if(dist>3){e.preventDefault();e.stopPropagation();dist=0;return}
-      const i=+b.dataset.i;busy=true;auto=false;tiles.forEach(t=>t.hv=false);snapTo(i,false,()=>{busy=false;open(i)})},true);
-    el.addEventListener('focusin',e=>{const b=e.target.closest('.smw-t');if(b&&!busy){auto=false;snapTo(+b.dataset.i,false)}});
-    el.addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const b=e.target.closest('.smw-t');if(!b)return;e.preventDefault();open(+b.dataset.i)},true);
-    function open(i){const t=tiles[i],u=t.u,wd=W[u.wi],b=t.b;
-      lbList=wd.n?Array.from({length:wd.n},(_,k)=>({src:`${A}${wd.k}-${String(k+1).padStart(2,'0')}.jpg`,alt:`${wd.l} · slide ${k+1}`})):[{src:A+wd.k+'.jpg',alt:wd.l,video:u.v||null}];
-      lbI=wd.n?u.k-1:0;lbFrom=b;const from=b.getBoundingClientRect();lb.style.opacity='0';lb.hidden=false;lbShow();
-      const tgt=u.v?document.getElementById('lbVid'):lbImg,go=()=>{const to=tgt.getBoundingClientRect();
-        if(RM.matches||!to.width){lb.style.opacity='';document.getElementById('lbClose').focus({preventScroll:true});return}
-        const f=new Image();f.className='sph-fly';f.alt='';f.src=u.src;Object.assign(f.style,{left:to.left+'px',top:to.top+'px',width:to.width+'px',height:to.height+'px',objectFit:'cover'});document.body.appendChild(f);tgt.style.visibility='hidden';b.style.visibility='hidden';
-        f.animate([{transform:`translate(${from.left-to.left}px,${from.top-to.top}px) scale(${from.width/to.width},${from.height/to.height})`,borderRadius:'8px'},{transform:'none',borderRadius:'14px'}],{duration:750,easing:'cubic-bezier(.76,0,.24,1)',fill:'both'}).onfinish=()=>{tgt.style.visibility='';b.style.visibility='';f.animate([{opacity:1},{opacity:0}],{duration:200,fill:'both'}).onfinish=()=>f.remove()};
-        lb.animate([{opacity:0},{opacity:0,offset:.3},{opacity:1}],{duration:750,easing:'ease-out',fill:'both'}).onfinish=ev=>{lb.style.opacity='';ev.target.cancel()};
-        document.getElementById('lbClose').focus({preventScroll:true})};
-      if(u.v)requestAnimationFrame(go);else (lbImg.decode?lbImg.decode():Promise.resolve()).then(go,go)}
-    el._smwStart=start;
-  }
-  return {mount,resume(){document.querySelectorAll('[data-smw]').forEach(e=>e._smwStart&&e._smwStart())}};
-})();
 
 /* ---------- Ivy Pink Step interactive prototype ---------- */
 const IPS=(()=>{
@@ -1789,9 +1440,9 @@ const IPS=(()=>{
 /* ---------- lightbox (zoom) ---------- */
 const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbStage=document.getElementById('lbStage');
 let lbList=[],lbI=0,lbFrom=null;
-function lbShow(){const it=lbList[lbI];lb.classList.toggle('multi',lbList.length>1);lbStage.classList.remove('zoom');{const lv=document.getElementById('lbVid');if(it.video){lbImg.style.display='none';lv.style.display='';if(lv.getAttribute('src')!==it.video){lv.src=it.video;lv.poster=it.src}lv.play().catch(()=>{})}else{lv.pause();lv.removeAttribute('src');lv.style.display='none';lbImg.style.display=''}}lbImg.src=it.src;lbImg.alt=it.alt;document.getElementById('lbCap').textContent=it.alt;document.getElementById('lbCount').textContent=`${lbI+1} / ${lbList.length}`;document.getElementById('lbPrev').disabled=lbI===0;document.getElementById('lbNext').disabled=lbI===lbList.length-1}
+function lbShow(){const it=lbList[lbI];lbStage.classList.remove('zoom');lbImg.src=it.src;lbImg.alt=it.alt;document.getElementById('lbCap').textContent=it.alt;document.getElementById('lbCount').textContent=`${lbI+1} / ${lbList.length}`;document.getElementById('lbPrev').disabled=lbI===0;document.getElementById('lbNext').disabled=lbI===lbList.length-1}
 function lbOpen(img){const group=img.closest('.screens,.figs,.slides')||img.closest('.mood');lbList=[...group.querySelectorAll('img')].map(i=>({src:i.currentSrc||i.src,alt:i.alt}));lbI=[...group.querySelectorAll('img')].indexOf(img);lbFrom=img;lb.hidden=false;lbShow();document.getElementById('lbClose').focus()}
-function lbClose(){if(SPH.close())return;{const lv=document.getElementById('lbVid');lv.pause();lv.removeAttribute('src');lv.style.display='none';lbImg.style.display=''}lb.hidden=true;setTimeout(()=>{SPH.resume();SMW.resume()},0);lbStage.classList.remove('zoom');if(lbFrom)lbFrom.focus?.()}
+function lbClose(){lb.hidden=true;lbStage.classList.remove('zoom');if(lbFrom)lbFrom.focus?.()}
 caseEl.addEventListener('click',e=>{const cb=e.target.closest('[data-ch]');if(cb){document.getElementById(cb.dataset.ch)?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});return}});
 caseEl.addEventListener('click',e=>{const t=e.target.closest('[data-fkt]');if(!t)return;const fk=t.closest('.fk');fk.dataset.fk=t.dataset.fkt;fk.querySelectorAll('[data-fkt]').forEach(b=>b.setAttribute('aria-pressed',b===t))});
 caseEl.addEventListener('click',e=>{const img=e.target.closest('.scr img,.mood img,.sl img');if(img){e.preventDefault();lbOpen(img)}});
@@ -1808,24 +1459,6 @@ window.addEventListener('pointerup',()=>{if(pan&&pan.m){lbImg.addEventListener('
 document.getElementById('lbClose').addEventListener('click',lbClose);
 document.getElementById('lbPrev').addEventListener('click',()=>{if(lbI>0){lbI--;lbShow()}});
 document.getElementById('lbNext').addEventListener('click',()=>{if(lbI<lbList.length-1){lbI++;lbShow()}});
-/* touch: swipe left/right to change image */
-(()=>{let s=null,sw=0;const RMq=matchMedia('(prefers-reduced-motion: reduce)');
-  const reset=()=>{lbImg.style.transition='';lbImg.style.transform='';lbImg.style.opacity=''};
-  lbStage.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'||lbStage.classList.contains('zoom')||lbList.length<2)return;s={x:e.clientX,y:e.clientY,t:performance.now(),dx:0,on:false,id:e.pointerId}});
-  lbStage.addEventListener('pointermove',e=>{if(!s||e.pointerId!==s.id)return;const dx=e.clientX-s.x,dy=e.clientY-s.y;
-    if(!s.on){if(Math.abs(dx)<8||Math.abs(dx)<Math.abs(dy)*1.2)return;s.on=true}
-    s.dx=dx;const edge=(dx>0&&lbI===0)||(dx<0&&lbI===lbList.length-1),x=edge?dx*.3:dx;
-    lbImg.style.transition='none';lbImg.style.transform=`translateX(${x}px)`;lbImg.style.opacity=String(1-Math.min(.45,Math.abs(x)/700))});
-  const end=()=>{if(!s)return;const d=s;s=null;if(!d.on)return;sw=Date.now();
-    const v=Math.abs(d.dx)/Math.max(1,performance.now()-d.t),dir=(Math.abs(d.dx)>innerWidth*.16||v>.45)?(d.dx<0?1:-1):0,ni=lbI+dir;
-    if(!dir||ni<0||ni>=lbList.length){lbImg.style.transition='transform .3s cubic-bezier(.2,.8,.2,1),opacity .3s';lbImg.style.transform='';lbImg.style.opacity='';setTimeout(reset,320);return}
-    if(RMq.matches){lbI=ni;lbShow();reset();return}
-    const W=lbStage.clientWidth;lbImg.style.transition='transform .2s ease-in,opacity .2s ease-in';lbImg.style.transform=`translateX(${-dir*W}px)`;lbImg.style.opacity='0';
-    setTimeout(()=>{lbI=ni;lbShow();lbImg.style.transition='none';lbImg.style.transform=`translateX(${dir*W*.5}px)`;lbImg.style.opacity='0';lbImg.offsetWidth;
-      lbImg.style.transition='transform .34s cubic-bezier(.2,.8,.2,1),opacity .34s';lbImg.style.transform='';lbImg.style.opacity='';setTimeout(reset,360)},200)};
-  lbStage.addEventListener('pointerup',end);lbStage.addEventListener('pointercancel',end);
-  lb.addEventListener('click',e=>{if(Date.now()-sw<400){e.stopImmediatePropagation();e.preventDefault()}},true);
-})();
 lb.addEventListener('click',e=>{if(e.target===lb||e.target===lbStage)lbClose()});
 document.addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape'){e.stopImmediatePropagation();lbClose()}else if(e.key==='ArrowRight')document.getElementById('lbNext').click();else if(e.key==='ArrowLeft')document.getElementById('lbPrev').click()},true);
 
@@ -1856,7 +1489,7 @@ const RV=(()=>{
     const m=document.querySelector('main');
     prep(m,'.shead h2',null,{mask:true});
     prep(m,'.shead p, .filters, .statement, .tools, .contact .mono, .mailrow, .social-row',null);
-    prep(m,'.svc, .do-row, .step, .xp-list li, .xp-side > div',null,{stagger:90});
+    prep(m,'.svc, .step, .xp-list li, .xp-side > div',null,{stagger:90});
     prep(m,'.contact .big',null,{mask:true});
   }
   function caseIn(body,root){
@@ -1899,10 +1532,10 @@ document.getElementById('copy').addEventListener('click',()=>{
 
 /* ---------- print pages ---------- */
 const pr=document.getElementById('print');
-pr.innerHTML=`<section class="p-page p-cover"><div class="p-row"><span>Portfolio 2026</span><span>UI/UX &amp; Graphic Designer</span><span>Lisbon</span></div><h1>Ednaldo<br>Leite</h1><div class="p-row"><span>UI/UX · Brand · Presentations · Web · Motion</span><span>ednaldo.leite1994@gmail.com</span></div></section>
+pr.innerHTML=`<section class="p-page p-cover"><div class="p-row"><span>Portfolio 2026</span><span>UI/UX &amp; Graphic Designer</span><span>Lisbon</span></div><h1>Ednaldo<br>Leite<span>*</span></h1><div class="p-row"><span>UI/UX · Brand · Presentations · Web · Motion</span><span>ednaldo.leite1994@gmail.com</span></div></section>
 <section class="p-page p-index"><h2 class="p-h">Index</h2><div class="p-list">${P.map((p,i)=>`<div><span>${pad(i+1)}</span><strong>${p.title}</strong><span>${p.tags.join(' · ')}</span></div>`).join('')}</div></section>
-${P.map((p,i)=>`<section class="p-page p-proj"><div class="p-img">${coverOf(p)}</div><div class="p-txt"><span class="p-tags">${pad(i+1)} / ${pad(P.length)} — ${p.tags.join(' · ')}</span><h2>${p.title}</h2><div class="p-meta"><div><b>Client</b>${p.client}</div><div><b>Year</b>${p.year}</div>${p.url?`<div><b>Live site</b><a href="${p.url}" style="color:inherit">${p.url.replace(/^https?:\/\//,'').replace(/\/$/,'')}</a></div>`:''}<div><b>Role</b>${p.role}</div><div><b>Tools</b>${p.tools}</div></div><p>${p.summary} ${p.context}</p><ul>${p.approach.map(a=>`<li>${a}</li>`).join('')}</ul><span class="p-tags">Deliverables: ${p.deliverables.join(' · ')}</span></div></section>${p.chapters&&p.chapters.some(c=>c.images)?`<section class="p-page p-slides"><span class="p-tags">${p.title} — in pictures</span><div class="p-sg">${p.chapters.flatMap(c=>c.images||[]).filter(x=>!x.tall).slice(0,8).map(x=>`<figure><img src="${x.src}" alt=""><figcaption>${x.label}</figcaption></figure>`).join('')}</div></section>`:''}${p.heroWall?`<section class="p-page p-slides"><span class="p-tags">${p.title} — selected posts</span><div class="p-sg">${p.heroWall.filter(w=>!w.v).slice(0,8).map(w=>`<figure><img src="social-${w.n?w.k+'-01':w.k}.jpg" alt=""><figcaption>${w.l}</figcaption></figure>`).join('')}</div></section>`:''}${p.heroSphere?`<section class="p-page p-slides"><span class="p-tags">${p.title} — selected layouts</span><div class="p-sg">${p.heroSphere.slice(0,8).map(([n,l])=>`<figure><img src="ppt-s${String(n).padStart(3,'0')}.jpg" alt=""><figcaption>${l}</figcaption></figure>`).join('')}</div></section>`:''}${p.chapters&&p.chapters.some(c=>c.steps)?(()=>{const st=p.chapters.find(c=>c.steps),vp=p.chapters.find(c=>c.vpc),ia=p.chapters.find(c=>c.ia),wf=p.chapters.find(c=>c.wf),sp=p.chapters.find(c=>c.spine),pe=p.chapters.find(c=>c.persona),jo=p.chapters.find(c=>c.journey),bm=p.chapters.find(c=>c.bench);const pp=pe&&pe.persona,J=jo&&jo.journey,B=bm&&bm.bench,sym={y:'<i class="pd y"></i>',p:'<i class="pd p"></i>',n:'<i class="pd n"></i>'};const extra=`${sp&&pp?`<section class="p-page p-ffp"><span class="p-tags">${p.title} — the story and the persona</span><div class="p-ffg"><div class="p-txt"><h2>The story</h2><ol class="p-spine">${sp.spine.map(([k,t])=>`<li><b>${k}</b>${t}</li>`).join('')}</ol></div><div class="p-txt"><h2>${pp.name}</h2><span class="p-tags">${pp.meta}</span><p class="p-q">“${pp.quote}”</p><p>${pp.bio}</p><div class="p-vpc"><div><b>Goals</b><ul>${pp.goals.map(x=>`<li>${x}</li>`).join('')}</ul></div><div><b>Frustrations</b><ul>${pp.pains.map(x=>`<li>${x}</li>`).join('')}</ul></div></div><p style="font-size:8pt">${pp.scenario}</p></div></div></section>`:''}${J?`<section class="p-page p-ffp"><span class="p-tags">${p.title} — user journey map</span><div><div class="p-jpr">${J.principles.map((t,i)=>`<div><b>0${i+1}</b>${t}</div>`).join('')}</div><table class="p-jm"><tr><th></th>${J.stages.map(x=>`<th>${x.name}<small>${x.mood}</small></th>`).join('')}</tr>${[['Doing','doing'],['Thinking','think'],['Pain points','pain'],['Foodfy answer','opp']].map(([l,k])=>`<tr><td class="l">${l}</td>${J.stages.map(x=>`<td>${x[k]}</td>`).join('')}</tr>`).join('')}<tr><td class="l">Feeling</td>${J.stages.map(x=>`<td><span class="p-bar"><i style="width:${x.feel*100}%"></i></span></td>`).join('')}</tr></table></div></section>`:''}${B?`<section class="p-page p-ffp"><span class="p-tags">${p.title} — benchmark · ${B.source}</span><div><table class="p-bm"><tr><th></th>${B.cols.map(h=>`<th>${h}</th>`).join('')}</tr>${B.rows.map(([n,sub,v],i)=>`<tr${i?'':' class="us"'}><td class="l">${n}<small>${sub}</small></td>${v.split('').map(k=>`<td>${sym[k]}</td>`).join('')}</tr>`).join('')}</table><p class="p-tags" style="margin-top:2mm"><i class="pd y"></i> yes &nbsp; <i class="pd p"></i> partly, only some restaurants or prepaid experiences &nbsp; <i class="pd n"></i> no</p><div class="p-learn">${B.insights.map(([h,t])=>`<div><b>${h}</b>${t}</div>`).join('')}</div></div></section>`:''}`;return `<section class="p-page p-ffp"><span class="p-tags">${p.title} — thought process and value proposition</span><div class="p-ffg"><div class="p-txt"><h2>Thought process</h2><ol class="p-steps">${st.steps.map(([t,d],i)=>`<li><span>${String(i+1).padStart(2,'0')}</span><b>${t}</b>${d}</li>`).join('')}</ol></div>${vp?`<div class="p-txt"><h2>Value proposition</h2><div class="p-vpc">${vp.vpc.map.map((m,i)=>[m,vp.vpc.cust[i]]).flat().map(([h,a])=>`<div><b>${h}</b><ul>${a.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')}</div></div>`:''}</div></section>${extra}${ia?`<section class="p-page p-ia"><span class="p-tags">${p.title} — information architecture</span><img src="${ia.ia.src}" alt=""></section>`:''}${wf?`<section class="p-page p-media p-wf"><span class="p-tags">${p.title} — first iterations · wireframes and the first prototype</span><div class="p-strip">${wf.screens.filter(c=>!/past|detail|archives/.test(c.src)).map(c=>`<figure><img class="sc" src="${c.src}" alt=""><figcaption>${c.label}</figcaption></figure>`).join('')}${(wf.clips||[]).map(v=>`<figure><img class="sc v1" src="${v.poster}" alt=""><figcaption>V1 prototype · video ${v.len}</figcaption></figure>`).join('')}</div></section>`:''}`})():''}${p.chapters&&p.chapters.some(c=>c.screens)?`<section class="p-page p-media"><span class="p-tags">${p.title} — app screens</span><div class="p-strip">${p.chapters.filter(c=>!c.wf).flatMap(c=>c.screens||[]).filter((x,i,a)=>a.findIndex(y=>y.src===x.src)===i).slice(0,12).map(c=>`<figure><img class="sc" src="${c.src}" alt=""><figcaption>${c.label}</figcaption></figure>`).join('')}</div></section>`:''}${p.chapters&&p.chapters.some(c=>c.brand)?(()=>{const B=p.chapters.find(c=>c.brand).brand.filter(x=>x.src).filter((x,i)=>i<8),out=[];for(let i=0;i<B.length;i+=4)out.push(`<section class="p-page p-slides"><span class="p-tags">${p.title} — brand identity ${i/4+1}/${Math.ceil(B.length/4)}</span><div class="p-sg p-brand">${B.slice(i,i+4).map(x=>`<figure><img src="${x.src}" alt=""><figcaption>${x.label}</figcaption></figure>`).join('')}</div></section>`);return out.join('')})():''}${p.chapters&&p.chapters.some(c=>c.kit)?`<section class="p-page p-kit"><span class="p-tags">${p.title} — design system · components</span><div class="p-kitw">${kitHTML().replace('data-fk="dark"','data-fk="light"')}</div></section>`:''}${p.chapters&&p.chapters.some(c=>c.book)?(()=>{const B=p.chapters.find(c=>c.book).book,out=[];for(let i=0;i<B.length;i+=4)out.push(`<section class="p-page p-slides"><span class="p-tags">${p.title} — brand guidelines ${i/4+1}/${Math.ceil(B.length/4)}</span><div class="p-sg p-book">${B.slice(i,i+4).map(x=>`<figure><img src="${x.src}" alt=""><figcaption>${x.label}</figcaption></figure>`).join('')}</div></section>`);return out.join('')})():''}${p.chapters&&p.chapters.some(c=>c.posts)?`<section class="p-page p-slides"><span class="p-tags">${p.title} — social media templates</span><div class="p-sg p-posts">${p.chapters.find(c=>c.posts).posts.map(x=>`<figure><img src="${x.src}" alt=""><figcaption>${x.label}</figcaption></figure>`).join('')}</div></section>`:''}${p.chapters&&p.chapters.some(c=>c.video)?`<section class="p-page p-slides"><span class="p-tags">${p.title} — the trailer and selected slides</span><div class="p-sg"><figure><img src="${p.chapters.find(c=>c.video).video.poster}" alt=""><figcaption>Teaser trailer · ${p.chapters.find(c=>c.video).video.len}</figcaption></figure>${(p.chapters.find(c=>c.slides)||{slides:[]}).slides.slice(0,11).map(x=>`<figure><img src="${x.src}" alt=""><figcaption>${x.label}</figcaption></figure>`).join('')}</div></section>`:''}${p.process?`<section class="p-page p-proc"><span class="p-tags">${p.title} — chapters 01–02 · the brief and inspiration</span><div class="p-pgrid"><div class="p-txt"><h2>The brief</h2><p class="p-q">“${p.process.quote}”</p><p>${p.process.brief}</p><ul>${p.process.how.map(h=>`<li>${h}</li>`).join('')}</ul></div><figure class="p-mood"><img src="${p.process.moodboard.src}" alt=""><figcaption>Moodboard</figcaption></figure></div></section><section class="p-page p-media p-lofi"><span class="p-tags">${p.title} — chapters 03–04 · wireframes and the first prototype (Figma Make)</span><div class="p-strip">${p.process.lofi.slice(0,5).map(c=>`<figure><img class="sc lo" src="${c.src}" alt=""><figcaption>Lo-fi · ${c.label}</figcaption></figure>`).join('')}${p.process.v1.screens.slice(0,2).map(c=>`<figure><img class="sc" src="${c.src}" alt=""><figcaption>V1 · ${c.label}</figcaption></figure>`).join('')}</div><div class="p-learn"><div><b>Worked</b>${p.process.well.join(' ')}</div><div><b>Didn’t work</b>${p.process.wrong.join(' ')}</div><div><b>Final app</b>${p.process.changed.slice(0,4).join(' ')}</div></div></section><section class="p-page p-ia"><span class="p-tags">${p.title} — chapter 05 · the rebuild, information architecture</span><img src="${p.process.ia.src}" alt=""></section>`:''}${p.process?`<section class="p-page p-ds"><span class="p-tags">${p.title} — chapter 06 · design system</span><div class="p-dsg"><div><h2 class="p-h" style="font-size:20mm">Design system</h2><div class="p-sw">${DS.colors.flatMap(g=>g.items).map(([n,h,,u])=>`<div><i style="background:${h}"></i><b>${n}</b><span>${h}</span><small>${u}</small></div>`).join('')}</div><ul class="p-rules">${DS.rules.map(r=>`<li>${r}</li>`).join('')}</ul></div><div class="ds-type p-type">${DS.type.map(([sz,w,ex,use])=>`<div class="ds-trow"><span class="mono">${sz}px · ${w}</span><span class="ds-spec" style="font-size:${sz*0.75}pt;font-weight:${w==='Bold'?700:w==='Semibold'?600:400};color:${+sz>=20?'#2A9C9E':'#262626'}">${ex}</span><small>${use}</small></div>`).join('')}</div></div></section>`:''}${p.media?`<section class="p-page p-media"><span class="p-tags">${p.title} — chapters 07–08 · the final app and launch</span><div class="p-strip">${(p.media.videos||[]).map(v=>`<figure><img src="${v.poster}" alt=""><figcaption>Video · ${v.label} · ${v.len}</figcaption></figure>`).join('')}${(p.media.screens||[]).slice(0,10).map(c=>`<figure><img class="sc" src="${c.src}" alt=""><figcaption>${c.label}</figcaption></figure>`).join('')}</div></section>`:''}`).join('')}
-<section class="p-page p-about"><div style="display:grid;gap:8mm;align-content:start"><h2 class="p-h">About</h2><p class="statement">UI/UX and graphic designer in Lisbon. I design the <em>product</em> people use, the <em>brand</em> they recognise and the <em>deck</em> that explains it.</p><span class="p-tags">Tools: Figma · Adobe XD · Illustrator · Photoshop · InDesign · Premiere Pro · PowerPoint</span><span class="p-tags">Education: Design Bachelor, 2015–2018, Faculty of Architecture and Art, Lusíada University of Lisbon · Languages: Portuguese (native), English (advanced), Spanish (intermediate)</span></div><div class="p-svc"><div><b>2024 — Now · UI/UX Designer / Branding Specialist</b>IVY Partners, Lisbon, Portugal. Brand and guidelines, digital and print assets, presentations, UI/UX for web and mobile, motion.</div><div><b>2021 — 2024 · UI/UX Specialist</b>VORTAL Connecting Business, Lisbon, Portugal. Research, A/B testing, prototypes, design system; led a main product redesign that raised user satisfaction by 30%.</div><div><b>2019 — 2021 · UI/UX &amp; Graphic Designer</b>Acid Integration, Toronto, Canada. Discovery and design sprints, journeys and IA, brand identities and collateral.</div><div><b>2018 — 2019 · UI/UX Designer, internship</b>Glartek, Lisbon, Portugal. Web, mobile and AR tools for factory workers.</div></div></section>
+${P.map((p,i)=>`<section class="p-page p-proj"><div class="p-img">${coverOf(p)}</div><div class="p-txt"><span class="p-tags">${pad(i+1)} / ${pad(P.length)} — ${p.tags.join(' · ')}</span><h2>${p.title}</h2><div class="p-meta"><div><b>Client</b>${p.client}</div><div><b>Year</b>${p.year}</div>${p.url?`<div><b>Live site</b><a href="${p.url}" style="color:inherit">${p.url.replace(/^https?:\/\//,'').replace(/\/$/,'')}</a></div>`:''}<div><b>Role</b>${p.role}</div><div><b>Tools</b>${p.tools}</div></div><p>${p.summary} ${p.context}</p><ul>${p.approach.map(a=>`<li>${a}</li>`).join('')}</ul><span class="p-tags">Deliverables: ${p.deliverables.join(' · ')}</span></div></section>${p.chapters&&p.chapters.some(c=>c.images)?`<section class="p-page p-slides"><span class="p-tags">${p.title} — in pictures</span><div class="p-sg">${p.chapters.flatMap(c=>c.images||[]).filter(x=>!x.tall).slice(0,8).map(x=>`<figure><img src="${x.src}" alt=""><figcaption>${x.label}</figcaption></figure>`).join('')}</div></section>`:''}${p.chapters&&p.chapters.some(c=>c.steps)?(()=>{const st=p.chapters.find(c=>c.steps),vp=p.chapters.find(c=>c.vpc),ia=p.chapters.find(c=>c.ia),wf=p.chapters.find(c=>c.wf),sp=p.chapters.find(c=>c.spine),pe=p.chapters.find(c=>c.persona),jo=p.chapters.find(c=>c.journey),bm=p.chapters.find(c=>c.bench);const pp=pe&&pe.persona,J=jo&&jo.journey,B=bm&&bm.bench,sym={y:'<i class="pd y"></i>',p:'<i class="pd p"></i>',n:'<i class="pd n"></i>'};const extra=`${sp&&pp?`<section class="p-page p-ffp"><span class="p-tags">${p.title} — the story and the persona</span><div class="p-ffg"><div class="p-txt"><h2>The story</h2><ol class="p-spine">${sp.spine.map(([k,t])=>`<li><b>${k}</b>${t}</li>`).join('')}</ol></div><div class="p-txt"><h2>${pp.name}</h2><span class="p-tags">${pp.meta}</span><p class="p-q">“${pp.quote}”</p><p>${pp.bio}</p><div class="p-vpc"><div><b>Goals</b><ul>${pp.goals.map(x=>`<li>${x}</li>`).join('')}</ul></div><div><b>Frustrations</b><ul>${pp.pains.map(x=>`<li>${x}</li>`).join('')}</ul></div></div><p style="font-size:8pt">${pp.scenario}</p></div></div></section>`:''}${J?`<section class="p-page p-ffp"><span class="p-tags">${p.title} — user journey map</span><div><div class="p-jpr">${J.principles.map((t,i)=>`<div><b>0${i+1}</b>${t}</div>`).join('')}</div><table class="p-jm"><tr><th></th>${J.stages.map(x=>`<th>${x.name}<small>${x.mood}</small></th>`).join('')}</tr>${[['Doing','doing'],['Thinking','think'],['Pain points','pain'],['Foodfy answer','opp']].map(([l,k])=>`<tr><td class="l">${l}</td>${J.stages.map(x=>`<td>${x[k]}</td>`).join('')}</tr>`).join('')}<tr><td class="l">Feeling</td>${J.stages.map(x=>`<td><span class="p-bar"><i style="width:${x.feel*100}%"></i></span></td>`).join('')}</tr></table></div></section>`:''}${B?`<section class="p-page p-ffp"><span class="p-tags">${p.title} — benchmark · ${B.source}</span><div><table class="p-bm"><tr><th></th>${B.cols.map(h=>`<th>${h}</th>`).join('')}</tr>${B.rows.map(([n,sub,v],i)=>`<tr${i?'':' class="us"'}><td class="l">${n}<small>${sub}</small></td>${v.split('').map(k=>`<td>${sym[k]}</td>`).join('')}</tr>`).join('')}</table><p class="p-tags" style="margin-top:2mm"><i class="pd y"></i> yes &nbsp; <i class="pd p"></i> partly, only some restaurants or prepaid experiences &nbsp; <i class="pd n"></i> no</p><div class="p-learn">${B.insights.map(([h,t])=>`<div><b>${h}</b>${t}</div>`).join('')}</div></div></section>`:''}`;return `<section class="p-page p-ffp"><span class="p-tags">${p.title} — thought process and value proposition</span><div class="p-ffg"><div class="p-txt"><h2>Thought process</h2><ol class="p-steps">${st.steps.map(([t,d],i)=>`<li><span>${String(i+1).padStart(2,'0')}</span><b>${t}</b>${d}</li>`).join('')}</ol></div>${vp?`<div class="p-txt"><h2>Value proposition</h2><div class="p-vpc">${vp.vpc.map.map((m,i)=>[m,vp.vpc.cust[i]]).flat().map(([h,a])=>`<div><b>${h}</b><ul>${a.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('')}</div></div>`:''}</div></section>${extra}${ia?`<section class="p-page p-ia"><span class="p-tags">${p.title} — information architecture</span><img src="${ia.ia.src}" alt=""></section>`:''}${wf?`<section class="p-page p-media p-wf"><span class="p-tags">${p.title} — first iterations · wireframes and the first prototype</span><div class="p-strip">${wf.screens.filter(c=>!/past|detail|archives/.test(c.src)).map(c=>`<figure><img class="sc" src="${c.src}" alt=""><figcaption>${c.label}</figcaption></figure>`).join('')}${(wf.clips||[]).map(v=>`<figure><img class="sc v1" src="${v.poster}" alt=""><figcaption>V1 prototype · video ${v.len}</figcaption></figure>`).join('')}</div></section>`:''}`})():''}${p.chapters&&p.chapters.some(c=>c.screens)?`<section class="p-page p-media"><span class="p-tags">${p.title} — app screens</span><div class="p-strip">${p.chapters.filter(c=>!c.wf).flatMap(c=>c.screens||[]).filter((x,i,a)=>a.findIndex(y=>y.src===x.src)===i).slice(0,12).map(c=>`<figure><img class="sc" src="${c.src}" alt=""><figcaption>${c.label}</figcaption></figure>`).join('')}</div></section>`:''}${p.chapters&&p.chapters.some(c=>c.brand)?(()=>{const B=p.chapters.find(c=>c.brand).brand.filter(x=>x.src).filter((x,i)=>i<8),out=[];for(let i=0;i<B.length;i+=4)out.push(`<section class="p-page p-slides"><span class="p-tags">${p.title} — brand identity ${i/4+1}/${Math.ceil(B.length/4)}</span><div class="p-sg p-brand">${B.slice(i,i+4).map(x=>`<figure><img src="${x.src}" alt=""><figcaption>${x.label}</figcaption></figure>`).join('')}</div></section>`);return out.join('')})():''}${p.chapters&&p.chapters.some(c=>c.kit)?`<section class="p-page p-kit"><span class="p-tags">${p.title} — design system · components</span><div class="p-kitw">${kitHTML().replace('data-fk="dark"','data-fk="light"')}</div></section>`:''}${p.chapters&&p.chapters.some(c=>c.book)?(()=>{const B=p.chapters.find(c=>c.book).book,out=[];for(let i=0;i<B.length;i+=4)out.push(`<section class="p-page p-slides"><span class="p-tags">${p.title} — brand guidelines ${i/4+1}/${Math.ceil(B.length/4)}</span><div class="p-sg p-book">${B.slice(i,i+4).map(x=>`<figure><img src="${x.src}" alt=""><figcaption>${x.label}</figcaption></figure>`).join('')}</div></section>`);return out.join('')})():''}${p.chapters&&p.chapters.some(c=>c.posts)?`<section class="p-page p-slides"><span class="p-tags">${p.title} — social media templates</span><div class="p-sg p-posts">${p.chapters.find(c=>c.posts).posts.map(x=>`<figure><img src="${x.src}" alt=""><figcaption>${x.label}</figcaption></figure>`).join('')}</div></section>`:''}${p.chapters&&p.chapters.some(c=>c.video)?`<section class="p-page p-slides"><span class="p-tags">${p.title} — the trailer and selected slides</span><div class="p-sg"><figure><img src="${p.chapters.find(c=>c.video).video.poster}" alt=""><figcaption>Teaser trailer · ${p.chapters.find(c=>c.video).video.len}</figcaption></figure>${p.chapters.find(c=>c.slides).slides.slice(0,11).map(x=>`<figure><img src="${x.src}" alt=""><figcaption>${x.label}</figcaption></figure>`).join('')}</div></section>`:''}${p.process?`<section class="p-page p-proc"><span class="p-tags">${p.title} — chapters 01–02 · the brief and inspiration</span><div class="p-pgrid"><div class="p-txt"><h2>The brief</h2><p class="p-q">“${p.process.quote}”</p><p>${p.process.brief}</p><ul>${p.process.how.map(h=>`<li>${h}</li>`).join('')}</ul></div><figure class="p-mood"><img src="${p.process.moodboard.src}" alt=""><figcaption>Moodboard</figcaption></figure></div></section><section class="p-page p-media p-lofi"><span class="p-tags">${p.title} — chapters 03–04 · wireframes and the first prototype (Figma Make)</span><div class="p-strip">${p.process.lofi.slice(0,5).map(c=>`<figure><img class="sc lo" src="${c.src}" alt=""><figcaption>Lo-fi · ${c.label}</figcaption></figure>`).join('')}${p.process.v1.screens.slice(0,2).map(c=>`<figure><img class="sc" src="${c.src}" alt=""><figcaption>V1 · ${c.label}</figcaption></figure>`).join('')}</div><div class="p-learn"><div><b>Worked</b>${p.process.well.join(' ')}</div><div><b>Didn’t work</b>${p.process.wrong.join(' ')}</div><div><b>Final app</b>${p.process.changed.slice(0,4).join(' ')}</div></div></section><section class="p-page p-ia"><span class="p-tags">${p.title} — chapter 05 · the rebuild, information architecture</span><img src="${p.process.ia.src}" alt=""></section>`:''}${p.process?`<section class="p-page p-ds"><span class="p-tags">${p.title} — chapter 06 · design system</span><div class="p-dsg"><div><h2 class="p-h" style="font-size:20mm">Design system</h2><div class="p-sw">${DS.colors.flatMap(g=>g.items).map(([n,h,,u])=>`<div><i style="background:${h}"></i><b>${n}</b><span>${h}</span><small>${u}</small></div>`).join('')}</div><ul class="p-rules">${DS.rules.map(r=>`<li>${r}</li>`).join('')}</ul></div><div class="ds-type p-type">${DS.type.map(([sz,w,ex,use])=>`<div class="ds-trow"><span class="mono">${sz}px · ${w}</span><span class="ds-spec" style="font-size:${sz*0.75}pt;font-weight:${w==='Bold'?700:w==='Semibold'?600:400};color:${+sz>=20?'#2A9C9E':'#262626'}">${ex}</span><small>${use}</small></div>`).join('')}</div></div></section>`:''}${p.media?`<section class="p-page p-media"><span class="p-tags">${p.title} — chapters 07–08 · the final app and launch</span><div class="p-strip">${(p.media.videos||[]).map(v=>`<figure><img src="${v.poster}" alt=""><figcaption>Video · ${v.label} · ${v.len}</figcaption></figure>`).join('')}${(p.media.screens||[]).slice(0,10).map(c=>`<figure><img class="sc" src="${c.src}" alt=""><figcaption>${c.label}</figcaption></figure>`).join('')}</div></section>`:''}`).join('')}
+<section class="p-page p-about"><div style="display:grid;gap:8mm;align-content:start"><h2 class="p-h">About</h2><p class="statement">UI/UX and graphic designer in Lisbon. I design the <em>product</em> people use, the <em>brand</em> they recognise and the <em>deck</em> that explains it.</p><span class="p-tags">Tools: Figma · Adobe XD · Illustrator · Photoshop · InDesign · Premiere Pro · PowerPoint</span><span class="p-tags">Education: Design Bachelor, 2015–2018, Faculty of Architecture and Art, Lusíada University of Lisbon · Languages: Portuguese (native), English (advanced), Spanish (intermediate)</span></div><div class="p-svc"><div><b>2024 — Now · UI/UX Designer / Branding Specialist</b>IVY Partners, Lisbon. Brand and guidelines, digital and print assets, presentations, UI/UX for web and mobile, motion.</div><div><b>2021 — 2024 · UI/UX Specialist</b>VORTAL Connecting Business, Lisbon. Research, A/B testing, prototypes, design system; led a main product redesign that raised user satisfaction by 30%.</div><div><b>2019 — 2021 · UI/UX &amp; Graphic Designer</b>Acid Integration, Lisbon. Discovery and design sprints, journeys and IA, brand identities and collateral.</div><div><b>2018 — 2019 · UI/UX Designer, internship</b>Glartek, Lisbon. Web, mobile and AR tools for factory workers.</div></div></section>
 <section class="p-page p-contact"><span class="p-row"><span>Have a project in mind?</span></span><div class="big">Let’s talk</div><div class="p-row"><span>ednaldo.leite1994@gmail.com</span><a href="https://www.linkedin.com/in/ednaldo-leite-05232a15b/" style="color:inherit;text-decoration:none">linkedin.com/in/ednaldo-leite-05232a15b</a><span>Lisbon · UTC+1</span></div></section>`;
 
 /* ---------- intro ---------- */
@@ -1930,51 +1563,6 @@ RV.page();
     (el||window).scrollTo({top:0,behavior:beh});const f=el?document.getElementById('caseClose'):document.querySelector('.nav a,.nav button');if(f)setTimeout(()=>f.focus({preventScroll:true}),beh==='smooth'?600:0)});
   upd()})();
 
-/* ---------- liquid "Let's talk": the cursor leaves a fading trail that bends the type like ink in water ---------- */
-(()=>{const big=document.querySelector('#contact .big');if(!big)return;
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!matchMedia('(hover:hover)').matches)return;
-  const NS='http://www.w3.org/2000/svg',acc=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()||'#E0753A';
-  const svg=document.createElementNS(NS,'svg');svg.setAttribute('aria-hidden','true');svg.style.cssText='position:absolute;width:0;height:0;overflow:hidden';
-  svg.innerHTML=`<filter id="liqf" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-   <feImage id="liqimg" preserveAspectRatio="none" result="m0"/><feGaussianBlur in="m0" stdDeviation="11" result="m"/>
-   <feDisplacementMap in="SourceGraphic" in2="m" xChannelSelector="R" yChannelSelector="G" result="dg" id="liqd1"/>
-   <feDisplacementMap in="SourceGraphic" in2="m" xChannelSelector="R" yChannelSelector="G" result="dr" id="liqd2"/>
-   <feDisplacementMap in="SourceGraphic" in2="m" xChannelSelector="R" yChannelSelector="G" result="db" id="liqd3"/>
-   <feColorMatrix in="dr" values="1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" result="r"/>
-   <feColorMatrix in="dg" values="0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0" result="g"/>
-   <feColorMatrix in="db" values="0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0" result="b"/>
-   <feBlend in="r" in2="g" mode="screen" result="rg"/><feBlend in="rg" in2="b" mode="screen" result="txt"/>
-   <feColorMatrix in="m" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.8 0 -.55" result="mask"/>
-   <feFlood flood-color="${acc}" result="ac"/><feComposite in="ac" in2="mask" operator="in" result="acm"/>
-   <feComposite in="acm" in2="dg" operator="in" result="tint"/>
-   <feMerge><feMergeNode in="txt"/><feMergeNode in="tint"/></feMerge></filter>`;
-  document.body.appendChild(svg);
-  const img=svg.querySelector('#liqimg'),d=[1,2,3].map(i=>svg.querySelector('#liqd'+i)),fc=document.createElement('canvas'),fx=fc.getContext('2d');
-  let W=0,H=0,pad=0,raf=0,mx=-1,my=-1,px=-1,py=-1,energy=0,on=false,vis=false,last=0;
-  function size(){const r=big.getBoundingClientRect();if(!r.width)return false;W=r.width;H=r.height;pad=Math.round(parseFloat(getComputedStyle(big).fontSize)*.2);
-    const f=svg.querySelector('filter');[['x',-pad],['y',-pad],['width',W+pad*2],['height',H+pad*2]].forEach(([k,v])=>{f.setAttribute(k,v);img.setAttribute(k,v)});
-    const s=Math.max(30,H*.42);d[0].setAttribute('scale',s);d[1].setAttribute('scale',s*1.14);d[2].setAttribute('scale',s*.86);
-    fc.width=Math.max(16,Math.round((W+pad*2)/4));fc.height=Math.max(16,Math.round((H+pad*2)/4));fx.fillStyle='rgb(128,128,0)';fx.fillRect(0,0,fc.width,fc.height);return true}
-  function start(){if(on||big.querySelector('.dnt-ch'))return;if(!size())return;on=true;lt=0;big.style.filter='url(#liqf)';kick()}
-  function stop(){on=false;big.style.filter='';energy=0;fx.fillStyle='rgb(128,128,0)';fx.fillRect(0,0,fc.width,fc.height);img.setAttribute('href',fc.toDataURL())}
-  let lt=0;function frame(ts){raf=0;if(!on)return;const dt=Math.min(100,lt?ts-lt:16.7)/16.7;lt=ts;
-    if(big.querySelector('.dnt-ch')){stop();return}
-    fx.globalCompositeOperation='source-over';fx.fillStyle=`rgba(128,128,0,${Math.min(.6,1-Math.pow(.91,dt)).toFixed(3)})`;fx.fillRect(0,0,fc.width,fc.height);
-    if(mx>-1e4&&px>-1e4){const dx=mx-px,dy=my-py,sp=Math.hypot(dx,dy);
-      if(sp>.5){const n=Math.min(14,Math.ceil(sp/8));for(let i=1;i<=n;i++){const x=(px+dx*i/n+pad)/4,y=(py+dy*i/n+pad)/4,rad=Math.max(8,fc.height*.17);
-        const r=Math.max(0,Math.min(255,128-dx*2.4)),g=Math.max(0,Math.min(255,128-dy*2.4)),b=Math.min(255,120+sp*8);
-        const gr=fx.createRadialGradient(x,y,0,x,y,rad);gr.addColorStop(0,`rgba(${r|0},${g|0},${b|0},.5)`);gr.addColorStop(1,`rgba(${r|0},${g|0},${b|0},0)`);
-        fx.fillStyle=gr;fx.fillRect(x-rad,y-rad,rad*2,rad*2)}energy=1}}
-    px=mx;py=my;energy*=Math.pow(.945,dt);
-    if(ts-last>28){img.setAttribute('href',fc.toDataURL());last=ts}
-    if(energy>.04)kick();else stop()}
-  function kick(){if(!raf)raf=requestAnimationFrame(frame)}
-  addEventListener('pointermove',e=>{if(!vis)return;const r=big.getBoundingClientRect(),m=Math.max(60,pad);const x=e.clientX-r.left,y=e.clientY-r.top;
-    if(x<-m||y<-m||x>r.width+m||y>r.height+m){mx=my=px=py=-1e5;return}
-    if(px<-1e4){px=x;py=y}mx=x;my=y;start();kick()},{passive:true});
-  new IntersectionObserver(es=>{vis=es[0].isIntersecting;if(!vis)stop()}).observe(big);
-  addEventListener('resize',()=>{if(on)size()});
-})();
 (()=>{const btn=document.getElementById('dnt');if(!btn)return;let M=null,on=false,state=null;
   const load=()=>M?Promise.resolve(M):new Promise((res,rej)=>{const sc=document.createElement('script');sc.src='js-matter.min.js';sc.onload=()=>res(M=window.Matter);sc.onerror=rej;document.head.appendChild(sc)});
   const SEL='.dnt-ch,h1,h2,h3,h4,h5,p,a,button,li,img,video,svg,figcaption,label,small,blockquote,span,dt,dd,.chip,.card';
@@ -2017,17 +1605,5 @@ RV.page();
   btn.addEventListener('click',drop)})();
 </script>
 
-<script>
-/* Analytics events: which projects people open, and how they get in touch */
-(()=>{const g=(n,p)=>{if(typeof gtag==='function')gtag('event',n,p)};
-  const proj=()=>{const id=location.hash.slice(1);if(id&&document.querySelector('#grid [data-id="'+id+'"]'))g('view_project',{project:id,page_title:document.title})};
-  addEventListener('hashchange',proj);if(location.hash)setTimeout(proj,1500);
-  document.addEventListener('click',e=>{const a=e.target.closest('a,button');if(!a)return;
-    if(a.matches('a[href^="mailto:"]'))g('contact_click',{method:'email'});
-    else if(a.matches('a[href*="linkedin.com"]'))g('contact_click',{method:'linkedin'});
-    else if(a.id==='copy')g('contact_click',{method:'copy_email'});
-    else if(a.matches('.case-link,a[href^="http"]'))g('outbound_click',{url:a.href});});
-})();
-</script>
 </body>
 </html>
