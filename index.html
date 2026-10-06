@@ -3,11 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Ednaldo Leite, UI/UX and graphic designer in Lisbon. Product design, brand systems, presentations and motion.">
-<meta property="og:title" content="Ednaldo Leite Portfolio">
-<meta property="og:description" content="UI/UX and graphic designer in Lisbon.">
-<meta property="og:image" content="foodfy-cover.jpg">
-<title>Ednaldo Leite Portfolio</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QFC4PXEY2F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QFC4PXEY2F');
+</script>
+<title>Ednaldo Leite · UI/UX &amp; Graphic Designer in Lisbon</title>
+<meta name="description" content="Portfolio of Ednaldo Leite, UI/UX and graphic designer in Lisbon. Product design, brand identities and websites for VORTAL, Armilar, Valley View Hospital and more.">
+<meta name="author" content="Ednaldo Leite">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://ednaldoleite.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0C0C0E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ednaldo Leite">
+<meta property="og:title" content="Ednaldo Leite · UI/UX &amp; Graphic Designer">
+<meta property="og:description" content="Product design, brand identities and websites. Based in Lisbon.">
+<meta property="og:url" content="https://ednaldoleite.com/">
+<meta property="og:image" content="https://ednaldoleite.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ednaldo Leite, UI/UX and graphic designer">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ednaldo Leite · UI/UX &amp; Graphic Designer">
+<meta name="twitter:description" content="Product design, brand identities and websites. Based in Lisbon.">
+<meta name="twitter:image" content="https://ednaldoleite.com/og-image.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ednaldo Leite","url":"https://ednaldoleite.com/","image":"https://ednaldoleite.com/og-image.jpg","jobTitle":"UI/UX & Graphic Designer","address":{"@type":"PostalAddress","addressLocality":"Lisbon","addressCountry":"PT"},"knowsAbout":["UI design","UX design","Product design","Brand identity","Web design","Design systems"],"sameAs":["https://www.linkedin.com/in/ednaldo-leite-05232a15b/"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&family=Archivo+Black&family=Jost:wght@400;500;800&family=Poppins:wght@400;600;700&display=swap">
@@ -1735,5 +1762,17 @@ RV.page();
   btn.addEventListener('click',drop)})();
 </script>
 
+<script>
+/* Analytics events: which projects people open, and how they get in touch */
+(()=>{const g=(n,p)=>{if(typeof gtag==='function')gtag('event',n,p)};
+  const proj=()=>{const id=location.hash.slice(1);if(id&&document.querySelector('#grid [data-id="'+id+'"]'))g('view_project',{project:id,page_title:document.title})};
+  addEventListener('hashchange',proj);if(location.hash)setTimeout(proj,1500);
+  document.addEventListener('click',e=>{const a=e.target.closest('a,button');if(!a)return;
+    if(a.matches('a[href^="mailto:"]'))g('contact_click',{method:'email'});
+    else if(a.matches('a[href*="linkedin.com"]'))g('contact_click',{method:'linkedin'});
+    else if(a.id==='copy')g('contact_click',{method:'copy_email'});
+    else if(a.matches('.case-link,a[href^="http"]'))g('outbound_click',{url:a.href});});
+})();
+</script>
 </body>
 </html>
