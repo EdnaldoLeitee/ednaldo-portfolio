@@ -102,7 +102,7 @@ a{color:inherit}
 .hero-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem 2rem}
 .hero-meta p{margin:0;max-width:34ch}
 .hero-meta .hero-what{max-width:36ch;font-size:clamp(1.25rem,2.3vw,2rem);line-height:1.2;letter-spacing:-.01em}
-@media (min-width:900px){.hero{grid-template-columns:auto minmax(15rem,26rem);justify-content:space-between;align-items:end;column-gap:clamp(2rem,5vw,5rem)}.hero-meta{display:block;padding-bottom:.4rem}.hero-meta .hero-what{max-width:none;font-size:clamp(1.15rem,1.7vw,1.6rem)}}
+@media (min-width:900px){.hero{grid-template-columns:auto minmax(15rem,26rem);justify-content:space-between;align-items:end;column-gap:clamp(2rem,5vw,5rem)}.hero-meta{display:block;padding-bottom:.4rem}.hero-meta .hero-what{max-width:none;font-size:clamp(1.3rem,2.1vw,2rem)}}
 .hero-meta .mono{color:var(--mute);display:block;margin-bottom:.35rem}
 .dot{display:inline-block;width:.55em;height:.55em;border-radius:50%;background:var(--accent);margin-right:.5em;box-shadow:0 0 0 0 var(--accent);animation:pulse 2.4s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,117,58,.6)}70%{box-shadow:0 0 0 10px rgba(224,117,58,0)}100%{box-shadow:0 0 0 0 rgba(224,117,58,0)}}
@@ -915,7 +915,12 @@ body.locked{overflow:hidden}
   .p-contact .big{font-family:var(--display);font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:44mm;line-height:.82}
 }
 #work>.shead{padding-block:clamp(1.75rem,3.5vw,2.75rem) 1.25rem;border-top:1px solid var(--line)}#work>.shead h2{font-size:clamp(2.6rem,6vw,5rem)}#work>.filters{padding-bottom:1.75rem}
-.hero-what .hw-b{color:var(--mute)}
+.hero-what .hw-a,.hero-what .hw-b{display:block}.hero-what .hw-b{color:var(--mute)}
+.cyc{display:inline-block;position:relative;overflow:hidden;vertical-align:bottom;color:var(--accent);transition:width .6s cubic-bezier(.6,0,.2,1);padding-bottom:.08em;margin-bottom:-.08em}
+.cyc-w{display:inline-block;white-space:nowrap}
+.hero-what .cyc{font-weight:600}
+
+.cyc-w+.cyc-w{position:absolute;left:0;top:0}
 </style>
 </head>
 <body>
@@ -945,7 +950,7 @@ body.locked{overflow:hidden}
   <header class="hero wrap">
     <h1 aria-label="Ednaldo Leite"><span class="hero-line" aria-hidden="true"><span><span class="ch"><b>E</b></span><span class="ch"><b>d</b></span><span class="ch"><b>n</b></span><span class="ch"><b>a</b></span><span class="ch"><b>l</b></span><span class="ch"><b>d</b></span><span class="ch"><b>o</b></span></span></span><span class="hero-line" aria-hidden="true"><span><span class="ch"><b>L</b></span><span class="ch"><b>e</b></span><span class="ch"><b>i</b></span><span class="ch"><b>t</b></span><span class="ch"><b>e</b></span></span></span></h1>
     <div class="hero-meta">
-      <p class="hero-what"><span class="hw-a">UI/UX and graphic designer.</span> <span class="hw-b">I design apps, websites, brands, presentations and motion.</span></p>
+      <p class="hero-what"><span class="sr-only">UI/UX and graphic designer. I design apps, websites, brands, presentations and motion.</span><span aria-hidden="true"><span class="hw-a" data-roll>UI/UX and graphic designer.</span> <span class="hw-b">I design <span class="cyc" data-words="apps|websites|brands|presentations|motion"><span class="cyc-w">apps</span></span></span></span></p>
     </div>
   </header>
 
@@ -1299,12 +1304,20 @@ document.querySelectorAll('.do-row').forEach(r=>{const side=e=>{const b=r.getBou
   r.addEventListener('pointerenter',e=>r.style.setProperty('--o',side(e)));r.addEventListener('pointerleave',e=>r.style.setProperty('--o',side(e)))});
 document.querySelectorAll('.do-row[data-f]').forEach(r=>r.addEventListener('click',e=>{const c=r.dataset.f;if(!cats.includes(c))return;e.preventDefault();active=c;renderFilters();renderGrid();document.getElementById('work').scrollIntoView({behavior:'smooth'})}));
 renderFilters();renderGrid();
+/* ---------- intro: the design word rolls through apps, websites, brands... ---------- */
+document.querySelectorAll('.cyc').forEach(c=>{const W=c.dataset.words.split('|');
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){c.firstChild.textContent=W.slice(0,-1).join(', ')+' and '+W.at(-1);return}
+  let i=0;const fit=el=>c.style.width=el.offsetWidth+'px';fit(c.firstChild);addEventListener('resize',()=>fit(c.lastChild));
+  const E='cubic-bezier(.7,0,.2,1)';
+  setInterval(()=>{if(document.hidden)return;const cur=c.lastChild;i=(i+1)%W.length;const nx=document.createElement('span');nx.className='cyc-w';nx.textContent=W[i];c.appendChild(nx);fit(nx);
+    cur.animate([{transform:'translateY(0)'},{transform:'translateY(-140%)'}],{duration:650,easing:E,fill:'forwards'}).finished.then(()=>{cur.remove();nx.style.position='static'});
+    nx.animate([{transform:'translateY(140%)'},{transform:'translateY(0)'}],{duration:650,easing:E})},2200)});
 /* ---------- name hover: letters roll through, like awakeagency.dev ---------- */
 if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
   const css=getComputedStyle(document.documentElement),acc=css.getPropertyValue('--accent').trim(),pap=css.getPropertyValue('--paper').trim();
   /* track pointer direction so letters leave the way the mouse is moving */
   let mx=0,my=0,vx=0,vy=0;addEventListener('pointermove',e=>{vx=vx*.5+(e.clientX-mx)*.5;vy=vy*.5+(e.clientY-my)*.5;mx=e.clientX;my=e.clientY},{passive:true});
-  document.querySelectorAll('[data-roll]').forEach(el=>{const s=el.textContent;el.setAttribute('aria-label',s);el.innerHTML=[...s].map(c=>c===' '?' ':`<span class="ch" aria-hidden="true"><b>${c}</b></span>`).join('')});
+  document.querySelectorAll('[data-roll]').forEach(el=>{const s=el.textContent;el.setAttribute('aria-label',s);el.innerHTML=s.split(' ').map(w=>`<span style="white-space:nowrap">${[...w].map(c=>`<span class="ch" aria-hidden="true"><b>${c}</b></span>`).join('')}</span>`).join(' ')});
   /* delegated, so it survives the scroll-reveal rewrapping headings */
   document.addEventListener('pointerover',e=>{const ch=e.target.closest&&e.target.closest('.hero h1 .ch,[data-roll] .ch');if(!ch||ch.contains(e.relatedTarget)||ch._busy)return;ch._busy=true;const b=ch.firstElementChild;
       const h=Math.abs(vx)>Math.abs(vy),s=(h?vx:vy)>=0?1:-1,ax=h?'X':'Y',T=v=>`translate${ax}(${v}%)`;
