@@ -95,20 +95,20 @@ a{color:inherit}
 @media (max-width:640px){.nav .clock{display:none}.nav ul{gap:.75rem}}
 
 /* ---------- Hero ---------- */
-.hero{padding-block:clamp(6rem,14vh,9rem) 2.5rem;display:grid;grid-template-columns:minmax(0,1fr);gap:2rem}
-.hero h1{margin:0;font-family:var(--display);font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:clamp(4.5rem,24vw,22rem);line-height:.8;letter-spacing:-.01em}
+.hero{padding-block:clamp(5rem,11vh,7rem) clamp(1.75rem,3.5vw,2.75rem);display:grid;grid-template-columns:minmax(0,1fr);gap:2rem}
+.hero h1{margin:0;font-family:var(--display);font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:clamp(4rem,min(15vw,23vh),16rem);line-height:.8;letter-spacing:-.01em}
+.hero h1 .ch,[data-roll] .ch{display:inline-block;overflow:hidden;vertical-align:top}.hero h1 .ch b,[data-roll] .ch b{display:inline-block;font-weight:inherit;will-change:transform}
 .hero h1 .ital{font-stretch:125%;font-weight:200;font-style:normal;letter-spacing:-.04em;color:var(--accent)}
-.hero-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem 2rem;border-top:1px solid var(--line);padding-top:1.25rem}
+.hero-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem 2rem}
 .hero-meta p{margin:0;max-width:34ch}
 .hero-meta .hero-what{max-width:36ch;font-size:clamp(1.25rem,2.3vw,2rem);line-height:1.2;letter-spacing:-.01em}
+/* staggered name: first name left, last name right, intro in the space beside the last name */
+.hero h1{display:grid}.hero h1 .hero-line{width:max-content;max-width:100%}.hero h1 .hero-line:nth-child(2){justify-self:end}
+@media (min-width:900px){.hero{position:relative}.hero h1 .hero-line:nth-child(2){margin-top:.12em}.hero-meta{position:absolute;left:var(--gut);bottom:clamp(1.75rem,3.5vw,2.75rem);display:block;max-width:min(26rem,calc(100% - 2*var(--gut) - 3.1em))}.hero-meta .hero-what{max-width:none;font-size:clamp(1.15rem,1.7vw,1.6rem)}}
 .hero-meta .mono{color:var(--mute);display:block;margin-bottom:.35rem}
 .dot{display:inline-block;width:.55em;height:.55em;border-radius:50%;background:var(--accent);margin-right:.5em;box-shadow:0 0 0 0 var(--accent);animation:pulse 2.4s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,117,58,.6)}70%{box-shadow:0 0 0 10px rgba(224,117,58,0)}100%{box-shadow:0 0 0 0 rgba(224,117,58,0)}}
 
-/* marquee */
-.marquee{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding-block:1rem}
-.marquee-track{display:inline-flex;gap:2.5rem;animation:slide 38s linear infinite;font-family:var(--display);font-stretch:100%;font-weight:300;font-size:clamp(1.5rem,3.6vw,2.75rem);text-transform:uppercase;letter-spacing:-.01em}
-.marquee-track{gap:4rem}
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* ---------- Section heads ---------- */
@@ -236,7 +236,7 @@ section{scroll-margin-top:4rem}
 .do{margin-top:clamp(3rem,6vw,5rem);border-top:1px solid var(--line)}
 .do-k{display:block;color:var(--mute);padding:1.25rem 0 .5rem}
 .do-row{position:relative;display:grid;grid-template-columns:3.2rem minmax(0,1.25fr) minmax(0,1fr) 2rem;gap:1.5rem;align-items:center;padding:1.6rem 1.5rem;border-bottom:1px solid var(--line);color:inherit;text-decoration:none;isolation:isolate;overflow:hidden}
-.do-row::before{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform .55s cubic-bezier(.7,0,.2,1);z-index:-1}
+.do-row::before{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleY(0);transform-origin:var(--o,bottom);transition:transform .55s cubic-bezier(.7,0,.2,1);z-index:-1}
 .do-n{color:var(--mute);transition:color .3s}
 .dd{position:absolute;left:var(--x,80%);top:var(--y,50%);margin:-46px 0 0 -46px;width:92px;height:92px;fill:none;stroke:var(--ink);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;z-index:2;transform-box:border-box;transform-origin:50% 50%;transform:scale(0) rotate(-35deg);transition:transform .55s cubic-bezier(.3,1.5,.5,1),left .45s cubic-bezier(.2,.8,.2,1),top .45s cubic-bezier(.2,.8,.2,1)}
 .dd *{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .25s ease}
@@ -249,7 +249,7 @@ section{scroll-margin-top:4rem}
 .do-tags li{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:.4rem .7rem;border:1px solid var(--line);border-radius:99px;transition:transform .35s cubic-bezier(.3,1.8,.5,1),border-color .3s,color .3s,background .3s}
 .do-go{font-size:1.4rem;justify-self:end;transform:translate(-6px,6px);opacity:.4;transition:transform .45s cubic-bezier(.3,1.6,.5,1),opacity .3s,color .3s}
 @media (hover:hover){
- .do-row:hover::before{transform:scaleY(1);transform-origin:top}
+ .do-row:hover::before{transform:scaleY(1)}
  .do-row:hover .do-n,.do-row:hover .do-t h3,.do-row:hover .do-t p,.do-row:hover .do-go{color:var(--ink)}
  .do-row:hover .dd{transform:scale(1) rotate(0)}
  .do-row:hover .dd *{stroke-dashoffset:0;transition:stroke-dashoffset .9s cubic-bezier(.6,0,.2,1)}
@@ -456,7 +456,6 @@ body.locked{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   #intro{display:none}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
-  .marquee-track{animation:none}
 }
 
 
@@ -917,6 +916,19 @@ body.locked{overflow:hidden}
   .p-contact{background:#0C0C0E;color:#ECE9E2;align-content:end;gap:6mm}
   .p-contact .big{font-family:var(--display);font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:44mm;line-height:.82}
 }
+#work>.shead{padding-block:clamp(1.75rem,3.5vw,2.75rem) 1.25rem;border-top:1px solid var(--line)}#work>.shead h2{font-size:clamp(2.6rem,6vw,5rem)}#work>.filters{padding-bottom:1.75rem}
+/* hero: rotating badge + intro hierarchy */
+.hero-what .hw-b{color:var(--mute)}
+.badge{position:relative;display:grid;place-items:center;width:clamp(112px,10vw,156px);aspect-ratio:1;border-radius:50%;color:var(--paper);text-decoration:none;justify-self:end;margin-top:1.5rem}
+.badge svg{position:absolute;inset:0;width:100%;height:100%;animation:bspin 16s linear infinite;overflow:visible}
+.badge text{font-family:var(--mono);font-size:15.5px;letter-spacing:.2em;text-transform:uppercase;fill:currentColor}
+.badge-i{display:grid;place-items:center;width:44%;aspect-ratio:1;border-radius:50%;background:var(--accent);color:var(--ink);font-size:clamp(1.2rem,1.8vw,1.6rem);transition:transform .5s cubic-bezier(.3,1.6,.5,1),background .25s}
+.badge:hover svg{animation-duration:5s}.badge:hover .badge-i{transform:translateY(4px) scale(1.08);background:var(--paper)}
+.badge:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+@keyframes bspin{to{transform:rotate(360deg)}}
+@media (min-width:900px){.badge{position:absolute;right:var(--gut);top:clamp(5rem,11vh,7rem);margin:0}}
+@media (max-width:899px){.badge{display:none}}
+@media (prefers-reduced-motion:reduce){.badge svg{animation:none}}
 </style>
 </head>
 <body>
@@ -944,30 +956,24 @@ body.locked{overflow:hidden}
 
 <main class="screen" id="top">
   <header class="hero wrap">
-    <h1><span class="hero-line"><span>Ednaldo</span></span><span class="hero-line"><span>Leite</span></span></h1>
+    <h1 aria-label="Ednaldo Leite"><span class="hero-line" aria-hidden="true"><span><span class="ch"><b>E</b></span><span class="ch"><b>d</b></span><span class="ch"><b>n</b></span><span class="ch"><b>a</b></span><span class="ch"><b>l</b></span><span class="ch"><b>d</b></span><span class="ch"><b>o</b></span></span></span><span class="hero-line" aria-hidden="true"><span><span class="ch"><b>L</b></span><span class="ch"><b>e</b></span><span class="ch"><b>i</b></span><span class="ch"><b>t</b></span><span class="ch"><b>e</b></span></span></span></h1>
     <div class="hero-meta">
-      <p class="hero-what">UI/UX and graphic designer. I design apps, websites, brands, presentations and motion.</p>
+      <p class="hero-what"><span class="hw-a">UI/UX and graphic designer.</span> <span class="hw-b">I design apps, websites, brands, presentations and motion.</span></p>
     </div>
+    <a class="badge" href="#work" aria-label="Scroll to selected work"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="bc" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#bc" startOffset="0">Selected work 2021–2026 · Scroll down · </textPath></text></svg><span class="badge-i" aria-hidden="true">↓</span></a>
   </header>
 
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>UI/UX design</span><span>Prototyping</span><span>Brand systems</span><span>Presentation design</span><span>Web design &amp; build</span><span>Motion</span>
-      <span>UI/UX design</span><span>Prototyping</span><span>Brand systems</span><span>Presentation design</span><span>Web design &amp; build</span><span>Motion</span>
-    </div>
-  </div>
 
   <section id="work" class="wrap">
     <div class="shead">
       <h2>Work</h2>
-      <p>Apps, websites, brands and presentations for companies and studios.</p>
     </div>
     <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
     <div class="work-grid" id="grid"></div>
   </section>
 
   <section id="about" class="wrap">
-    <div class="shead"><h2>About</h2></div>
+    <div class="shead"><h2 data-roll>About</h2></div>
     <p class="statement"><span class="hi">Hi, I’m Ednaldo</span>I’m a UI/UX and graphic designer in Lisbon. I design the <em>product</em> people use, the <em>brand</em> they recognise and the <em>deck</em> that explains it.</p>
     <div class="do">
       <span class="mono do-k">What I do</span>
@@ -1302,8 +1308,21 @@ function renderGrid(){
 }
 filters.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;active=b.dataset.c;renderFilters();renderGrid();});
 try{localStorage.removeItem('pf-filter')}catch(_){}
+/* What I do: the orange fill enters and leaves from the side the mouse crosses */
+document.querySelectorAll('.do-row').forEach(r=>{const side=e=>{const b=r.getBoundingClientRect();return e.clientY<b.top+b.height/2?'top':'bottom'};
+  r.addEventListener('pointerenter',e=>r.style.setProperty('--o',side(e)));r.addEventListener('pointerleave',e=>r.style.setProperty('--o',side(e)))});
 document.querySelectorAll('.do-row[data-f]').forEach(r=>r.addEventListener('click',e=>{const c=r.dataset.f;if(!cats.includes(c))return;e.preventDefault();active=c;renderFilters();renderGrid();document.getElementById('work').scrollIntoView({behavior:'smooth'})}));
 renderFilters();renderGrid();
+/* ---------- name hover: letters roll through, like awakeagency.dev ---------- */
+if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const css=getComputedStyle(document.documentElement),acc=css.getPropertyValue('--accent').trim(),pap=css.getPropertyValue('--paper').trim();
+  /* track pointer direction so letters leave the way the mouse is moving */
+  let mx=0,my=0,vx=0,vy=0;addEventListener('pointermove',e=>{vx=vx*.5+(e.clientX-mx)*.5;vy=vy*.5+(e.clientY-my)*.5;mx=e.clientX;my=e.clientY},{passive:true});
+  document.querySelectorAll('[data-roll]').forEach(el=>{const s=el.textContent;el.setAttribute('aria-label',s);el.innerHTML=[...s].map(c=>c===' '?' ':`<span class="ch" aria-hidden="true"><b>${c}</b></span>`).join('')});
+  /* delegated, so it survives the scroll-reveal rewrapping headings */
+  document.addEventListener('pointerover',e=>{const ch=e.target.closest&&e.target.closest('.hero h1 .ch,[data-roll] .ch');if(!ch||ch.contains(e.relatedTarget)||ch._busy)return;ch._busy=true;const b=ch.firstElementChild;
+      const h=Math.abs(vx)>Math.abs(vy),s=(h?vx:vy)>=0?1:-1,ax=h?'X':'Y',T=v=>`translate${ax}(${v}%)`;
+      b.animate([{transform:T(0),color:pap,easing:'cubic-bezier(.6,0,.9,.4)'},{transform:T(102*s),color:pap,offset:.42},{transform:T(-102*s),color:acc,offset:.4201,easing:'cubic-bezier(.15,.75,.25,1)'},{transform:T(0),color:acc,offset:.8},{transform:T(0),color:pap}],{duration:900}).finished.then(()=>ch._busy=false,()=>ch._busy=false)})}
 /* card tilt: the cover lifts off the card and follows the pointer */
 if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
   let tc=null,tx=0,ty=0,cx=0,cy=0,raf=0;
