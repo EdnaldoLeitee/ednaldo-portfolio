@@ -95,11 +95,12 @@ a{color:inherit}
 @media (max-width:640px){.nav .clock{display:none}.nav ul{gap:.75rem}}
 
 /* ---------- Hero ---------- */
-.hero{padding-block:clamp(6rem,14vh,9rem) 2.5rem;display:grid;gap:2rem}
+.hero{padding-block:clamp(6rem,14vh,9rem) 2.5rem;display:grid;grid-template-columns:minmax(0,1fr);gap:2rem}
 .hero h1{margin:0;font-family:var(--display);font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:clamp(4.5rem,24vw,22rem);line-height:.8;letter-spacing:-.01em}
 .hero h1 .ital{font-stretch:125%;font-weight:200;font-style:normal;letter-spacing:-.04em;color:var(--accent)}
 .hero-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem 2rem;border-top:1px solid var(--line);padding-top:1.25rem}
 .hero-meta p{margin:0;max-width:34ch}
+.hero-meta .hero-what{max-width:36ch;font-size:clamp(1.25rem,2.3vw,2rem);line-height:1.2;letter-spacing:-.01em}
 .hero-meta .mono{color:var(--mute);display:block;margin-bottom:.35rem}
 .dot{display:inline-block;width:.55em;height:.55em;border-radius:50%;background:var(--accent);margin-right:.5em;box-shadow:0 0 0 0 var(--accent);animation:pulse 2.4s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,117,58,.6)}70%{box-shadow:0 0 0 10px rgba(224,117,58,0)}100%{box-shadow:0 0 0 0 rgba(224,117,58,0)}}
@@ -578,20 +579,22 @@ body.locked{overflow:hidden}
 .story-nav button{font:inherit;background:none;border:0;border-bottom:1px solid var(--line);color:var(--paper);text-align:left;padding:.8rem 0;display:flex;gap:1rem;align-items:baseline;cursor:pointer;font-size:1.05rem;transition:color .2s,padding .2s}
 .story-nav button .mono{color:var(--accent)}
 .story-nav button:hover{color:var(--accent);padding-left:.4rem}
-.chap{border-top:1px solid var(--line);padding-block:3rem 2.5rem;scroll-margin-top:70px}
+.chap{border-top:1px solid var(--line);padding-block:3rem 2.5rem;scroll-margin-top:70px;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:2.5rem}
+.chap>.ch-h{display:contents}.chap>.ch-h>div{margin-bottom:1.75rem;min-width:0}.chap>.ch-b{grid-column:2}
 .ch-h{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1rem 2.5rem;align-items:start;margin-bottom:2rem}
 .ch-n{font-family:var(--display);font-stretch:62%;font-weight:850;font-size:clamp(4.5rem,11vw,9rem);line-height:.78;color:var(--accent)}
 .ch-k{color:var(--mute);display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin:0 0 .5rem}
 .ch-h h3{margin:0;font-family:var(--display);font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:clamp(2.2rem,5.5vw,4.2rem);line-height:.9}
 .ch-lede{margin:.8rem 0 0;max-width:58ch;color:var(--mute);font-size:1.05rem}
-.ch-b{display:grid;gap:1.5rem;min-width:0;padding-left:clamp(0rem,14vw,12.5rem)}
+.ch-b{display:grid;gap:1.25rem;min-width:0}
+.ch-b>p{margin:0}.ch-b>p+p{margin-top:-.4rem}
 .ch-b p,.ch-list li{max-width:64ch}
 .ch-b a{color:var(--accent)}
 .ch-b h4{margin:1rem 0 0}
 .ch-list{margin:0;padding-left:1.2rem;display:grid;gap:.4rem}
 .ch-quote{margin:0;font-family:var(--display);font-weight:300;font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:1.08;color:var(--accent);max-width:24ch}
 .chap .proto{border-top:0;padding-block:1rem 0;margin-top:1rem}
-@media (max-width:760px){.story-intro{grid-template-columns:1fr}.ch-b{padding-left:0}.ch-h{grid-template-columns:1fr}.ch-n{font-size:4rem}}
+@media (max-width:760px){.story-intro{grid-template-columns:1fr}.chap{grid-template-columns:minmax(0,1fr)}.chap>.ch-b{grid-column:1}.ch-n{font-size:4rem;margin-bottom:.75rem}.ch-h{grid-template-columns:1fr}}
 
 
 /* ---------- design system ---------- */
@@ -932,7 +935,6 @@ body.locked{overflow:hidden}
 <a class="skip" href="#work">Skip to work</a>
 <nav class="nav screen" aria-label="Primary">
   <a class="brand" href="#top">Ednaldo Leite</a>
-  <span class="mono clock" id="clock">Lisbon --:--</span>
   <ul class="mono">
     <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
@@ -944,10 +946,7 @@ body.locked{overflow:hidden}
   <header class="hero wrap">
     <h1><span class="hero-line"><span>Ednaldo</span></span><span class="hero-line"><span>Leite</span></span></h1>
     <div class="hero-meta">
-      <p><span class="mono">Practice</span>UI/UX &amp; graphic designer. Product and web design, brand systems, presentations and motion.</p>
-      <p><span class="mono">Based</span>Lisbon, working with teams between Lisbon and Geneva.</p>
-      <p><span class="mono">Status</span><span class="dot" aria-hidden="true"></span>Open to new projects</p>
-      <p><span class="mono">Index</span><a href="#work">Selected work, 2026 →</a></p>
+      <p class="hero-what">UI/UX and graphic designer. I design apps, websites, brands, presentations and motion.</p>
     </div>
   </header>
 
@@ -961,21 +960,21 @@ body.locked{overflow:hidden}
   <section id="work" class="wrap">
     <div class="shead">
       <h2>Work</h2>
-      <p>Decks, sites, apps and campaigns made for consultancies, studios and the people who present them.</p>
+      <p>Apps, websites, brands and presentations for companies and studios.</p>
     </div>
     <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
     <div class="work-grid" id="grid"></div>
   </section>
 
   <section id="about" class="wrap">
-    <div class="shead"><h2>About</h2><p class="mono">Ednaldo Leite — Lisbon</p></div>
-    <p class="statement"><span class="hi">Hi, I’m Ednaldo</span>A UI/UX and graphic designer in Lisbon. I design the <em>product</em> people use, the <em>brand</em> they recognise and the <em>deck</em> that explains it.</p>
+    <div class="shead"><h2>About</h2></div>
+    <p class="statement"><span class="hi">Hi, I’m Ednaldo</span>I’m a UI/UX and graphic designer in Lisbon. I design the <em>product</em> people use, the <em>brand</em> they recognise and the <em>deck</em> that explains it.</p>
     <div class="do">
       <span class="mono do-k">What I do</span>
-      <a class="do-row" href="#work" data-f="Product"><span class="do-n mono">01</span><div class="do-t"><h3>Apps people <span class="sq">actually</span> enjoy</h3><p>I talk to users, sketch a lot and test early, so the final product feels obvious. Then I hand it over in a tidy design system.</p></div><ul class="do-tags"><li>Research &amp; interviews</li><li>Wireframes</li><li>Prototypes</li><li>Usability testing</li><li>Design systems</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
-      <a class="do-row" href="#work" data-f="Branding"><span class="do-n mono">02</span><div class="do-t"><h3>Brands that look like <span class="sq">themselves</span></h3><p>The logo is the fun part. I also make the rules for colour, type and layout, so every poster and post still looks like you.</p></div><ul class="do-tags"><li>Logos</li><li>Brand guidelines</li><li>Print</li><li>Event identity</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
-      <a class="do-row" href="#work" data-f="Presentation"><span class="do-n mono">03</span><div class="do-t"><h3>Slides nobody <span class="sq">falls asleep</span> to</h3><p>I turn long documents into clear, good-looking decks, templates your team can reuse and posts that get noticed.</p></div><ul class="do-tags"><li>Pitch &amp; webinar decks</li><li>PowerPoint templates</li><li>Social posts</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
-      <a class="do-row" href="#work" data-f="Motion"><span class="do-n mono">04</span><div class="do-t"><h3>Things that <span class="sq">move</span></h3><p>Websites, landing pages and small animations that explain an idea faster than a paragraph can. A bit like this one.</p></div><ul class="do-tags"><li>Websites</li><li>Logo &amp; UI animation</li><li>Videos</li><li>Interactive tools</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
+      <a class="do-row" href="#work" data-f="Product"><span class="do-n mono">01</span><div class="do-t"><h3>Apps that are <span class="sq">easy</span> to use</h3><p>I talk to real users, sketch, prototype and test early. You get a clear product and a design system your developers can build from.</p></div><ul class="do-tags"><li>Research &amp; interviews</li><li>Wireframes</li><li>Prototypes</li><li>Usability testing</li><li>Design systems</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
+      <a class="do-row" href="#work" data-f="Branding"><span class="do-n mono">02</span><div class="do-t"><h3>Brands that stay <span class="sq">consistent</span></h3><p>A logo plus clear rules for colour, type and layout, so every poster, post and event looks like the same brand.</p></div><ul class="do-tags"><li>Logos</li><li>Brand guidelines</li><li>Print</li><li>Event identity</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
+      <a class="do-row" href="#work" data-f="Presentation"><span class="do-n mono">03</span><div class="do-t"><h3>Presentations that are <span class="sq">clear</span></h3><p>I turn long documents into decks that are easy to follow, plus PowerPoint templates your team can reuse and social posts.</p></div><ul class="do-tags"><li>Pitch &amp; webinar decks</li><li>PowerPoint templates</li><li>Social posts</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
+      <a class="do-row" href="#work" data-f="Motion"><span class="do-n mono">04</span><div class="do-t"><h3>Websites and <span class="sq">motion</span></h3><p>Websites, landing pages and short animations that explain an idea quickly. This site is one of them.</p></div><ul class="do-tags"><li>Websites</li><li>Logo &amp; UI animation</li><li>Videos</li><li>Interactive tools</li></ul><span class="do-go" aria-hidden="true">↗</span></a>
     </div>
   </section>
 
@@ -990,8 +989,6 @@ body.locked{overflow:hidden}
     <div class="social-row"><a class="social" href="https://www.linkedin.com/in/ednaldo-leite-05232a15b/" target="_blank" rel="noopener"><svg class="li-ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M4 1.5h16A2.5 2.5 0 0 1 22.5 4v16a2.5 2.5 0 0 1-2.5 2.5H4A2.5 2.5 0 0 1 1.5 20V4A2.5 2.5 0 0 1 4 1.5ZM5.3 9.3v9.4h3V9.3h-3Zm1.5-4.6a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5Zm4.2 4.6v9.4h3v-4.9c0-1.3.25-2.55 1.85-2.55 1.58 0 1.6 1.47 1.6 2.63v4.82h3v-5.32c0-2.61-.56-4.62-3.62-4.62-1.47 0-2.45.8-2.86 1.57h-.04V9.3H11Z"/></svg><span class="s-name">in/ednaldo-leite</span><i aria-hidden="true">↗</i></a></div>
     <footer class="mono">
       <span>© 2026 Ednaldo Leite</span>
-      <span>Lisbon · UTC+1</span>
-      <a href="#top">Back to top ↑</a>
     </footer>
   </section>
 </main>
@@ -1889,10 +1886,6 @@ const RV=(()=>{
   return {page,caseIn};
 })();
 
-/* ---------- clock ---------- */
-const clock=document.getElementById('clock');
-function tick(){try{clock.textContent='Lisbon '+new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',hour:'2-digit',minute:'2-digit'}).format(new Date())}catch(_){}}
-tick();setInterval(tick,15000);
 
 /* ---------- copy email ---------- */
 document.getElementById('copy').addEventListener('click',()=>{
