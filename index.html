@@ -997,6 +997,40 @@ body.locked{overflow:hidden}
 .fxx.s img{transform:scaleY(.6) scaleX(1.12)}.fxx.r img{transform:rotate(-18deg)}.fxx.h img{filter:hue-rotate(150deg) saturate(1.3)}.fxx.e img{filter:drop-shadow(6px 8px 4px rgba(0,0,0,.45)) blur(.4px)}
 .fxx.on{background:var(--fo);color:#fff}.fxx.bz{background:url(fox-brand-street.jpg) center/cover;color:#fff}.fxx.op img{opacity:.3}
 .fxx.rb .rb{display:flex;align-items:center;gap:8px;font:italic 700 clamp(1rem,2vw,1.4rem)/1 Georgia,serif;color:var(--fo)}.fxx.rb .rb img{width:38%}
+.case-veil{position:fixed;left:0;top:0;z-index:5;background:var(--ink-2) center/cover no-repeat;pointer-events:none;opacity:0}
+/* About statement: words rise line by line, the three key words land last with a pop */
+.statement.sw-ready .hi{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.statement.sw-ready.in .hi{opacity:1;transform:none}
+.statement .sw{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .02em .1em;margin:0 -.02em -.1em}
+.statement.sw-ready .sw>span{display:inline-block;transform:translateY(110%);transition:transform .95s cubic-bezier(.2,.8,.2,1) var(--d)}
+.statement.sw-ready .sw.k>span{transform:translateY(110%) rotate(8deg);transform-origin:0 100%}
+.statement.sw-ready.in .sw>span{transform:none}
+.statement.sw-ready.in .sw.k em{display:inline-block;animation:kpop .7s cubic-bezier(.3,1.6,.5,1) calc(var(--d) + .55s) both}
+@keyframes kpop{0%{transform:scale(1)}45%{transform:scale(1.14)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.statement.sw-ready .sw>span,.statement.sw-ready .hi{transform:none!important;opacity:1!important;transition:none}.statement.sw-ready.in .sw.k em{animation:none}}
+.dnt-w{display:inline-grid;overflow:hidden;height:1.25em;line-height:1.25em;text-align:left;width:var(--w0,auto);transition:width .45s cubic-bezier(.7,0,.2,1)}
+#dnt:hover .dnt-w,#dnt:focus-visible .dnt-w{width:var(--w1,auto)}
+.dnt-w>span{grid-area:1/1;justify-self:start;white-space:nowrap;transition:transform .45s cubic-bezier(.7,0,.2,1),opacity .3s}
+.dnt-w>span:last-child{transform:translateY(110%);opacity:0}
+#dnt:hover .dnt-w>span:first-child,#dnt:focus-visible .dnt-w>span:first-child{transform:translateY(-110%);opacity:0}
+#dnt:hover .dnt-w>span:last-child,#dnt:focus-visible .dnt-w>span:last-child{transform:none;opacity:1}
+/* work grid: each project reveals as it scrolls in */
+.card.cr-pre{animation:none}
+.card.cr-pre .card-cover{clip-path:inset(100% 0 0 0 round 0);transition:clip-path 1.15s cubic-bezier(.76,0,.24,1) var(--cd,0ms)}
+.card.cr-pre .card-tilt{transform:scale(1.18);transition:transform 1.6s cubic-bezier(.2,.8,.2,1) var(--cd,0ms),inset .7s cubic-bezier(.2,.8,.2,1),border-radius .7s cubic-bezier(.2,.8,.2,1),box-shadow .7s}
+.card.cr-pre .card-info>*{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--cd,0ms) + 420ms + var(--k,0)*70ms)}
+.card.cr-pre.cr-in .card-cover{clip-path:inset(0 0 0 0 round 0)}
+.card.cr-pre.cr-in .card-tilt{transform:none}
+.card.cr-pre.cr-in .card-info>*{opacity:1;transform:none}
+.card.cr-pre .tag{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .6s cubic-bezier(.3,1.5,.5,1);transition-delay:calc(var(--cd,0ms) + 700ms + var(--t,0)*60ms)}
+.card.cr-pre.cr-in .tag{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.card.cr-pre .card-cover,.card.cr-pre .card-tilt,.card.cr-pre .card-info>*,.card.cr-pre .tag{clip-path:none!important;transform:none!important;opacity:1!important;transition:none!important}}
+/* card labels: title rises from a mask, client + year decode like a split-flap */
+.card.cr-pre .card-info>h3{opacity:1;transform:none;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.card.cr-pre .cr-l{display:inline-block;transform:translateY(108%);transition:transform 1s cubic-bezier(.2,.8,.2,1) calc(var(--cd,0ms) + 380ms)}
+.card.cr-pre.cr-in .cr-l{transform:none}
+.card-info h3 .ch{display:inline-block;overflow:hidden;vertical-align:top}.card-info h3 .ch b{display:inline-block;font-weight:inherit}
+@media (prefers-reduced-motion:reduce){.card.cr-pre .cr-l{transform:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -1067,7 +1101,7 @@ body.locked{overflow:hidden}
 </main>
 
 <!-- ================= CASE STUDY ================= -->
-<button id="dnt" class="screen" type="button" aria-label="Do not touch: drops the page to the bottom of the screen"><i aria-hidden="true"></i>Do not touch</button>
+<button id="dnt" class="screen" type="button" aria-label="Do not touch: drops the page to the bottom of the screen"><i aria-hidden="true"></i><span class="dnt-w" aria-hidden="true"><span>Do not touch</span><span>Please don’t do it</span></span></button>
 <button id="toTop" class="screen" type="button" aria-label="Back to top" title="Back to top"><svg class="ring" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26"/></svg><svg class="ar" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 <div id="case" role="dialog" aria-modal="true" aria-labelledby="caseTitle" class="screen">
   <div class="case-top mono"><span id="caseIdx">01 / 08</span><button class="btn" id="caseClose" type="button">Close ✕</button></div>
@@ -1381,6 +1415,34 @@ document.querySelectorAll('.do-row').forEach(r=>{const side=e=>{const b=r.getBou
   r.addEventListener('pointerenter',e=>r.style.setProperty('--o',side(e)));r.addEventListener('pointerleave',e=>r.style.setProperty('--o',side(e)))});
 document.querySelectorAll('.do-row[data-f]').forEach(r=>r.addEventListener('click',e=>{const c=r.dataset.f;if(!cats.includes(c))return;e.preventDefault();active=c;renderFilters();renderGrid();document.getElementById('work').scrollIntoView({behavior:'smooth'})}));
 renderFilters();renderGrid();
+/* ---------- work grid scroll reveal ---------- */
+const CR=(()=>{const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduce||!('IntersectionObserver' in window))return{run(){}};
+  let ready=false;const G='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789·/';
+  function decode(el,delay){const fin=el.textContent;if(!fin.trim())return;el.style.minWidth=el.offsetWidth+'px';const n=fin.length,dur=700,t0=performance.now()+delay;
+    const step=t=>{const k=Math.max(0,(t-t0)/dur);if(k<=0){el.textContent=fin.replace(/\S/g,' ');requestAnimationFrame(step);return}
+      const done=Math.floor(k*n);el.textContent=[...fin].map((ch,i)=>i<done||ch===' '?ch:G[(Math.random()*G.length)|0]).join('');
+      if(k<1)requestAnimationFrame(step);else{el.textContent=fin;el.style.minWidth=''}};requestAnimationFrame(step)}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const c=e.target;c.classList.add('cr-in');const d=parseInt(getComputedStyle(c).getPropertyValue('--cd'))||0;
+      c.querySelectorAll('.card-info .client,.card-info .year').forEach((x,j)=>decode(x,d+480+j*120));io.unobserve(c)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  function run(){document.querySelectorAll('#grid .card').forEach((c,i)=>{if(c.classList.contains('cr-pre'))return;c.classList.add('cr-pre');c.style.setProperty('--cd',(i%2)*140+'ms');
+    [...c.querySelectorAll('.card-info>*')].forEach((x,k)=>x.style.setProperty('--k',k));c.querySelectorAll('.tag').forEach((x,k)=>x.style.setProperty('--t',k));
+    const h=c.querySelector('.card-info h3');if(h&&!h.querySelector('.cr-l')){const s=h.textContent;h.setAttribute('aria-label',s);h.innerHTML=`<span class="cr-l" aria-hidden="true">${s.split(' ').map(w=>`<span style="white-space:nowrap">${[...w].map(ch=>`<span class="ch"><b>${ch}</b></span>`).join('')}</span>`).join(' ')}</span>`}
+    if(ready)io.observe(c)})}
+  function start(){ready=true;document.querySelectorAll('#grid .card.cr-pre:not(.cr-in)').forEach(c=>io.observe(c))}
+  const intro=document.getElementById('intro');if(!intro||!document.body.contains(intro))start();else setTimeout(start,2600);
+  return{run}})();
+CR.run();{const _rg=renderGrid;renderGrid=function(){_rg();CR.run()}}
+{const w=document.querySelector('.dnt-w');if(w){const fit=()=>{const[s0,s1]=w.children;w.style.setProperty("--w0",s0.offsetWidth+"px");w.style.setProperty("--w1",s1.offsetWidth+"px")};fit();document.fonts&&document.fonts.ready.then(fit)}}
+/* ---------- About statement reveal ---------- */
+{const st=document.querySelector('#about .statement');if(st){
+  let i=0;const wrap=(inner,k)=>`<span class="sw${k?' k':''}"><span style="--d:${(i++)*38}ms">${inner}</span></span>`;
+  const html=[...st.childNodes].map(n=>{
+    if(n.nodeType===3)return n.textContent.split(/(\s+)/).map(w=>!w?'':/^\s+$/.test(w)?' ':wrap(w,false)).join('');
+    if(n.classList&&n.classList.contains('hi'))return n.outerHTML;
+    if(n.tagName==='EM')return wrap(n.outerHTML,true);
+    return n.outerHTML}).join('');
+  st.innerHTML=html;st.classList.add('sw-ready');
+  new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){st.classList.add('in');o.disconnect()}},{threshold:.35}).observe(st)}}
 /* ---------- Fox brand book spreads ---------- */
 const FXB='fox-brand-';const fxl=n=>`${FXB}Fox_v2-0${n}.svg`;
 function fxSpread(no,tag,title,paras,body){return `<section class="fxb"><div class="fxb-top" aria-hidden="true"><span>Fox Real Estate — <b>Brand guidelines</b></span><span>${no} · ${tag}</span></div><div class="fxb-g"><div><span class="fxb-n">${no}</span><h4>${title}</h4>${paras.map(p=>`<p>${p}</p>`).join('')}</div><div>${body}</div></div></section>`}
@@ -1428,7 +1490,7 @@ if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers
   let mx=0,my=0,vx=0,vy=0;addEventListener('pointermove',e=>{vx=vx*.5+(e.clientX-mx)*.5;vy=vy*.5+(e.clientY-my)*.5;mx=e.clientX;my=e.clientY},{passive:true});
   document.querySelectorAll('[data-roll]').forEach(el=>{const s=el.textContent;el.setAttribute('aria-label',s);el.innerHTML=s.split(' ').map(w=>`<span style="white-space:nowrap">${[...w].map(c=>`<span class="ch" aria-hidden="true"><b>${c}</b></span>`).join('')}</span>`).join(' ')});
   /* delegated, so it survives the scroll-reveal rewrapping headings */
-  document.addEventListener('pointerover',e=>{const ch=e.target.closest&&e.target.closest('.hero h1 .ch,[data-roll] .ch');if(!ch||ch.contains(e.relatedTarget)||ch._busy)return;ch._busy=true;const b=ch.firstElementChild;
+  document.addEventListener('pointerover',e=>{const ch=e.target.closest&&e.target.closest('.hero h1 .ch,[data-roll] .ch,.card-info h3 .ch');if(!ch||ch.contains(e.relatedTarget)||ch._busy)return;ch._busy=true;const b=ch.firstElementChild;
       const h=Math.abs(vx)>Math.abs(vy),s=(h?vx:vy)>=0?1:-1,ax=h?'X':'Y',T=v=>`translate${ax}(${v}%)`;
       b.animate([{transform:T(0),color:pap,easing:'cubic-bezier(.6,0,.9,.4)'},{transform:T(102*s),color:pap,offset:.42},{transform:T(-102*s),color:acc,offset:.4201,easing:'cubic-bezier(.15,.75,.25,1)'},{transform:T(0),color:acc,offset:.8},{transform:T(0),color:pap}],{duration:900}).finished.then(()=>ch._busy=false,()=>ch._busy=false)})}
 /* card tilt: the cover lifts off the card and follows the pointer */
@@ -1593,9 +1655,20 @@ function openCase(id){
   caseEl.classList.add('open'); caseEl.scrollTop=0; requestAnimationFrame(()=>RV.caseIn(caseBody,caseEl)); document.body.classList.add('locked');
   setTimeout(()=>document.getElementById('caseClose').focus({preventScroll:true}),50);
 }
+/* close: the project folds back into its card in the grid, then the card settles */
+let closing=false;
 function closeCase(){
-  caseEl.querySelectorAll('video').forEach(v=>v.pause());
-  caseEl.classList.remove('open');document.body.classList.remove('locked');
+  if(closing)return;caseEl.querySelectorAll('video').forEach(v=>v.pause());
+  const card=lastId&&document.querySelector(`#grid .card[data-id="${lastId}"] .card-cover`),W=innerWidth,H=innerHeight;
+  const r=card&&card.getBoundingClientRect(),vis=r&&r.bottom>40&&r.top<H-40&&r.width>0;
+  const done=()=>{closing=false;caseEl.style.transition='none';caseEl.classList.remove('open');document.body.classList.remove('locked');caseEl.style.clipPath='';caseEl.offsetHeight;caseEl.style.transition='';
+    if(card){card.animate([{transform:'scale(.94)'},{transform:'scale(1.02)',offset:.6},{transform:'scale(1)'}],{duration:650,easing:'cubic-bezier(.2,.8,.2,1)'})}};
+  if(vis&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    closing=true;const E='cubic-bezier(.76,0,.24,1)',to=`inset(${r.top}px ${W-r.right}px ${H-r.bottom}px ${r.left}px round 6px)`;
+    const veil=document.createElement('div');veil.className='case-veil';const pp=P.find(x=>x.id===lastId);if(pp&&pp.coverImg){veil.style.backgroundImage=`url(${pp.coverImg})`;veil.style.backgroundPosition=pp.coverCenter?'center':'left center'}caseEl.appendChild(veil);
+    veil.animate([{left:'0px',top:'0px',width:W+'px',height:H+'px',opacity:0,borderRadius:'0px'},{opacity:1,offset:.45},{left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px',opacity:1,borderRadius:'6px'}],{duration:780,easing:E,fill:'forwards'});
+    caseEl.animate([{clipPath:'inset(0px 0px 0px 0px round 0px)'},{clipPath:to}],{duration:780,easing:E,fill:'forwards'}).finished.then(()=>{veil.remove();caseEl.getAnimations().forEach(a=>a.cancel());done()});
+  }else{caseEl.classList.remove('open');document.body.classList.remove('locked')}
   if(location.hash && P.some(p=>'#'+p.id===location.hash)) history.replaceState(null,'',location.pathname+location.search+'#work');
   if(lastFocus) lastFocus.focus({preventScroll:true});
 }
@@ -1988,7 +2061,7 @@ const RV=(()=>{
   function page(){
     const m=document.querySelector('main');
     prep(m,'.shead h2',null,{mask:true});
-    prep(m,'.shead p, .filters, .statement, .tools, .contact .mono, .mailrow, .social-row',null);
+    prep(m,'.shead p, .filters, .tools, .contact .mono, .mailrow, .social-row, .do-k, footer > *',null);
     prep(m,'.svc, .do-row, .step, .xp-list li, .xp-side > div',null,{stagger:90});
     prep(m,'.contact .big',null,{mask:true});
   }
