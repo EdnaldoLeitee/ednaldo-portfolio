@@ -1239,6 +1239,19 @@ html.pt-in #pt{transform:none}
 @keyframes navdot{0%,100%{transform:scale(1)}50%{transform:scale(.6)}}
 @media (prefers-reduced-motion:reduce){.nav ul a[aria-current="page"]::before{animation:none}}
 </style>
+<style>
+/* phones: a solid fade behind the menu so it never sits on top of text, and bigger tap areas */
+@media (max-width:720px){
+  .nav{mix-blend-mode:normal;color:var(--paper);background:linear-gradient(var(--ink) 62%,rgba(12,12,14,0));padding-bottom:22px}
+  .nav ul a{padding:.55rem .1rem}
+  .nav .brand{padding:.55rem 0}
+  #toTop{right:12px;bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+  #dnt{left:12px;bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+  .st-n{padding-top:.6rem}
+  .case-link{max-width:100%;flex-wrap:wrap;overflow-wrap:anywhere}
+  #case{overflow-x:hidden}
+}
+</style>
 <div id="pt" aria-hidden="true"><span class="pt-t"><b></b></span></div>
 <script>/* the curtain word is drawn before anything else; every letter gets a fixed-width slot so the scramble never shifts the word */
 window.PTW=function(word){var b=document.querySelector('#pt .pt-t b'),n=word.length,fs=Math.min(innerWidth*.86/(n*.56),innerHeight*.34);
@@ -1413,11 +1426,11 @@ if(!SEQ&&!matchMedia('(prefers-reduced-motion: reduce)').matches)nameIn(120);
   const snap=v=>Math.round(v/S)*S;
   function goRel(n){tgt=snap(tgt)+n*S;kick()}
   function goTo(i){const cur=mod(Math.round(tgt/S),N);let d=i-cur;if(d>N/2)d-=N;if(d<-N/2)d+=N;goRel(d)}
-  strip.addEventListener('pointerdown',e=>{if(e.button!==0||e.target.closest('.st-n'))return;drag={x:e.clientX,t:tgt};hist=[[performance.now(),e.clientX]];moved=false;strip.classList.add('drag');kick()});
+  strip.addEventListener('pointerdown',e=>{if(e.button!==0||e.target.closest('.st-n'))return;drag={x:e.clientX,t:tgt,touch:e.pointerType!=='mouse'};hist=[[performance.now(),e.clientX]];moved=false;strip.classList.add('drag');kick()});
   addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag.x;if(Math.abs(dx)>5)moved=true;tgt=drag.t-dx*1.15;const t=performance.now();hist.push([t,e.clientX]);while(hist.length>2&&t-hist[0][0]>100)hist.shift();kick()},{passive:true});
   const end=()=>{if(!drag)return;let v=0;if(hist.length>1){const[a0,x0]=hist[0],[a1,x1]=hist[hist.length-1];if(performance.now()-a1<80&&a1>a0)v=(x1-x0)/(a1-a0)}
     /* flick: carry on like a spun wheel, then rest on the nearest project */
-    tgt=snap(tgt-v*(reduce?0:560));drag=null;strip.classList.remove('drag');kick()};
+    /* a flick carries on, but never more than two projects (one and a bit on touch) */const lim=S*(drag.touch?1.4:2.2);tgt=snap(tgt+Math.max(-lim,Math.min(lim,-v*(reduce?0:(drag.touch?380:560)))));drag=null;strip.classList.remove('drag');kick()};
   addEventListener('pointerup',end);addEventListener('pointercancel',end);
   tr.addEventListener('click',e=>{const s=e.target.closest('.st-s');if(!s)return;if(moved){e.preventDefault();moved=false;return}
     const x=parseFloat(s.style.transform.slice(12))||0;e.preventDefault();if(Math.abs(x)>S*.4){goRel(Math.round(x/S))}else flyOpen(s)});

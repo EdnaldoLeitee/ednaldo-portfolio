@@ -1166,6 +1166,17 @@ html.pt-in #pt{transform:none}
 @keyframes navdot{0%,100%{transform:scale(1)}50%{transform:scale(.6)}}
 @media (prefers-reduced-motion:reduce){.nav ul a[aria-current="page"]::before{animation:none}}
 </style>
+<style>
+/* phones: a solid fade behind the menu so it never sits on top of text, and bigger tap areas */
+@media (max-width:720px){
+  .nav{mix-blend-mode:normal;color:var(--paper);background:linear-gradient(var(--ink) 62%,rgba(12,12,14,0));padding-bottom:22px}
+  .nav ul a{padding:.55rem .1rem}
+  .nav .brand{padding:.55rem 0}
+  #toTop{right:12px;bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+  #dnt{left:12px;bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+  .st-n{padding-top:.6rem}
+}
+</style>
 <div id="pt" aria-hidden="true"><span class="pt-t"><b></b></span></div>
 <script>/* the curtain word is drawn before anything else; every letter gets a fixed-width slot so the scramble never shifts the word */
 window.PTW=function(word){var b=document.querySelector('#pt .pt-t b'),n=word.length,fs=Math.min(innerWidth*.86/(n*.56),innerHeight*.34);
