@@ -1162,7 +1162,7 @@ html.pt-in #pt{transform:none}
 .nav ul a{opacity:.55;transition:opacity .25s;display:inline-flex;align-items:center;gap:.5em}
 .nav ul a:hover,.nav ul a:focus-visible{opacity:1}
 .nav ul a[aria-current="page"]{opacity:1;text-decoration:none}
-.nav ul a[aria-current="page"]::before{content:"";width:.5em;height:.5em;border-radius:50%;background:currentColor;animation:navdot 2.4s ease-in-out infinite}
+.nav ul a[aria-current="page"]::before{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--accent);animation:navdot 2.4s ease-in-out infinite}
 @keyframes navdot{0%,100%{transform:scale(1)}50%{transform:scale(.6)}}
 @media (prefers-reduced-motion:reduce){.nav ul a[aria-current="page"]::before{animation:none}}
 </style>

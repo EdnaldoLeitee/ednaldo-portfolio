@@ -1153,7 +1153,7 @@ body.locked{overflow:hidden}
 #work .st-rul{bottom:14px}
 .st-foot{position:absolute;left:var(--gut);right:var(--gut);bottom:26px;display:flex;justify-content:space-between;align-items:baseline;pointer-events:none;font-family:var(--display);font-stretch:100%;font-weight:700;text-transform:uppercase;font-size:clamp(.8rem,1.05vw,1.05rem);letter-spacing:-.01em;color:var(--paper)}
 .st-foot time{font-variant-numeric:tabular-nums}
-body.on-work #dnt,body.on-work #toTop{opacity:0!important;pointer-events:none!important;transition:opacity .3s}
+body.on-work #toTop{opacity:0!important;pointer-events:none!important;transition:opacity .3s}
 @media (max-width:720px){.st-m{white-space:normal!important;max-width:86vw}#work .st-info{top:calc(50% - 34px + 78vw*.325 + 18px)}#work .st-rul{bottom:52px}.st-foot{bottom:20px;font-size:.78rem}}
 /* ---------- intro: name rises, covers flick like a reel, the last one grows into the strip ---------- */
 #i2{position:fixed;inset:0;z-index:120;pointer-events:auto;cursor:pointer}
@@ -1235,7 +1235,7 @@ html.pt-in #pt{transform:none}
 .nav ul a{opacity:.55;transition:opacity .25s;display:inline-flex;align-items:center;gap:.5em}
 .nav ul a:hover,.nav ul a:focus-visible{opacity:1}
 .nav ul a[aria-current="page"]{opacity:1;text-decoration:none}
-.nav ul a[aria-current="page"]::before{content:"";width:.5em;height:.5em;border-radius:50%;background:currentColor;animation:navdot 2.4s ease-in-out infinite}
+.nav ul a[aria-current="page"]::before{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--accent);animation:navdot 2.4s ease-in-out infinite}
 @keyframes navdot{0%,100%{transform:scale(1)}50%{transform:scale(.6)}}
 @media (prefers-reduced-motion:reduce){.nav ul a[aria-current="page"]::before{animation:none}}
 </style>
@@ -1513,7 +1513,8 @@ const CR=(()=>{const reduce=matchMedia('(prefers-reduced-motion: reduce)').match
   setTimeout(start,350);
   return{run}})();
 CR.run();{const _rg=renderGrid;renderGrid=function(){_rg();CR.run()}}
-{const w=document.querySelector('.dnt-w');if(w){const fit=()=>{const[s0,s1]=w.children;w.style.setProperty("--w0",s0.offsetWidth+"px");w.style.setProperty("--w1",s1.offsetWidth+"px")};fit();document.fonts&&document.fonts.ready.then(fit)}}
+{const w=document.querySelector('.dnt-w');if(w){const fit=()=>{const[s0,s1]=w.children;if(!s0.offsetWidth)return;w.style.setProperty("--w0",s0.offsetWidth+"px");w.style.setProperty("--w1",s1.offsetWidth+"px")};fit();document.fonts&&document.fonts.ready.then(fit);
+  /* the button is hidden during the intro, so measure it again once it shows */new MutationObserver(fit).observe(document.body,{attributes:true,attributeFilter:["class"]})}}
 
 /* ---------- Profile statement: words rise in, Lisbon clock ---------- */
 document.querySelectorAll('.prof-st').forEach((st,si)=>{let i=si*14;
