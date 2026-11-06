@@ -1021,6 +1021,7 @@ body.locked{overflow:hidden}
 .card.cr-pre .card-info>*{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--cd,0ms) + 420ms + var(--k,0)*70ms)}
 .card.cr-pre.cr-in .card-cover{clip-path:inset(0 0 0 0 round 0)}
 .card.cr-pre.cr-in .card-tilt{transform:none}
+.card.cr-pre.cr-done .card-tilt{transition:inset .7s cubic-bezier(.2,.8,.2,1),border-radius .7s cubic-bezier(.2,.8,.2,1),box-shadow .7s}
 .card.cr-pre.cr-in .card-info>*{opacity:1;transform:none}
 .card.cr-pre .tag{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .6s cubic-bezier(.3,1.5,.5,1);transition-delay:calc(var(--cd,0ms) + 700ms + var(--t,0)*60ms)}
 .card.cr-pre.cr-in .tag{opacity:1;transform:none}
@@ -1545,7 +1546,7 @@ const CR=(()=>{const reduce=matchMedia('(prefers-reduced-motion: reduce)').match
     const step=t=>{const k=Math.max(0,(t-t0)/dur);if(k<=0){el.textContent=fin.replace(/\S/g,' ');requestAnimationFrame(step);return}
       const done=Math.floor(k*n);el.textContent=[...fin].map((ch,i)=>i<done||ch===' '?ch:G[(Math.random()*G.length)|0]).join('');
       if(k<1)requestAnimationFrame(step);else{el.textContent=fin;el.style.minWidth=''}};requestAnimationFrame(step)}
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const c=e.target;c.classList.add('cr-in');const d=parseInt(getComputedStyle(c).getPropertyValue('--cd'))||0;
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const c=e.target;c.classList.add('cr-in');const d=parseInt(getComputedStyle(c).getPropertyValue('--cd'))||0;setTimeout(()=>c.classList.add('cr-done'),d+1700);
       c.querySelectorAll('.card-info .client,.card-info .year').forEach((x,j)=>decode(x,d+480+j*120));io.unobserve(c)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});
   function run(){document.querySelectorAll('#grid .card').forEach((c,i)=>{if(c.classList.contains('cr-pre'))return;c.classList.add('cr-pre');c.style.setProperty('--cd',(i%2)*140+'ms');
     [...c.querySelectorAll('.card-info>*')].forEach((x,k)=>x.style.setProperty('--k',k));c.querySelectorAll('.tag').forEach((x,k)=>x.style.setProperty('--t',k));
