@@ -1193,7 +1193,7 @@ body.case-instant #case{transition:none!important}
 .strip{position:relative;margin-inline:calc(var(--gut)*-1);height:clamp(520px,82vh,860px);overflow:hidden;user-select:none;-webkit-user-select:none;touch-action:pan-y;outline:none;cursor:grab}
 .strip.drag{cursor:grabbing}
 .st-line{position:absolute;left:50%;top:0;bottom:118px;width:1px;background:var(--line);pointer-events:none}
-.st-track{position:absolute;left:50%;top:calc(50% - 60px);width:0;height:0;column-gap:clamp(10px,1.2vw,18px)}
+.st-track{position:absolute;left:50%;top:calc(50% - 60px);width:0;height:0;column-gap:clamp(10px,1.2vw,18px);perspective:1300px;perspective-origin:0 0;transform-style:preserve-3d}
 .st-s{position:absolute;left:0;top:0;width:clamp(260px,33vw,640px);margin-left:calc(clamp(260px,33vw,640px)/-2);aspect-ratio:16/10.4;overflow:hidden;background:var(--ink-2);display:block;will-change:transform;filter:grayscale(calc(var(--d,1)*.4)) brightness(calc(1 - min(var(--d,1),1)*.45));-webkit-user-drag:none}
 .st-s .cv{position:absolute;inset:0;pointer-events:none}
 .st-s img{pointer-events:none;-webkit-user-drag:none}
@@ -1211,10 +1211,10 @@ body.case-instant #case{transition:none!important}
 .st-rt{position:absolute;left:50%;top:0;height:100%;width:0}
 .st-g{position:absolute;left:0;top:0;width:80px;height:100%;will-change:transform}
 .st-n{position:absolute;left:-40px;top:0;width:80px;font:inherit;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--mute);background:none;border:0;padding:.2rem 0 2.6rem;cursor:pointer;min-height:0;transition:color .3s}
-.st-n::after{content:"";position:absolute;left:50%;bottom:6px;width:1px;height:16px;background:currentColor}
+.st-n::after{content:"";position:absolute;left:50%;bottom:6px;width:1px;height:26px;margin-left:-.5px;background:currentColor;transform-origin:50% 100%;transform:scaleY(var(--s,.62));transition:width .45s cubic-bezier(.2,.8,.2,1),background-color .45s}
 .st-n:hover,.st-g.on .st-n{color:var(--paper)}
-.st-g.on .st-n::after{height:26px;width:2px;margin-left:-.5px;background:var(--accent)}
-.st-tk{position:absolute;bottom:6px;height:8px;width:1px;background:var(--line)}
+.st-g.on .st-n::after{width:2px;margin-left:-1px;background:var(--accent)}
+.st-tk{position:absolute;bottom:6px;height:8px;width:1px;background:var(--mute);opacity:.35;transform-origin:50% 100%;will-change:scale,opacity}
 .st-tk:nth-of-type(1){left:16px}.st-tk:nth-of-type(2){left:32px}.st-tk:nth-of-type(3){left:48px}.st-tk:nth-of-type(4){left:64px}
 .st-hint{position:absolute;right:var(--gut);bottom:30px;color:var(--mute)}
 @media (max-width:720px){.st-s{width:78vw;margin-left:-39vw}.st-info{top:calc(50% - 60px + 78vw*.325 + 18px)}.st-hint{display:none}.strip{height:clamp(480px,74vh,640px)}}
@@ -1389,15 +1389,21 @@ if(!SEQ&&!matchMedia('(prefers-reduced-motion: reduce)').matches)nameIn(120);
     const w=strip.clientWidth;tr.innerHTML=`<a class="st-s" style="visibility:hidden">${coverOf(L[0])}</a>`;
     const sw=tr.firstElementChild.offsetWidth,gap=parseFloat(getComputedStyle(tr).columnGap)||14;S=sw+gap;
     reps=Math.max(1,Math.ceil((w+S*3)/(N*S)));const T=N*reps;
-    tr.innerHTML=Array.from({length:T},(_,k)=>{const p=L[k%N];return `<a class="st-s" href="#${p.id}" data-id="${p.id}" data-k="${k}" draggable="false" aria-label="${p.title}"${k>=N?' aria-hidden="true" tabindex="-1"':''}>${coverOf(p)}</a>`}).join('');
+    tr.innerHTML=Array.from({length:T},(_,k)=>{const p=L[k%N];return `<a class="st-s" href="#${p.id}" data-id="${p.id}" data-k="${k}" draggable="false" aria-label="${p.title}"${k>=N?' aria-hidden="true" tabindex="-1"':''}>${coverOf(p).replace(' loading="lazy"','')}</a>`}).join('');
     slides=[...tr.children];
     rreps=Math.max(1,Math.ceil(1400/(N*SP)));
     rul.innerHTML=Array.from({length:N*rreps},(_,k)=>{const i=k%N;return `<span class="st-g" data-i="${i}"><button type="button" class="st-n" data-i="${i}" tabindex="${k<N?0:-1}" aria-label="Project ${pad(i+1)}: ${L[i].title}">${pad(i+1)}</button>${'<i class="st-tk"></i>'.repeat(4)}</span>`}).join('');
     marks=[...rul.children];pos=0;tgt=0;ai=-1;paint();}
   function paint(){if(!N)return;const T=N*reps,span=T*S,f=pos/S;
-    slides.forEach((s,k)=>{let x=mod(k*S-pos+span/2,span)-span/2;const d=Math.min(Math.abs(x)/S,1.5);
-      s.style.transform=`translate3d(${x}px,-50%,0) scale(${(1-Math.min(d,1)*.07).toFixed(4)})`;s.style.setProperty('--d',d.toFixed(3))});
-    const rs=N*rreps*SP;marks.forEach((m,k)=>{const x=mod(k*SP-f*SP+rs/2,rs)-rs/2;m.style.transform=`translate3d(${x}px,0,0)`;m.style.opacity=Math.abs(x)>SP*4.2?0:1});
+    /* curved wall: cards sit on the inside of a cylinder; the faster you move, the deeper it bends */
+    const B=bend;
+    slides.forEach((s,k)=>{let x=mod(k*S-pos+span/2,span)-span/2;const d=Math.min(Math.abs(x)/S,1.5),u=x/S;
+      const ang=-Math.max(-2.6,Math.min(2.6,u))*(9+17*B),z=Math.min(u*u,6)*(26+70*B);
+      s.style.transform=`translate3d(${x}px,-50%,${z.toFixed(1)}px) rotateY(${ang.toFixed(2)}deg) scale(${(1-Math.min(d,1)*.05).toFixed(4)})`;s.style.setProperty('--d',d.toFixed(3));});
+    const rs=N*rreps*SP;marks.forEach((m,k)=>{const x=mod(k*SP-f*SP+rs/2,rs)-rs/2;m.style.transform=`translate3d(${x}px,0,0)`;const far=Math.abs(x)>SP*4.2;m.style.opacity=far?0:1;if(far)return;
+      /* the lines swell as they pass the centre, like a dial under a lens */
+      const g=v=>Math.exp(-(v*v)/1800);m.style.setProperty('--s',(.62+.38*g(x)).toFixed(3));
+      (m._tk||(m._tk=[...m.querySelectorAll('.st-tk')])).forEach((t,j)=>{const w=g(x+16*(j+1));t.style.scale=`1 ${(1+1.6*w).toFixed(3)}`;t.style.opacity=(.35+.55*w).toFixed(3)})});
     const a=mod(Math.round(f),N);if(a!==ai){ai=a;setInfo()}}
   /* project info: old title slides up and out, new letters rise in one by one; the details decode like a split-flap board */
   const GL='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';let itok=0;
@@ -1418,10 +1424,11 @@ if(!SEQ&&!matchMedia('(prefers-reduced-motion: reduce)').matches)nameIn(120);
     if(!t.dataset.out){t.dataset.out='1';m.animate([{opacity:1},{opacity:0}],{duration:200,fill:'forwards'});old.forEach((b,i)=>b.animate([{transform:'none'},{transform:'translateY(-110%)'}],{duration:260,delay:i*8,easing:'cubic-bezier(.6,0,.9,.4)',fill:'forwards'}))}
     clearTimeout(info._t);info._t=setTimeout(put,300)}
   /* wheel-like motion: input moves a target, the strip eases towards it every frame */
-  let tgt=0,hist=[];
+  let tgt=0,hist=[],bend=0,lastPos=0;
   function loop(){raf=0;const d=tgt-pos;pos+=d*(reduce?1:.075);if(Math.abs(d)<.15&&!drag)pos=tgt;
+    const v=Math.abs(pos-lastPos)/S;lastPos=pos;if(!reduce){const want=Math.min(1,v*9);bend+=(want-bend)*(want>bend?.18:.06);if(bend<.002)bend=0}
     paint();slides.forEach(s=>s.classList.toggle('on',+s.dataset.k%N===ai&&parseFloat(s.style.getPropertyValue('--d'))<.5));
-    if(drag||Math.abs(tgt-pos)>.15)kick()}
+    if(drag||Math.abs(tgt-pos)>.15||bend>0)kick()}
   const kick=()=>{if(!raf)raf=requestAnimationFrame(loop)};
   const snap=v=>Math.round(v/S)*S;
   function goRel(n){tgt=snap(tgt)+n*S;kick()}
@@ -1451,7 +1458,9 @@ if(!SEQ&&!matchMedia('(prefers-reduced-motion: reduce)').matches)nameIn(120);
             .then(()=>f.animate([{opacity:1},{opacity:0}],{duration:250,fill:'forwards'}).finished).then(cleanup)}))};wait()})}
   /* keep the strip on the project that is open, so closing folds back into it */
   window.stripIntro=()=>{if(!N)return;ai=-1;itok++;const t=info.querySelector('.st-t');t.innerHTML='';t.dataset.out='';paint();
-    rul.animate([{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'none'}],{duration:800,delay:150,easing:'cubic-bezier(.2,.8,.2,1)'});
+    if(reduce)return;const cx=rul.getBoundingClientRect().left+rul.offsetWidth/2,E='cubic-bezier(.2,.8,.2,1)';
+    rul.querySelectorAll('.st-n,.st-tk').forEach(el=>{const r=el.getBoundingClientRect(),d=Math.abs((el.classList.contains('st-n')?r.left+r.width/2:r.left)-cx);if(d>520)return;
+      el.animate(el.classList.contains('st-n')?[{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}]:[{transform:'scaleY(0)'},{transform:'none'}],{duration:900,delay:150+d*.9,easing:E,fill:'backwards'})});
 };
   window.stripShow=id=>{const i=L.findIndex(p=>p.id===id);if(i<0||!N)return;const c=Math.round(pos/S);let d=i-mod(c,N);if(d>N/2)d-=N;if(d<-N/2)d+=N;pos=tgt=(c+d)*S;paint();slides.forEach(s=>s.classList.toggle('on',+s.dataset.k%N===ai&&parseFloat(s.style.getPropertyValue('--d'))<.5))};
   rul.addEventListener('click',e=>{const n=e.target.closest('.st-n');if(n)goTo(+n.dataset.i)});
@@ -1460,6 +1469,12 @@ if(!SEQ&&!matchMedia('(prefers-reduced-motion: reduce)').matches)nameIn(120);
     if(Math.abs(dd)>=50&&e.deltaMode!==2&&!(Math.abs(dd)%1)){const n=performance.now();if(n-(strip._wt||0)>260){strip._wt=n;goRel(Math.sign(dd))}return}
     if(strip._w0==null)strip._w0=snap(tgt);tgt+=dd*(e.deltaMode===1?40:1)*1.2;kick();clearTimeout(strip._w);strip._w=setTimeout(()=>{const df=tgt-strip._w0;tgt=Math.abs(df)>S*.12?strip._w0+Math.sign(df)*Math.max(1,Math.round(Math.abs(df)/S))*S:snap(tgt);strip._w0=null;kick()},160)},{passive:false});
   strip.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();goRel(1)}else if(e.key==='ArrowLeft'){e.preventDefault();goRel(-1)}});
+  /* space bar opens the project in the centre */
+  addEventListener('keydown',e=>{if(e.code!=='Space'&&e.key!==' ')return;if(e.repeat||e.ctrlKey||e.metaKey||e.altKey||!N||drag)return;
+    const c=document.getElementById('case'),lbx=document.getElementById('lb');if((c&&c.classList.contains('open'))||(lbx&&!lbx.hidden)||document.body.classList.contains('locked')||document.querySelector('.st-fly'))return;
+    if(e.target.closest&&e.target.closest('input,textarea,select,button,[contenteditable],video'))return;if(!strip.offsetParent)return;
+    e.preventDefault();let best=null,bd=1e9;slides.forEach(s=>{const x=Math.abs(parseFloat(s.style.transform.slice(12))||0);if(x<bd){bd=x;best=s}});
+    if(!best)return;if(Math.abs(tgt-pos)>2){pos=tgt=snap(tgt);paint()}best=null;bd=1e9;slides.forEach(s=>{const x=Math.abs(parseFloat(s.style.transform.slice(12))||0);if(x<bd){bd=x;best=s}});flyOpen(best)});
   let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{const a=ai;build();if(a>0){pos=tgt=a*S;paint()}},150)});
   const _rg=renderGrid;renderGrid=function(){_rg();build()};
   build();
