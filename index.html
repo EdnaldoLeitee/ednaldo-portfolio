@@ -1172,6 +1172,8 @@ body.on-work #toTop{opacity:0!important;pointer-events:none!important;transition
 @media (max-width:720px){#i2 .i2-row .mono{display:none}}
 #i2 .i2-c{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);display:grid;justify-items:center;gap:clamp(1rem,2.4vw,1.75rem)}
 #i2 .i2-c .i2-name{position:static;transform:none;mix-blend-mode:normal;color:var(--paper)}
+#i2 .i2-role{overflow:hidden;margin-top:calc(clamp(1rem,2.4vw,1.75rem)*-.55);font-family:var(--mono);font-size:clamp(.9rem,1.45vw,1.3rem);letter-spacing:.2em;text-transform:uppercase;color:var(--paper);white-space:nowrap}
+#i2 .i2-role span{display:inline-block;padding:.1em 0 .15em}
 #i2 .i2-c .i2-pc{position:static;transform:none;display:flex;align-items:center;gap:1rem;width:min(360px,70vw)}
 #i2 .i2-c .i2-bar{flex:1;width:auto;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%}
 #i2 .i2-num{flex:none;width:4.5ch;text-align:right;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;font-variant-numeric:tabular-nums;color:var(--paper)}
@@ -1271,7 +1273,7 @@ try{var w=sessionStorage.getItem("pt");if(w){document.documentElement.classList.
 </div>
 
 <script>try{if(sessionStorage.getItem('pt')||location.hash.length>1||matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('no-i2')}catch(_){}</script>
-<div id="i2" aria-hidden="true"><div class="i2-bg"></div><div class="i2-c"><div class="i2-name">Ednaldo Leite</div><div class="i2-pc"><i class="i2-bar"></i><span class="i2-num"><span class="i2-n">0</span>%</span></div></div></div>
+<div id="i2" aria-hidden="true"><div class="i2-bg"></div><div class="i2-c"><div class="i2-name">Ednaldo Leite</div><div class="i2-role"><span>UI/UX &amp; Graphic Designer</span></div><div class="i2-pc"><i class="i2-bar"></i><span class="i2-num"><span class="i2-n">0</span>%</span></div></div></div>
 <div class="cursor" id="cursor" aria-hidden="true">View</div>
 
 <a class="skip" href="#work">Skip to work</a>
@@ -1493,6 +1495,7 @@ if(!SEQ&&!matchMedia('(prefers-reduced-motion: reduce)').matches)nameIn(120);
   chs.forEach((b,i)=>b.animate([{transform:'translateY(110%) rotate(8deg)'},{transform:'none'}],{duration:1000,delay:120+i*45,easing:'cubic-bezier(.2,.8,.2,1)',fill:'forwards'}));
   const info=document.getElementById('stInfo'),rul=document.querySelector('#strip .st-rul');
   if(info)info.style.opacity=0;if(rul)rul.style.opacity=0;
+  const role=I.querySelector('.i2-role span');if(role)role.animate([{transform:'translateY(110%)',opacity:0},{transform:'none',opacity:1}],{duration:900,delay:120+chs.length*45+150,easing:'cubic-bezier(.2,.8,.2,1)',fill:'backwards'});
   pc.animate([{opacity:0},{opacity:1}],{duration:500,delay:500,easing:'ease-out',fill:'backwards'});
   const T0=performance.now(),DUR=2000;let done=false;
   const tick=now=>{if(done)return;const t=Math.min(1,(now-T0)/DUR),e=1-Math.pow(1-t,2.4);num.textContent=Math.round(e*100);bar.style.transform=`scaleX(${e})`;
@@ -1500,6 +1503,7 @@ if(!SEQ&&!matchMedia('(prefers-reduced-motion: reduce)').matches)nameIn(120);
   function out(){if(done)return;done=true;num.textContent='100';bar.style.transform='scaleX(1)';
     chs.forEach((b,i)=>b.animate([{transform:'none'},{transform:'translateY(-110%)'}],{duration:560,delay:i*24,easing:'cubic-bezier(.6,0,.4,1)',fill:'forwards'}));
     pc.animate([{opacity:1},{opacity:0}],{duration:300,easing:'ease-in',fill:'forwards'});
+    if(role)role.animate([{transform:'none'},{transform:'translateY(-110%)'}],{duration:520,delay:80,easing:'cubic-bezier(.6,0,.4,1)',fill:'forwards'});
     bg.animate([{opacity:1},{opacity:0}],{duration:600,delay:450,easing:'ease-out',fill:'forwards'});
     /* every other project drops from above or rises from below, then settles into the strip, centre first */
     const W=innerWidth,vis=[...document.querySelectorAll('#strip .st-s')].map(s=>{const r=s.getBoundingClientRect();return{s,c:r.left+r.width/2,w:r.width}}).filter(o=>o.c+o.w/2>-40&&o.c-o.w/2<W+40).sort((a,b)=>a.c-b.c);
